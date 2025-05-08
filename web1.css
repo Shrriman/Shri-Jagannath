@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 * {
   margin: 0;
@@ -8,12 +8,15 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
+  background-image: url("jaga2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
 }
 
+/* Animated Box */
 @property --a {
   syntax: "<angle>";
   inherits: false;
@@ -37,6 +40,7 @@ body {
   border-radius: 20px;
   display: flex;
   transition: 0.5s;
+  margin: 100px auto 50px auto;
 }
 
 .box:hover {
@@ -45,12 +49,8 @@ body {
 }
 
 @keyframes rotating {
-  0% {
-    --a: 0deg;
-  }
-  100% {
-    --a: 360deg;
-  }
+  0% { --a: 0deg; }
+  100% { --a: 360deg; }
 }
 
 .box::before {
@@ -94,143 +94,87 @@ body {
   box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   transition: 0.5s;
-  color: #fff;
   overflow: hidden;
+  color: #fff;
 }
 
 img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
 }
-  
-.button {
+
+/* Buttons */
+.button,
+.select {
   position: absolute;
-    bottom: 126px;
-    left: 680px;
-    width: 184px;
-    height: 45px;
-    background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
-    border: none;
-    border-radius: 5px;
-    color: #323232;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: -1px;
-    transition: 0.5s;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
+  border: none;
+  border-radius: 5px;
+  color: #323232;
+  font-weight: 500;
+  transition: 0.5s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-align: center;
+}
+
+.button {
+  bottom: 140px;
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
 }
 
 .button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5);
-    width: 190px;
-    height: 50px;
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5);
 }
 
 .select {
-    position: absolute;
-    bottom: 65px;
-    left: 648px;
-    width: 250px;
-    height: 45px;
-    background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
-    border: none;
-    border-radius: 5px;
-    color: #323232;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -1px;
-    transition: 0.5s;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-    cursor : pointer;
-    display: block;
-
+  bottom: 70px;
+  width: 260px;
+  height: auto;
+  padding: 10px;
 }
 
 span::after {
   float: right;
-  right: 10px;
   content: "﹀";
 }
 
 .slide {
-  clear:both;
-  text-decoration: none;
+  clear: both;
   width: 100%;
   border-radius: 5px;
-  float: right;
-  height: 0px;
+  height: 0;
   overflow: hidden;
-  transition: height .4s ease;
+  transition: height 0.4s ease;
   background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
   font-weight: bold;
   font-size: 16px;
+  list-style: none;
+  text-align: center;
 }
 
-.slide li {padding : 1px;}
-
-#touch {position: absolute; opacity: 0; height:0;}    
-
-#touch:checked + .slide {height: 250%;}
-
-a {
-  background-image: linear-gradient(to right, rgb(0, 255, 170), rgb(0, 255, 255), rgb(0, 38, 255) 50%, #000 50%);
-  background-size: 200% 100%;
-  background-position: -100%;
-  display: inline-block;
-  padding: 5px 0;
-  position: relative;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-in-out;
+.slide li {
+  padding: 5px;
 }
 
-a:before{
-  content: '';
-  background:  rgb(0, 255, 255);
-  display: block;
+#touch {
   position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  height: 0;
 }
 
-a:hover {
- background-position: 0;
+#touch:checked + .slide {
+  height: 120px;
 }
 
-a:hover::before{
-  width: 100%;
-}
-
-.h1 {
-  font-size: 61px;
-}
-
-.h2 {
-  font-size: 61px;
-}
-
-header {
-  position: absolute;
-  font-size: 100px;
-  background: radial-gradient(circle, rgb(255, 225, 0), rgb(0, 255, 162), rgb(0, 255, 255), rgb(0, 38, 255));   
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.h1 {
-  left: 200px;
-}
-
-.h2 {
-  right: 110px;
-}
-
+/* Animated flower effect */
 .flower {
   position: absolute;
   top: -50px;
@@ -245,3 +189,99 @@ header {
   }
 }
 
+/* Headers */
+header {
+  position: absolute;
+  font-size: 60px;
+  background: radial-gradient(circle, rgb(255, 225, 0), rgb(0, 255, 162), rgb(0, 255, 255), rgb(0, 38, 255));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.h1 {
+  top: 20px;
+  left: 20px;
+}
+
+.h2 {
+  top: 20px;
+  right: 20px;
+}
+
+/* Links */
+a {
+  background-image: linear-gradient(to right, rgb(0, 255, 170), rgb(0, 255, 255), rgb(0, 38, 255) 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+a::before {
+  content: '';
+  background: rgb(0, 255, 255);
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  background-position: 0;
+}
+
+a:hover::before {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .box {
+    width: 90vw;
+    height: 300px;
+  }
+
+  .box:hover {
+    width: 95vw;
+    height: 350px;
+  }
+
+  .boxinside {
+    inset: 30px;
+  }
+
+  .button {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .select {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  header {
+    font-size: 36px;
+  }
+
+  .h1 {
+    left: 10px;
+  }
+
+  .h2 {
+    right: 10px;
+  }
+
+  .slide li {
+    font-size: 14px;
+  }
+}
