@@ -22,8 +22,8 @@ body {
 
 .box {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   background: repeating-conic-gradient(
     from var(--a),
     #CBD702 0%,
@@ -40,8 +40,8 @@ body {
 }
 
 .box:hover {
-  width: 450px;
-  height: 500px;
+  width: 350px;
+  height: 350px;
 }
 
 @keyframes rotating {
@@ -83,7 +83,7 @@ body {
 
 .boxinside {
   position: absolute;
-  inset: 61px;
+  inset: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
