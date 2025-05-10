@@ -37,7 +37,7 @@ body {
   border-radius: 20px;
   display: flex;
   transition: 0.5s;
-  left: -16px;
+  left: -19px;
 }
 
 .box:hover {
