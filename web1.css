@@ -14,14 +14,6 @@ body {
   min-height: 100vh;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-}
-
 @property --a {
   syntax: "<angle>";
   inherits: false;
