@@ -14,6 +14,32 @@ body {
   min-height: 100vh;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .h1, .h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .button, .select {
+    width: 90%;
+    font-size: 14px;
+  }
+}
+
+
 @property --a {
   syntax: "<angle>";
   inherits: false;
@@ -239,7 +265,6 @@ header {
   background-clip: text;
   color: transparent;
 }
-
 .h1 {
   left: 200px;
 }
@@ -247,6 +272,18 @@ header {
 .h2 {
   right: 110px;
 }
+
+header {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  margin: 10px auto;
+}
+
+.h1, .h2 {
+  font-size: 48px;
+}
+
 
 .flower {
   position: absolute;
