@@ -76,7 +76,7 @@ body {
 .box::after {
   content: "";
   position: absolute;
-  inset: 13px;
+  inset: 4px;
   background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
   border-radius: 15px;
   border: 0.5px solid #999;
@@ -84,7 +84,7 @@ body {
 
 .boxinside {
   position: absolute;
-  inset: 13px;
+  inset: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
