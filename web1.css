@@ -121,14 +121,6 @@ img {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.button {
-  position: relative;
-  margin: 20px auto;
-  display: block;
-  width: 70%;
-  max-width: 250px;
-}
-
 .button:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5);
@@ -155,15 +147,6 @@ img {
     display: block;
 
 }
-
-.select {
-  position: relative;
-  margin: 20px auto;
-  display: block;
-  width: 80%;
-  max-width: 300px;
-}
-
 
 span::after {
   float: right;
