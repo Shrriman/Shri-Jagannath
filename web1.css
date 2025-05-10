@@ -254,7 +254,10 @@ header {
 .scroll-text {
   display: inline-block;
   white-space: nowrap;
-  color: rgb(96, 96, 96);
+  background: linear-gradient(to left,  rgb(255, 0, 161), rgb(255, 0, 0), rgb(255, 0, 161), rgb(255, 0, 0), rgb(255, 0, 161));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-weight: bold;
   font-size: 25px;
   justify-content: center;
