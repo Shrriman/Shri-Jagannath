@@ -150,7 +150,7 @@ img {
 }
 
 span::after {
-  float: right;
+  float: center;
   right: 10px;
   content: "﹀";
 }
