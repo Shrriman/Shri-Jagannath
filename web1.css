@@ -12,14 +12,10 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
-/* Mobile ke liye */
-@media (max-width: 768px) {
-  .your-class {
-    font-size: 14px;
-    padding: 10px;
-    width: 100%;
-  }
+  width: 100%;
+max-width: 600px;  /* Optional for better control */
+height: auto;
+
 }
 
 @property --a {
