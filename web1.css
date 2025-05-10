@@ -22,24 +22,6 @@ body {
   padding: 20px;
 }
 
-@media (max-width: 768px) {
-  .box {
-    width: 90vw;
-    height: 90vw;
-  }
-
-  .h1, .h2 {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  .button, .select {
-    width: 90%;
-    font-size: 14px;
-  }
-}
-
-
 @property --a {
   syntax: "<angle>";
   inherits: false;
