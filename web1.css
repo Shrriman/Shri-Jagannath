@@ -275,13 +275,3 @@ header {
     transform: translateX(-100%);
   }
 }
-
-.ganesh {
-height: 200px;
-  width: 200px;
-  left: 500px;
-  justify-content: right;
-  top: 31px;
- position: absolute;
-  align-items: right;
-}
