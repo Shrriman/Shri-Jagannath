@@ -275,3 +275,8 @@ header {
     transform: translateX(-100%);
   }
 }
+
+.ganesh {
+height: 20px;
+  width: 20px;
+}
