@@ -477,7 +477,8 @@
         chatBody.scrollTop = chatBody.scrollHeight;
       }
       
-      function getReply(msg) {  
+      function getReply(msg) {
+          msg = msg.toLowerCase();
         if (msg.includes('where') || msg.includes('kahan par') || msg.includes('कहां पर') || msg.includes('kidhar') || msg.includes('किधर') || msg.includes('kauthi') || msg.includes('keunthi') || msg.includes('keunthare') || msg.includes('keunthaare') || msg.includes('kauthaare') || msg.includes('କେଉଁଠି') || msg.includes('କେଉଁଠାରେ') || msg.includes('କଉଠି') || msg.includes('କଉଠାରେ') || msg.includes('kauthare')) return "The temple is located in Puri, Odisha, India.";
           if (msg.includes('temple') || msg.includes('mandir') || msg.includes('मंदिर') || msg.includes('टेम्पल') || msg.includes('ମନ୍ଦିର') || msg.includes('ଟେମ୍ପଲ୍')) {
           return "The main temple of Lord Jagannath is in Puri, a coastal city in the Indian state of Odisha.  It is one of the four pilgrimage sites and is considered one of the most important Hindu temples in the world. This temple is considered Lord Jagannath's earthly abode, where He resides with His brother Balabhadra and sister Subhadra.";
