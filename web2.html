@@ -480,17 +480,33 @@
         if (msg.includes('hi') || msg.includes('hello')) {
           return "Leave hello and hi, say Jagannath Swami ki Jai! 🙌🏻";
         }        
-        if (msg.includes('temple') || msg.includes('mandir')) {
-          return "The main temple of Lord Jagannath is in Puri, a coastal city in the Indian state of Odisha.  It is one of the four pilgrimage sites and is considered one of the most important Hindu temples in the world.";
+        if (msg.includes('where')) return "The temple is located in Puri, Odisha, India.";
+          if (msg.includes('temple') || msg.includes('mandir')) {
+          return "The main temple of Lord Jagannath is in Puri, a coastal city in the Indian state of Odisha.  It is one of the four pilgrimage sites and is considered one of the most important Hindu temples in the world. This temple is considered Lord Jagannath's earthly abode, where He resides with His brother Balabhadra and sister Subhadra.";
         }
         if (msg.includes('jay jagannath')) return "Jay Shri Jagannath⚫❗⚫. May you be well by the grace of Lord Jagannath.";
           if (msg.includes('namaste')) return "Namaste! May you be well by the grace of Lord Jagannath.";
         if (msg.includes('jagannath')) return "'Jagannath' means 'Lord of the Universe' (Jagat = Universe, Nath = Lord). He is a form of Lord Vishnu and is especially worshipped as a form of Lord Krishna. He is the presiding deity of the Jagannath Temple in Puri, Odisha.";
-        if (msg.includes('rath yatra')) return "Rath Yatra ek vishesh utsav hai jo Puri mein hota hai har saal.";
+          if(msg.includes('live') || (msg.includes('worship')) { return "Lord Jagannath is primarily worshipped at the Jagannath Temple in Puri, Odisha, India"; }
+         if(msg.includes('with') return "Lord Jagannath lives in the Jagannath Temple in Puri with:\n\n 1. Lord Balabhadra – His elder brother, also known as Balarama, a powerful and protective deity.\n 2. Goddess Subhadra – His younger sister, who symbolizes divine purity and devotion.\n 3. Sudarshan Chakra – Considered the divine weapon and protector, placed beside Jagannath.\n\n These four deities are worshipped together on the Ratna Singhasan (jeweled throne) inside the sanctum of the temple.";
+        if (msg.includes('rath yatra')) return "Rath Yatra is the grand chariot festival of Lord Jagannath.\n\nDuring this event, Lord Jagannath, Balabhadra, and Subhadra ride on huge wooden chariots. The chariots are pulled by thousands of devotees. They travel from the Jagannath Temple to the Gundicha Temple. The festival takes place in June or July (Ashadha month). It is one of the biggest religious processions in the world.";
         if (msg.includes('kitchen')) return "This is the largest temple kitchen in the world. It cooks for thousands of people every day, but millions can also eat here.";
         if (msg.includes('who are you') || msg.includes('your name') || msg.includes('your work')) {
           return "I am Jaga Chat Bot, a servant of Lord Jagannath. I am here to answer your questions about him.";
         }
+        if (msg.includes("10 avatars") || msg.includes("dashavatar") || msg.includes("ten avatars")) {
+    return "The 10 avatars (Dashavatara) of Lord Vishnu are:\n" +
+           "1. Matsya (Fish)\n" +
+           "2. Kurma (Tortoise)\n" +
+           "3. Varaha (Boar)\n" +
+           "4. Narasimha (Half-man, Half-lion)\n" +
+           "5. Vamana (Dwarf Brahmin)\n" +
+           "6. Parashurama (Warrior with an axe)\n" +
+           "7. Rama (Prince of Ayodhya)\n" +
+           "8. Krishna (Divine cowherd)\n" +
+           "9. Buddha (The Enlightened One)\n" +
+           "10. Kalki (The future warrior on a white horse)";
+            
         return "Sorry. I'm still learning, so I may not be able to answer your questions yet.";
       }
       
@@ -499,7 +515,7 @@
   <!-- Chatbox -->
   <div id="chatboxContainer">
     <div class="chatbox-header">
-      <img src="c:\Users\MAA\OneDrive\Pictures\Screenshots\Screenshot 2025-05-01 223226.png" alt="Jagannath" class="icon">
+      <img src="jaga1.jpg" alt="Jagannath" class="icon">
   Jaga
     </div>
     <div class="chatbox-body" id="chatBody">
