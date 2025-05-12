@@ -476,9 +476,7 @@
         chatBody.scrollTop = chatBody.scrollHeight;
       }
       
-      function getReply(msg) {
-       
-        }        
+      function getReply(msg) {  
         if (msg.includes('where') || msg.includes('kaha') || msg.includes('कहां') || msg.includes('kauthi') || msg.includes('keun') || msg.includes('କେଉଁ')) return "The temple is located in Puri, Odisha, India.";
           if (msg.includes('temple') || msg.includes('mandir')) {
           return "The main temple of Lord Jagannath is in Puri, a coastal city in the Indian state of Odisha.  It is one of the four pilgrimage sites and is considered one of the most important Hindu temples in the world. This temple is considered Lord Jagannath's earthly abode, where He resides with His brother Balabhadra and sister Subhadra.";
@@ -514,6 +512,7 @@
         if (msg.includes('jagannath')) return "'Jagannath' means 'Lord of the Universe' (Jagat = Universe, Nath = Lord). He is a form of Lord Vishnu and is especially worshipped as a form of Lord Krishna. He is the presiding deity of the Jagannath Temple in Puri, Odisha.";
          if (msg.includes('hi') || msg.includes('hello') || msg.includes('ହାଏ') || msg.includes('ହେଲୋ') || msg.includes('हेलो') || msg.includes('हाए')) {
           return "Leave hello and hi, say Jagannath Swami ki Jai! 🙌🏻";
+         }
         return "Sorry. I'm still learning, so I may not be able to answer your questions yet.";
       }
       
