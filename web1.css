@@ -276,18 +276,3 @@ header {
     transform: translateX(-100%);
   }
 }
-
-.banner {
-  height: 200px;
-  width: 200px;
-  align-items: flex-start;
-  top: 31px;
- position: absolute;
-}
-
- .decoration {
-  position: absolute;
-  width: 100%;
-  top: -5px;
-  align-items: flex-start;
-} 
