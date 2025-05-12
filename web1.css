@@ -279,6 +279,7 @@ header {
 .ganesh {
 height: 200px;
   width: 200px;
+  left: 100px;
   align-items: flex-start;
   top: 31px;
  position: absolute;
