@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9th Web</title>
+        <style>
+        body {
+            margin: 0;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #fff4d0;
+            color: #333;
+            padding: 0;
+            height: 100%;
+        }
+
+        .about-section h1 {
+            background-size: cover;
+            background-position: center;
+            height: 61px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 5px #000000;
+            font-size: 3em;
+        }
+    </style>
+    </head>
+    <center><body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <nav class="golden-navbar">
+          <div class="left-section">
+            <img src="jaga3.png" alt="Jagannath Logo" class="logo">
+            <span class="logo-text">Shri Jagannath</span>
+          </div>
+          <ul class="right-section">
+            <li><a href="web5.html"><i class="fa fa-arrow-left"></i><span>Back</span></a></li>
+            <li><a href="#"><span class="om-symbol">ॐ</span><span>About</span></a></li>
+            <li><a href="#"><i class="fa fa-calendar-day"></i><span>Festivals</span></a></li>
+            <li><a href="web5.html"><i class="fa fa-home"></i><span>Home</span></a></li>
+            <li><a href="#"><i class="fa fa-images"></i><span>Gallery</span></a></li>
+            <li><a onclick="toggleParagraph()"><i class="fa fa-scroll"></i><span>Stories</span></a></li>
+            <li><a href="#"><i class="fa fa-music"></i><span>Music</span></a></li>
+          </ul>
+        </nav>
+        
+        <!-- CSS -->
+        <style>
+        .golden-navbar {
+          background-color: #970000;
+          border-top: 4px solid gold;
+          border-bottom: 4px solid gold;
+          padding: 12px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        .left-section {
+          display: flex;
+          align-items: center;
+        }
+        
+        .left-section .logo {
+          width: 40px; /* Adjust the size of the logo */
+          height: auto;
+          margin-right: 10px; /* Space between logo and text */
+        }
+        
+        .left-section .logo-text {
+          color: #ffd700;
+          font-size: 24px;
+          font-weight: bold;
+        }
+        
+        .golden-navbar ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+        }
+        
+        .golden-navbar li {
+          display: inline-block;
+          margin: 0 15px;
+        }
+        
+        .golden-navbar a {
+          color: #ffd700;
+          font-size: 16px;
+          font-weight: bold;
+          text-decoration: none;
+          transition: 0.3s ease;
+          text-align: center;  /* Center the text */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .golden-navbar a i {
+          font-size: 20px;
+          margin-bottom: 4px;
+          display: block;
+        }
+        
+        .golden-navbar a:hover {
+          color: #ffffff;
+          text-shadow: 0 0 10px #ffd700;
+        }
+        
+        .golden-navbar a .om-symbol {
+          font-size: 24px;  /* Adjust size of Om symbol */
+          margin-right: 8px;
+          margin: -4px;  /* Space between symbol and text */
+        }
+        </style>
+
+        <div class="about-section">
+          <h1>About</h1>
+        <h3>"Oṁ Nīlāchala Nivāsāya Nityāya Paramātmane,<br>
+Balabhadra Subhadrābhyāṁ Jagannāthāya Te Namaḥ."
+        </h3>
+<p>
+Lord Jagannath, the Lord of the Universe, is considered an incarnation of Lord Vishnu. He is worshipped in the form of Lord Krishna. With his large round eyes, a red mouth, black-colored divine face, and semi-formed arms, his appearance is quite distinctive. For this reason, some people call him “Adha Gadha Dian” (half-formed deity). His main temple is located in the eastern direction of the city of Puri in Odisha. There, he is worshipped seated on the Ratna Singhasana (gem-studded throne) along with his elder brother Balabhadra, sister Subhadra, and the divine discus Sudarshan. Hence, Puri is counted among the four sacred dhams (holy pilgrimage sites) of India. The glory of Mahaprabhu (Great Lord) Jagannath is world-renowned. Let us now understand the significance of his divine form.</p>
+
+<button onclick="toggleParagraph()" class="custom-button">
+  <span class="button-content">
+    <span class="button-text">Read Stories</span>
+    <span class="button-icon">→</span>
+  </span>
+  <span class="button-background"></span>
+</button>
+
+<style>
+    /* From Uiverse.io by SamiBouchareb */ 
+/* Modern, clean button styling */
+.custom-button {
+  position: relative;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  isolation: isolate;
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.button-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #a70037 0%, #b90000 100%);
+  transition: all 0.3s ease;
+}
+
+.button-icon {
+  display: inline-flex;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Hover effects */
+.custom-button:hover .button-content {
+  transform: translateY(-1px);
+}
+
+.custom-button:hover .button-icon {
+  transform: translateX(4px);
+}
+
+.custom-button:hover .button-background {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Active effects */
+.custom-button:active .button-content {
+  transform: translateY(1px);
+}
+
+.custom-button:active .button-background {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+/* Focus styles */
+.custom-button:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Add subtle shadow */
+.custom-button {
+  box-shadow:
+    0 2px 4px rgba(79, 70, 229, 0.1),
+    0 4px 8px rgba(79, 70, 229, 0.1),
+    0 -1px 2px rgba(79, 70, 229, 0.05);
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+  box-shadow:
+    0 4px 8px rgba(79, 70, 229, 0.2),
+    0 8px 16px rgba(79, 70, 229, 0.2),
+    0 -2px 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Optional: Add a subtle shine effect */
+@keyframes shine {
+  from {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  to {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.custom-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%) rotate(45deg);
+  z-index: 1;
+}
+
+.custom-button:hover::after {
+  animation: shine 1s ease;
+}
+
+</style>
+<script>
+  function toggleParagraph() {
+    var content = document.getElementById("hidden-content");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+</script>
+
+<div id="hidden-content" style="display: none; margin-top: 20px;">
+  <style>
+   .about-section h3 {
+            text-align: center;
+            color: #a70037;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .about-section {
+            background: #fff8e1;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .about-section p {
+            text-align: justify;
+        }
+
+        .about-section p::first-letter {
+            font-size: 130%;
+            font-weight: bold;
+            color: #a70037;
+        }
+
+        .about-section h2 {
+          color: #a70037;
+        }
+    </style>
+  <h2>The Reason Behind Lord Jagannath’s Unique Form</h2>
+  <p>
+   There is a story behind the unique form of Lord Jagannath. It dates back to the Dwapara Yuga. One day, while Lord Krishna was resting, his two wives — Devi Rukmini and Devi Satyabhama — were sitting beside him. They wanted to know whose name the Lord would take first upon waking. They hoped he would call one of them first. However, as soon as Lord Krishna woke up, he first uttered the name of Radha.<br><br>
+
+Now, Rukmini and Satyabhama had never heard the complete story of Radha and Krishna's eternal love. So, they went to Mother Rohini and requested her to narrate the story of Radha-Krishna's Rasaleela (divine dance of love). Mother Rohini feared that if Krishna and Balaram heard these past tales, they might be drawn back to Vrindavan again. So, she asked Devi Subhadra to stand guard at the door while she narrated the story. Rohini Devi then began describing the divine and priceless love story of Radha and Krishna.<br><br>
+
+After a while, both Krishna and Balaram arrived at the spot. Subhadra, being so engrossed in the story, didn't notice their arrival. The tale was so sweet and mesmerizing that all three — Krishna, Balaram, and Subhadra — became deeply emotional and overwhelmed with divine love.<br><br>
+
+At that moment, the great sage Devarshi Narada happened to pass by. Seeing the Lord and his siblings in such a divine state, he too was drawn toward them and came to witness their divine expressions. As Narada approached, Mother Rohini's eyes fell on the divine trio. Everyone present was deeply moved and enchanted by this extraordinary divine form. Sage Narada then requested the Lord that this divine form should be made visible to the entire world. In response, Lord Krishna declared that in the age of Kali Yuga, the three of them — Krishna, Balaram, and Subhadra — would be worshipped in this very divine form by the people of the world.<br><br>
+
+So, calling Lord Jagannath “half-formed” is incorrect. He is, in truth, a divine symbol of unconditional love and supreme devotion.</p>
+  <p>
+    
+  </p>
+</div>
+    </body></center>
+</html>
