@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>10th Web</title>
+        <style>
+        body {
+            margin: 0;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #fff4d0;
+            color: #333;
+            padding: 0;
+            height: 100%;
+        }
+
+        .about-section h1 {
+            background-size: cover;
+            background-position: center;
+            height: 61px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 5px #000000;
+            font-size: 3em;
+        }
+    </style>
+    </head>
+    <center><body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <nav class="golden-navbar">
+          <div class="left-section">
+            <img src="jaga3.png" alt="Jagannath Logo" class="logo">
+            <span class="logo-text">श्री जगन्नाथ</span>
+          </div>
+          <ul class="right-section">
+            <li><a href="web4.html"><i class="fa fa-arrow-left"></i><span>पिछे जाऐं</span></a></li>
+            <li><a onclick="toggleParagraph()"><i class="fa fa-scroll"></i><span>कहानियां</span></a></li>
+            <li><a href="#"><i class="fa fa-calendar-day"></i><span>त्योहारों</span></a></li>
+            <li><a href="web4.html"><i class="fa fa-home"></i><span>घर</span></a></li>
+            <li><a href="#"><i class="fa fa-images"></i><span>गैलरी</span></a></li>
+            <li><a href="#"><i class="fa fa-music"></i><span>संगीत</span></a></li>
+            <li><a href="#"><i class="fa fa-question-circle"></i><span>प्रश्न और उत्तर</span></a></li>
+          </ul>
+        </nav>
+        
+        <!-- CSS -->
+        <style>
+        .golden-navbar {
+          background-color: #970000;
+          border-top: 4px solid gold;
+          border-bottom: 4px solid gold;
+          padding: 12px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        .left-section {
+          display: flex;
+          align-items: center;
+        }
+        
+        .left-section .logo {
+          width: 40px; /* Adjust the size of the logo */
+          height: auto;
+          margin-right: 10px; /* Space between logo and text */
+        }
+        
+        .left-section .logo-text {
+          color: #ffd700;
+          font-size: 24px;
+          font-weight: bold;
+        }
+        
+        .golden-navbar ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+        }
+        
+        .golden-navbar li {
+          display: inline-block;
+          margin: 0 15px;
+        }
+        
+        .golden-navbar a {
+          color: #ffd700;
+          font-size: 16px;
+          font-weight: bold;
+          text-decoration: none;
+          transition: 0.3s ease;
+          text-align: center;  /* Center the text */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .golden-navbar a i {
+          font-size: 20px;
+          margin-bottom: 4px;
+          display: block;
+        }
+        
+        .golden-navbar a:hover {
+          color: #ffffff;
+          text-shadow: 0 0 10px #ffd700;
+        }
+        
+        .golden-navbar a .om-symbol {
+          font-size: 24px;  /* Adjust size of Om symbol */
+          margin-right: 8px;
+          margin: -4px;  /* Space between symbol and text */
+        }
+        </style>
+
+        <div class="about-section">
+          <h1>संपूर्ण तथ्य</h1>
+        <h3>"ॐ नीलाचल निवासाय नित्याय परमात्मने।<br>
+बलभद्र सुभद्राभ्यां जगन्नाथाय ते नमः॥"
+        </h3>
+<p>
+जगत के स्वामी महाप्रभु श्री जगन्नाथ भगवान विष्णु के एक अवतार हैं। वो श्रीकृष्ण के रूप में पूजे जाता है। बड़े-बड़े दो नेत्र, एक लाल मुँह, काला मुख और आधा निर्मित हाथोंको लेकर उनका शरीर निर्मित है। इसलिए कुछ लोग उन्हें "अधागढ़ा भगवान" (आधा निर्मित भगवान) कहते हैं। उनका मुख्य मंदिर ओड़िशा के पुरी शहर के अग्नि कोण में स्थित है। वहां वे बड़े भाई बलभद्र, बहन सुभद्रा और चक्रराज सुदर्शन के साथ रत्न सिंहासन पर विराजमान हैं। इसलिए पुरी को चारधामों में गिना जाता है। महाप्रभु की महिमा विश्व विख्यात है। आइए, उनके महिमा के विषय में जानें।</p>
+
+<button onclick="toggleParagraph()" class="custom-button">
+  <span class="button-content">
+    <span class="button-text">कहानियां पढ़ें</span>
+    <span class="button-icon">→</span>
+  </span>
+  <span class="button-background"></span>
+</button>
+
+<style>
+    /* From Uiverse.io by SamiBouchareb */ 
+/* Modern, clean button styling */
+.custom-button {
+  position: relative;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  isolation: isolate;
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.button-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #a70037 0%, #b90000 100%);
+  transition: all 0.3s ease;
+}
+
+.button-icon {
+  display: inline-flex;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Hover effects */
+.custom-button:hover .button-content {
+  transform: translateY(-1px);
+}
+
+.custom-button:hover .button-icon {
+  transform: translateX(4px);
+}
+
+.custom-button:hover .button-background {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Active effects */
+.custom-button:active .button-content {
+  transform: translateY(1px);
+}
+
+.custom-button:active .button-background {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+/* Focus styles */
+.custom-button:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Add subtle shadow */
+.custom-button {
+  box-shadow:
+    0 2px 4px rgba(79, 70, 229, 0.1),
+    0 4px 8px rgba(79, 70, 229, 0.1),
+    0 -1px 2px rgba(79, 70, 229, 0.05);
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+  box-shadow:
+    0 4px 8px rgba(79, 70, 229, 0.2),
+    0 8px 16px rgba(79, 70, 229, 0.2),
+    0 -2px 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Optional: Add a subtle shine effect */
+@keyframes shine {
+  from {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  to {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.custom-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%) rotate(45deg);
+  z-index: 1;
+}
+
+.custom-button:hover::after {
+  animation: shine 1s ease;
+}
+
+</style>
+<script>
+  function toggleParagraph() {
+    var content = document.getElementById("hidden-content");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+</script>
+
+<div id="hidden-content" style="display: none; margin-top: 20px;">
+  <style>
+   .about-section h3 {
+            text-align: center;
+            color: #a70037;
+            font-weight: bold;
+        }
+
+        .about-section {
+            background: #fff8e1;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .about-section p {
+            text-align: justify;
+        }
+
+        .about-section p::first-letter {
+            font-size: 130%;
+            font-weight: bold;
+            color: #a70037;
+        }
+
+        .about-section h2 {
+          color: #a70037;
+        }
+    </style>
+  <h2>जगन्नाथ जी के इस रूप का कारण</h2>
+  <p>
+भगवान जगन्नाथ के प्रकट होने के पीछे एक कहानी है। यह द्वापर युग की बात है। एक दिन, जब भगवान कृष्ण सो रहे थे, उनकी दोनों पत्नियाँ, देवी रुक्मिणी और देवी सत्यभामा, भगवान के पास बैठी थीं। वे जानना चाहते थे कि भगवान कृष्ण जागने के बाद सबसे पहले किसका नाम पुकारेंगे। वे चाहते थे कि प्रभु आज सबसे पहले उनका नाम लें। लेकिन जब श्री कृष्ण जागे तो उन्होंने सबसे पहले राधारानी का नाम पुकारा।<br><br>
+
+उन दोनों ने कभी भी राधा कृष्ण के बारे में पूरी कहानी नहीं सुनी थी। इसलिए वे माता रोहिणी के पास गए और उनसे राधा कृष्ण की लीलाओं के बारे में बताने को कहा। माता रोहिणी ने सोचा कि यदि कृष्ण और बलराम यह बात सुनेंगे तो वे वृंदावन लौट आएंगे। इसलिए उन्होंने देवी सुभद्रा को दरवाजे पर पहरा देने को कहा। माता रोहिणी ने उन्हें राधा और कृष्ण की अनमोल प्रेम कहानी सुनानी शुरू की।<br><br>
+
+कुछ देर बाद कृष्ण और बलराम भी वहाँ पहुँच गये। देवी सुभद्रा यह कथा सुनकर इतनी मंत्रमुग्ध हो गईं थी कि उन्हें उनके आगमन का पता ही नहीं चला। वे शब्द इतने मधुर थे कि तीनों भाई-बहन उन प्रेमपूर्ण कथा को सुनकर पिघलने लगे।<br><br>
+
+उस समय देवर्षि नारद उस मार्ग से गुजर रहे थे। भगवान को ऐसी अवस्था में देखकर वह भी मंत्रमुग्ध हो गये और उनके दर्शन के लिए आये। देवर्षि के आते ही माता रोहिणी की दृष्टि त्रिमूर्ति पर पड़ी। भगवान के इस रूप को देखकर सभी लोग अधिक आकर्षित हुए। देवर्षि ने भगवान से प्रार्थना की कि वे समस्त संसार को उनके इस रूप के दर्शन करने का अवसर प्रदान करें। तब भगवान कृष्ण ने कहा कि कलियुग में वो तीनों की पूजा संसार में इसी रूप में होगी।<br><br>
+
+इसलिए जगन्नाथ जी को आधा निर्मित भगवान कहना गलत हैं। वह तो प्रेम और भक्ति का प्रतीक है।</p>
+  <p>
+    
+  </p>
+</div>
+    </body></center>
+</html>
