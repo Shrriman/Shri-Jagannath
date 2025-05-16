@@ -42,15 +42,6 @@ body {
   
 }
 
-@media (max-width: 600px) {
-.box {
-left: -23px;
-}
-  .h1 {
-  display: none;
-  }
-}
-
 .box:hover {
   width: 361px;
   height:361px;
