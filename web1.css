@@ -41,7 +41,7 @@ body {
   
 }
 
-@media (min-width: 1286px) {
+@media (max-width: 600px) {
 .box {
 left: -23px;
 }
