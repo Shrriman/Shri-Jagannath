@@ -46,6 +46,9 @@ body {
 .box {
 left: -23px;
 }
+  .h1 {
+  display: none;
+  }
 }
 
 .box:hover {
