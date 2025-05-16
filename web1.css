@@ -214,23 +214,6 @@ a:hover::before{
   width: 100%;
 }
 
-.h1 {
-  font-size: 61px;
-}
-
-.h2 {
-  font-size: 61px;
-}
-
-header {
-  position: relative;
-  font-size: 20px;
-  background: radial-gradient(circle, rgb(255, 225, 0), rgb(0, 255, 162), rgb(0, 255, 255), rgb(0, 38, 255));   
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 .flower {
   position: absolute;
   top: -50px;
