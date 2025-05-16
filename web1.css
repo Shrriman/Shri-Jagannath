@@ -253,6 +253,10 @@ header {
   left: 5px;
 }
 
+.welcome-banner:hover {
+  width: 97%;
+}
+
 .scroll-text {
   display: inline-block;
   white-space: nowrap;
