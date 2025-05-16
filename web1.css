@@ -13,16 +13,7 @@ body {
   align-items: center;
   min-height: 100vh;
   backgound-size: cover;
-  margin: 0;
-  padding: 0;    
-    background-repeat: no-repeat;  
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -1;
+  margin: 0; 
 }
 
 @property --a {
@@ -55,6 +46,9 @@ body::before {
 .box {
 left: -23px;
 }
+  .button {
+  left: 680px;
+  }
 }
 
 .box:hover {
