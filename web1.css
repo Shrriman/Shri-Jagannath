@@ -122,8 +122,6 @@ img {
     letter-spacing: -1px;
     transition: 0.5s;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-  align-items: center;
-  justify-content: center;
 }
 
 .button:hover {
@@ -150,8 +148,6 @@ img {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     cursor : pointer;
     display: block;
-  align-items: center;
-  justify-content: center;
 
 }
 
