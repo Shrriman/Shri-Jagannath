@@ -286,3 +286,24 @@ header {
     transform: translateX(-100%);
   }
 }
+
+.wel, .come {
+  font-size: 61px;
+  font-weight: bold;
+  background: radial-gradient(circle, rgb(255, 225, 0), rgb(0, 255, 162), rgb(0, 255, 255), rgb(0, 38, 255));   
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wel { 
+  left: 313px;
+}
+
+.come {
+  right: 0;
+}
