@@ -23,8 +23,8 @@ body {
 
 .box {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 261px;
+  height: 261px;
   background: repeating-conic-gradient(
     from var(--a),
     #CBD702 0%,
@@ -38,12 +38,17 @@ body {
   border-radius: 20px;
   display: flex;
   transition: 0.5s;
-  left: -23px;
+  
 }
 
+@media (max-width: 761px) {
+.box {
+left: -23px;
+}
+}
 .box:hover {
-  width: 350px;
-  height:350px;
+  width: 361px;
+  height:361px;
 }
 
 @keyframes rotating {
