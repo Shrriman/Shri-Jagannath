@@ -290,6 +290,7 @@ a:hover::before{
 
   body {
     flex-direction: column;
+    background-image: url('jaga.jpeg');
     background-size: cover;
     background-position: center;
   }
