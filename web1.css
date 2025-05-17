@@ -292,17 +292,16 @@ a:hover::before{
   }
 
   .box {
-    width: 90vw;
-    height: 90vw;
+    width: 50vw;
+    height: 50vw;
   }
 
   .box:hover {
-    width: 95vw;
-    height: 95vw;
+    width: 61vw;
+    height: 61vw;
   }
 
-  .boxinside {
-    inset: 15px;           /* thoda kam padding */
+  .boxinside {         /* thoda kam padding */
     border-radius: 12px;
     font-size: 14px;       /* text size thoda kam */
     padding: 10px;
