@@ -43,8 +43,8 @@ body {
 }
 
 .box:hover {
-  width: 361px;
-  height:361px;
+  width: 348px;
+  height:348px;
 }
 
 @keyframes rotating {
