@@ -351,7 +351,7 @@ a:hover::before{
     align-items: center;
     gap: 5px; /* spacing between wel and come */
     height: auto;
-    top: 2px;
+    top: 50%;
     transform: none;
     margin: 20px 0;
   }
