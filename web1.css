@@ -288,8 +288,6 @@ a:hover::before{
 
 @media (max-width: 600px) {
 
-@media (max-width: 600px) {
-
   body {
     flex-direction: column;
     background-size: cover;
