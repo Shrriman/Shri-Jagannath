@@ -368,6 +368,26 @@ a:hover::before{
 }
 
 @media (orientation: landscape) and (max-width: 900px) {
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;  /* Vertical stacking */
+    align-items: center;     /* Center horizontally */
+    gap: 10px;               /* Thoda gap */
+  }
+
+  .button, .select {
+    left: 50% !important;     /* Center horizontally */
+    transform: translateX(-50%) !important;
+    width: 180px;
+    height: 38px;
+    font-size: 12px;
+    position: relative !important;  /* Remove absolute positioning issues */
+    bottom: auto !important;
+  }
+}
+
+  
   .wel, .come {
     display: none;
   }
