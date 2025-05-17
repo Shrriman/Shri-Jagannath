@@ -265,26 +265,22 @@ a:hover::before{
   }
 }
 
+/* Default desktop styles */
 .wel, .come {
+  position: absolute;
   font-size: 61px;
   font-weight: bold;
   background: radial-gradient(circle, rgb(255, 225, 0), rgb(0, 255, 162), rgb(0, 255, 255), rgb(0, 38, 255));   
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  position: absolute;
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.wel { 
-  left: 313px;
-}
-
-.come {
-  right: 0;
-}
+.wel { left: 313px; }
+.come { right: 0; }
 
 @media (max-width: 600px) {
 
@@ -330,24 +326,29 @@ a:hover::before{
     font-size: 14px;
   }
 
-  .wel, .come {
-    font-size: 36px;
-    top: 20%;
-    transform: translate(-50%, -20%);
-  }
-
-  .wel {
-    left: 50%;
-  }
-
-  .come {
-    left: 50%;
-    top: 35%;
-  }
-
   .scroll-text {
     font-size: 18px;
     padding-left: 50%;
   }
 
+.welcome-container {
+    position: relative;
+    display: flex;
+    flex-direction: row; /* or 'column' if you want stacked */
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /* spacing between wel and come */
+    height: auto;
+    top: auto;
+    transform: none;
+    margin: 20px 0;
+  }
+
+  .wel, .come {
+    position: relative; /* remove absolute */
+    font-size: 36px;
+    transform: none;
+    left: auto;
+    right: auto;
+  }
 }
