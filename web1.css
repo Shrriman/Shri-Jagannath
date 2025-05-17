@@ -316,23 +316,28 @@ a:hover::before{
     max-height: 100%;      /* Image ko box ke andar restrict kare */
     border-radius: 12px;
   }
-
+  
   .button {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    width: 90%;
-    margin: 20px auto;
-    font-size: 13px;
+    width: 140px;      /* width chhota kiya */
+    height: 38px;      /* height kam kiya */
+    font-size: 10px;   /* font size chhota kiya */
+    bottom: 90px;      /* position thoda adjust kiya */
+    left: 50%;         /* center align */
+    transform: translateX(-50%);
+  }
+
+  .button:hover {
+    width: 145px;
+    height: 40px;
   }
 
   .select {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    width: 90%;
-    margin: 10px auto;
-    font-size: 14px;
+    width: 180px;      /* chhota kiya */
+    height: 38px;      /* height kam kiya */
+    font-size: 12px;   /* font size kam kiya */
+    bottom: 40px;      /* position adjust kiya */
+    left: 50%;         /* center align */
+    transform: translateX(-50%);
   }
 
   .scroll-text {
