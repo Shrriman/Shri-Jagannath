@@ -5,8 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>1st Web</title>
         <link rel="stylesheet" href="web1.css">
+        <style>
+#rotatemessage {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fff5dc;
+      color: #8b0000;
+      z-index: 9999;
+      padding: 20px;
+      box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 1.2rem;
+    }
+        </style>
 </head>
     <body background = "jaga2.png">
+        <div class="rotate-message" id="rotateMessage">
+    <p>🙏Om Namah Ganeshaya🙏</p>
+            <p>Jay Jagannath⚫❗⚫</p>
+    <p>Please rotate 🔄️ your device for better viewing experience.</p>
+  </div>
+        <script>
+    function checkOrientation() {
+      const rotateMessage = document.getElementById("rotateMessage");
+      const mainContent = document.getElementById("mainContent");
+
+      if (window.innerHeight > window.innerWidth) {
+        // Portrait mode
+        rotateMessage.style.display = "flex";
+        mainContent.style.display = "none";
+      } else {
+        // Landscape mode
+        rotateMessage.style.display = "none";
+        mainContent.style.display = "block";
+      }
+    }
+
+    window.addEventListener("load", checkOrientation);
+    window.addEventListener("resize", checkOrientation);
+    window.addEventListener("orientationchange", checkOrientation);
+  </script>
         <div class="welcome-container">
         <div class="wel"><h1>WEL</h1></div>
         <div class="come"><h1>COME</h1></div>
