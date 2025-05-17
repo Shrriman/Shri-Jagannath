@@ -362,6 +362,13 @@ a:hover::before{
 
 @media (orientation: landscape) and (max-width: 900px) {
 
+  body {
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-image: url('jaga.jpeg');
+  }
+
   .wel, .come {
     display: none;
   }
