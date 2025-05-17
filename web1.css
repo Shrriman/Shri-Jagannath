@@ -294,7 +294,7 @@ a:hover::before{
   .box {
     width: 50vw;
     height: 50vw;
-    top: 100px;
+    top: 40px;
   }
 
   .box:hover {
@@ -347,7 +347,7 @@ a:hover::before{
     height: auto;
     transform: none;
   top: 40px;
-    margin: 7px 0;
+    margin: 0 0;
   }
 
   .wel, .come {
