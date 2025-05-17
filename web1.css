@@ -312,7 +312,7 @@ a:hover::before{
     width: 142px;      /* width chhota kiya */
     height: 38px;      /* height kam kiya */
     font-size: 10px;   /* font size chhota kiya */
-    bottom: 50px;      /* position thoda adjust kiya */
+    bottom: 100px;      /* position thoda adjust kiya */
     left: 50%;         /* center align */
     transform: translateX(-50%);
   }
