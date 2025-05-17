@@ -288,6 +288,7 @@ a:hover::before{
     flex-direction: column;
     background-size: cover;
     background-position: center;
+    background-image: url('jaga.jpeg');
   }
 
   .box {
@@ -295,7 +296,6 @@ a:hover::before{
     height: 50vw;
     top: 40px;
     margin: 20px auto; /* top se thoda space aur horizontally center */
-    background-image: url('jaga.jpeg');
   }
 
   .box:hover {
