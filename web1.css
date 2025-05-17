@@ -295,6 +295,7 @@ a:hover::before{
     width: 50vw;
     height: 50vw;
     top: 40px;
+    margin: 20px auto; /* top se thoda space aur horizontally center */
   }
 
   .box:hover {
