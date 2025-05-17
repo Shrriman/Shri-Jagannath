@@ -304,8 +304,8 @@ a:hover::before{
   .boxinside {         /* thoda kam padding */
     border-radius: 7px;
     font-size: 14px;       /* text size thoda kam */
-    padding: 3px;
     overflow: hidden;
+    inset: 23px;
   }
   
   .button {
