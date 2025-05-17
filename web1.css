@@ -295,6 +295,7 @@ a:hover::before{
     height: 50vw;
     top: 40px;
     margin: 20px auto; /* top se thoda space aur horizontally center */
+    background-image: url('jaga.jpeg');
   }
 
   .box:hover {
