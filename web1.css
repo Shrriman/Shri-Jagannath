@@ -302,10 +302,19 @@ a:hover::before{
   }
 
   .boxinside {
-    inset: 20px;
-    font-size: 14px;
+    inset: 15px;           /* thoda kam padding */
+    border-radius: 12px;
+    font-size: 14px;       /* text size thoda kam */
     padding: 10px;
-    text-align: center;
+    overflow: hidden;
+  }
+
+  .boxinside img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;   /* Image ko container ke andar acche se fit kar dega */
+    max-height: 100%;      /* Image ko box ke andar restrict kare */
+    border-radius: 12px;
   }
 
   .button {
