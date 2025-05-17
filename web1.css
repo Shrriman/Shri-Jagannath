@@ -294,6 +294,7 @@ a:hover::before{
   .box {
     width: 50vw;
     height: 50vw;
+    top: 100px;
   }
 
   .box:hover {
@@ -305,7 +306,7 @@ a:hover::before{
     border-radius: 7px;
     font-size: 14px;       /* text size thoda kam */
     overflow: hidden;
-    inset: 23px;
+    inset: 37px;
   }
   
   .button {
@@ -345,6 +346,7 @@ a:hover::before{
     gap: 5px; /* spacing between wel and come */
     height: auto;
     transform: none;
+  top: 40px;
     margin: 7px 0;
   }
 
