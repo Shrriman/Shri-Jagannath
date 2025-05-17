@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+  font-family: 'Poppins', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 body {
@@ -12,15 +12,73 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  backgound-size: cover;
+  background-size: cover;
   margin: 0; 
 }
 
-@media (orientation: portrait) {
-body {
-    background-image: url('jaga.jpeg');
+@media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
+
+  .box {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .box:hover {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .boxinside {
+    inset: 25px;
+  }
+
+  .button {
+    position: static;
+    margin: 20px auto;
+    display: block;
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .select {
+    position: static;
+    margin: 10px auto;
+    display: block;
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .wel, .come {
+    position: relative;
+    left: auto;
+    right: auto;
+    transform: none;
+    text-align: center;
+    font-size: 36px;
+    display: block;
+    margin: 10px auto;
+  }
+
+  .welcome-banner {
+    width: 100%;
+    left: 0;
+  }
+
+  .scroll-text {
+    font-size: 18px;
+  }
+
 }
+
 
 @property --a {
   syntax: "<angle>";
