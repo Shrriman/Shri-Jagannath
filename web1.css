@@ -288,12 +288,11 @@ a:hover::before{
 
 @media (max-width: 600px) {
 
+@media (max-width: 600px) {
+
   body {
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 10px;
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
   }
 
@@ -303,48 +302,53 @@ a:hover::before{
   }
 
   .box:hover {
-    width: 90vw;
-    height: 90vw;
+    width: 95vw;
+    height: 95vw;
   }
 
   .boxinside {
-    inset: 25px;
+    inset: 20px;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
   }
 
   .button {
-    position: static;
-    margin: 20px auto;
-    display: block;
+    position: relative;
+    bottom: auto;
+    left: auto;
     width: 90%;
-    font-size: 14px;
+    margin: 20px auto;
+    font-size: 13px;
   }
 
   .select {
-    position: static;
-    margin: 10px auto;
-    display: block;
+    position: relative;
+    bottom: auto;
+    left: auto;
     width: 90%;
+    margin: 10px auto;
     font-size: 14px;
   }
 
   .wel, .come {
-    position: relative;
-    left: auto;
-    right: auto;
-    transform: none;
-    text-align: center;
     font-size: 36px;
-    display: block;
-    margin: 10px auto;
+    top: 20%;
+    transform: translate(-50%, -20%);
   }
 
-  .welcome-banner {
-    width: 100%;
-    left: 0;
+  .wel {
+    left: 50%;
+  }
+
+  .come {
+    left: 50%;
+    top: 35%;
   }
 
   .scroll-text {
     font-size: 18px;
+    padding-left: 50%;
   }
 
 }
