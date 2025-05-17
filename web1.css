@@ -16,6 +16,12 @@ body {
   margin: 0; 
 }
 
+@media (max-width: 600px) {
+body {
+    background-image: url('jaga.jpeg');
+  }
+}
+
 @property --a {
   syntax: "<angle>";
   inherits: false;
