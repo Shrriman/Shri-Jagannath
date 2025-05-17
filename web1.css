@@ -318,7 +318,7 @@ a:hover::before{
     width: 140px;      /* width chhota kiya */
     height: 38px;      /* height kam kiya */
     font-size: 10px;   /* font size chhota kiya */
-    bottom: 90px;      /* position thoda adjust kiya */
+    top: 50px;      /* position thoda adjust kiya */
     left: 50%;         /* center align */
     transform: translateX(-50%);
   }
