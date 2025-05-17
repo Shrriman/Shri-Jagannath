@@ -366,3 +366,9 @@ a:hover::before{
     right: auto;
   }
 }
+
+@media (orientation: landscape) and (max-width: 900px) {
+  .wel, .come {
+    display: none;
+  }
+}
