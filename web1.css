@@ -302,16 +302,10 @@ a:hover::before{
   }
 
   .boxinside {         /* thoda kam padding */
-    border-radius: 12px;
+    border-radius: 7px;
     font-size: 14px;       /* text size thoda kam */
     padding: 3px;
     overflow: hidden;
-  }
-
-  .boxinside img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
   }
   
   .button {
