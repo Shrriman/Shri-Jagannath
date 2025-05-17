@@ -279,7 +279,7 @@ a:hover::before{
   transform: translate(-50%, -50%);
 }
 
-.wel { left: 313px; }
+.wel { left: 337px; }
 .come { right: 0; }
 
 @media (max-width: 600px) {
