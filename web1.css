@@ -362,6 +362,9 @@ a:hover::before{
 
 @media (orientation: landscape) and (max-width: 900px) {
 
+  body {
+  background-position: center;
+  }
   
   .wel, .come {
     display: none;
