@@ -477,46 +477,7 @@
         chatBody.scrollTop = chatBody.scrollHeight;
       }
       
-      function getReply(msg) {
-          msg = msg.toLowerCase();
-        if (msg.includes('where') || msg.includes('kahan par') || msg.includes('कहां पर') || msg.includes('kidhar') || msg.includes('किधर') || msg.includes('kauthi') || msg.includes('keunthi') || msg.includes('keunthare') || msg.includes('keunthaare') || msg.includes('kauthaare') || msg.includes('କେଉଁଠି') || msg.includes('କେଉଁଠାରେ') || msg.includes('କଉଠି') || msg.includes('କଉଠାରେ') || msg.includes('kauthare')) return "The temple is located in Puri, Odisha, India.";
-          if (msg.includes('temple') || msg.includes('mandir') || msg.includes('मंदिर') || msg.includes('टेम्पल') || msg.includes('ମନ୍ଦିର') || msg.includes('ଟେମ୍ପଲ୍')) {
-          return "The main temple of Lord Jagannath is in Puri, a coastal city in the Indian state of Odisha.  It is one of the four pilgrimage sites and is considered one of the most important Hindu temples in the world. This temple is considered Lord Jagannath's earthly abode, where He resides with His brother Balabhadra and sister Subhadra.";
-        }
-          if(msg.includes('live') || msg.includes('worship') || msg.includes('puja paanti') || msg.includes('puja panti') || msg.includes('ruhanti') || msg.includes('rahuchanti') || msg.includes('rahuchhanti') || msg.includes('basa karanti') || msg.includes('पूजा पाते') || msg.includes('puja paate') || msg.includes('puje jaate') || msg.includes('पूजे जाते') || msg.includes('रेहेते है') || msg.includes('रेहते है') || msg.includes('ରୁହନ୍ତି') || msg.includes('ରହୁଛନ୍ତି') || msg.includes('ବାସ କରନ୍ତି') || msg.includes('rehte') || msg.includes('rehete') || msg.includes('rehate') || msg.includes('bas karte') || msg.includes('ରହନ୍ତି')) { 
-              return "Lord Jagannath is primarily worshipped at the Jagannath Temple in Puri, Odisha, India, with his elder brother Lord Balabhadra and younger sister Maa Subhadra.";
-          }
-         if(msg.includes('with') || msg.includes('kie kie') || msg.includes('kaun kaun') || msg.includes('kiske saath') || msg.includes('kon kon') || msg.includes('saha') || msg.includes('sahita') || msg.includes('sathire') || msg.includes('sangare') || msg.includes('ସହ') || msg.includes('ସହିତ') || msg.includes('ସାଥିରେ') || msg.includes('ସାଙ୍ଗରେ') || msg.includes('କିଏ କିଏ') || msg.includes('कौन कौन') || msg.includes('किसके साथ')) return "Lord Jagannath lives in the Jagannath Temple in Puri with:\n\n" +
-             "1. Lord Balabhadra – His elder brother, also known as Balarama, a powerful and protective deity.\n" +
-             "2. Goddess Subhadra – His younger sister, who symbolizes divine purity and devotion.\n" +
-             "3. Sudarshan Chakra – Considered the divine weapon and protector, placed beside Jagannath.\n\n" +
-             "These four deities are worshipped together on the Ratna Singhasan (jeweled throne) inside the sanctum of the temple.";
-        if (msg.includes('rath yatra') || msg.includes('रथयात्रा') || msg.includes('ରଥଯାତ୍ରା') || msg.includes('car festival')) return "Rath Yatra is the grand chariot festival of Lord Jagannath. During this event, Lord Jagannath, Balabhadra, and Subhadra ride on huge wooden chariots. The chariots are pulled by thousands of devotees. They travel from the Jagannath Temple to the Gundicha Temple. The festival takes place in June or July (Ashadha month). It is one of the biggest religious processions in the world.";
-        if (msg.includes('kitchen') || msg.includes('rosha shala') || msg.includes('rosei ghara') || msg.includes('rosei sala') || msg.includes('rosa sala') || msg.includes('rosei shala') || msg.includes('rosha gruha') || msg.includes('रोसई ग्रिह') || msg.includes('randhana gruha') || msg.includes('paka shala') || msg.includes('ରୋଷ ଗୃହ') || msg.includes('ରୋଷେଇ ଘର') || msg.includes('ରୋଷେଇ ଶାଳ') || msg.includes('ରୋଷ ଶାଳା') || msg.includes('ରୋଷେଇ ଗୃହ') || msg.includes('रो शाला') || msg.includes('रोसई शाला') || msg.includes('पाक शाला') || msg.includes('ପାକ ଶାଳା') || msg.includes('ରାନ୍ଧନ ଶାଳା') || msg.includes('ରନ୍ଧନ ଗୃହ')) return "This is the largest temple kitchen in the world. It cooks for thousands of people every day, but millions can also eat here.";
-        if (msg.includes('who are you') || msg.includes('your name') || msg.includes('your work') || msg.includes('tumhara naam') || msg.includes('tumahara kaam') || msg.includes('tum kon ho') || msg.includes('tum kaun ho') || msg.includes('tamara naa') || msg.includes('tame kie') || msg.includes('ତମର ନାମ') || msg.includes('तुम्हारा नाम') || msg.includes('तुम्हारा काम') || msg.includes('तुम कौन हो') || msg.includes('ତମେ କିଏ') || msg.includes('ତମର କାମ କଣ')) {
-          return "I am Jaga Chat Bot, a servant of Lord Jagannath. I am here to answer your questions about him.";
-        }
-        if (msg.includes("10 avatar") || msg.includes('dashavatar') || msg.includes('avatars') || msg.includes('ten avatar') || msg.includes('୧୦ ଅବତାର') || msg.includes('ଦଶାବତାର') || msg.includes('दसाबतार') || msg.includes('१० अवतार') || msg.includes('अवतारों') || msg.includes('ଅବତାରଗୁଡ଼ିକ')) {
-    return "The 10 avatars (Dashavatara) of Lord Jagannath (Vishnu) are:\n" +
-           "1. Matsya (Fish)\n" +
-           "2. Kurma (Tortoise)\n" +
-           "3. Varaha (Boar)\n" +
-           "4. Narasimha (Half-man, Half-lion)\n" +
-           "5. Vamana (Dwarf Brahmin)\n" +
-           "6. Parashurama (Warrior with an axe)\n" +
-           "7. Rama (Prince of Ayodhya)\n" +
-           "8. Krishna (Divine cowherd)\n" +
-           "9. Buddha (The Enlightened One)\n" +
-           "10. Kalki (The future warrior on a white horse)";
-        }
-           if (msg.includes('jay') || msg.includes('ଜୟ') || msg.includes('जय')) return "Jay Shri Jagannath⚫❗⚫. May you be well by the grace of Lord Jagannath.";
-          if (msg.includes('namaste') || msg.includes('namaskar') || msg.includes('pranam') || msg.includes('नमस्ते') || msg.includes('ନମସ୍ତେ') || msg.includes('ନମସ୍କାର') || msg.includes('नमस्कार') || msg.includes('प्रणाम') || msg.includes('ପ୍ରଣାମ')) return "Namaste! May you be well by the grace of Lord Jagannath.";
-        if (msg.includes('jagannath') || msg.includes('ଜଗନ୍ନାଥ') || msg.includes('जगन्नाथ')) return "'Jagannath' means 'Lord of the Universe' (Jagat = Universe, Nath = Lord). He is a form of Lord Vishnu and is especially worshipped as a form of Lord Krishna. He is the presiding deity of the Jagannath Temple in Puri, Odisha.";
-         if (msg.includes('hi') || msg.includes('hello') || msg.includes('ହାଏ') || msg.includes('ହେଲୋ') || msg.includes('हेलो') || msg.includes('हाए')) {
-          return "Leave hello and hi, say Jagannath Swami ki Jai! 🙌🏻";
-         }
-        return "Sorry. I'm still learning, so I may not be able to answer your questions yet.";
-      }
+      
       
     </script>
 
