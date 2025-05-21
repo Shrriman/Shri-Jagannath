@@ -366,4 +366,22 @@ a:hover::before{
   .wel, .come {
     display: none;
   }
+
+  .button {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 15px auto 10px auto; /* upar thoda space */
+    display: block;
+  }
+
+  .select {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+    display: block;
+  }
 }
