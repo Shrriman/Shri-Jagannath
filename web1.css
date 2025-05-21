@@ -365,6 +365,11 @@ a:hover::before {
   }
 }
 
+.wel::after {
+    content: " -";
+    margin: 0 3px;
+  }
+
 @media (orientation: landscape) and (max-width: 900px) {
   .wel, .come {
     display: none;
