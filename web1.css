@@ -230,7 +230,7 @@ a:hover::before{
   z-index: 3000;
   overflow: hidden;
   background: transparent;
-  width: 96%; /* same as box */
+  width: 95.5%; /* same as box */
   height: 100%;
   top: 10px;
   bottom: 10px;
@@ -238,7 +238,7 @@ a:hover::before{
 }
 
 .welcome-banner:hover {
-  width: 97%;
+  width: 96.5%;
 }
 
 .scroll-text {
