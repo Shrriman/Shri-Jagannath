@@ -13,7 +13,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background-size: cover;
-  margin: 0; 
+  margin: 0;
 }
 
 @property --a {
@@ -39,12 +39,11 @@ body {
   border-radius: 20px;
   display: flex;
   transition: 0.5s;
-  
 }
 
 .box:hover {
   width: 348px;
-  height:348px;
+  height: 348px;
 }
 
 @keyframes rotating {
@@ -99,56 +98,56 @@ body {
   transition: 0.5s;
   color: #fff;
   overflow: hidden;
+  font-size: clamp(12px, 2vw, 18px);
 }
 
 img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
-  
+
 .button {
   position: absolute;
-    bottom: 126px;
-    left: 680px;
-    width: 184px;
-    height: 45px;
-    background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
-    border: none;
-    border-radius: 5px;
-    color: #000000;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: -1px;
-    transition: 0.5s;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  bottom: 126px;
+  left: 680px;
+  width: 184px;
+  height: 45px;
+  background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  font-size: clamp(10px, 2vw, 14px);
+  font-weight: 500;
+  letter-spacing: -1px;
+  transition: 0.5s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5);
-    width: 190px;
-    height: 50px;
+  transform: scale(1.05);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5);
+  width: 190px;
+  height: 50px;
 }
 
 .select {
-    position: absolute;
-    bottom: 65px;
-    left: 648px;
-    width: 250px;
-    height: 45px;
-    background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
-    border: none;
-    border-radius: 5px;
-    color: #000000;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -1px;
-    transition: 0.5s;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-    cursor : pointer;
-    display: block;
-
+  position: absolute;
+  bottom: 65px;
+  left: 648px;
+  width: 250px;
+  height: 45px;
+  background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 500;
+  letter-spacing: -1px;
+  transition: 0.5s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  display: block;
 }
 
 span::after {
@@ -158,7 +157,7 @@ span::after {
 }
 
 .slide {
-  clear:both;
+  clear: both;
   text-decoration: none;
   width: 100%;
   border-radius: 5px;
@@ -168,14 +167,22 @@ span::after {
   transition: height .4s ease;
   background: linear-gradient(90deg, #ffa700, #FFD700, #87CEFA, #00ccff);
   font-weight: bold;
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
-.slide li {padding : 1px;}
+.slide li {
+  padding: 1px;
+}
 
-#touch {position: absolute; opacity: 0; height:0;}    
+#touch {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+}
 
-#touch:checked + .slide {height: 250%;}
+#touch:checked + .slide {
+  height: 250%;
+}
 
 a {
   background-image: linear-gradient(to right, rgb(0, 255, 170), rgb(0, 255, 255), rgb(0, 38, 255) 50%, #000 50%);
@@ -189,9 +196,9 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-a:before{
+a:before {
   content: '';
-  background:  rgb(0, 255, 255);
+  background: rgb(0, 255, 255);
   display: block;
   position: absolute;
   bottom: -3px;
@@ -202,10 +209,10 @@ a:before{
 }
 
 a:hover {
- background-position: 0;
+  background-position: 0;
 }
 
-a:hover::before{
+a:hover::before {
   width: 100%;
 }
 
@@ -225,12 +232,11 @@ a:hover::before{
 
 .welcome-banner {
   position: absolute;
-  background: black;
+  background: transparent;
   border-radius: 10px 10px 0 0;
   z-index: 3000;
   overflow: hidden;
-  background: transparent;
-  width: 96%; /* same as box */
+  width: 96%;
   height: 100%;
   top: 10px;
   bottom: 10px;
@@ -244,13 +250,12 @@ a:hover::before{
 .scroll-text {
   display: inline-block;
   white-space: nowrap;
-  color: rgb(96, 96, 96);
   font-weight: bold;
-  font-size: 25px;
+  font-size: clamp(18px, 3vw, 25px);
   justify-content: center;
   padding-left: 100%;
   animation: scrollWelcome 13s linear infinite;
-  background: linear-gradient(to left,  rgb(255, 0, 161), rgb(255, 0, 0), rgb(255, 0, 161), rgb(255, 0, 0), rgb(255, 0, 161));
+  background: linear-gradient(to left, rgb(255, 0, 161), rgb(255, 0, 0), rgb(255, 0, 161), rgb(255, 0, 0), rgb(255, 0, 161));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -265,12 +270,11 @@ a:hover::before{
   }
 }
 
-/* Default desktop styles */
 .wel, .come {
   position: absolute;
-  font-size: 61px;
+  font-size: clamp(28px, 6vw, 61px);
   font-weight: bold;
-  background: radial-gradient(circle, rgb(255, 225, 0), rgb(0, 255, 162), rgb(0, 255, 255), rgb(0, 38, 255));   
+  background: radial-gradient(circle, rgb(255, 225, 0), rgb(0, 255, 162), rgb(0, 255, 255), rgb(0, 38, 255));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -295,7 +299,7 @@ a:hover::before{
     width: 50vw;
     height: 50vw;
     top: 40px;
-    margin: 20px auto; /* top se thoda space aur horizontally center */
+    margin: 20px auto;
   }
 
   .box:hover {
@@ -303,19 +307,19 @@ a:hover::before{
     height: 61vw;
   }
 
-  .boxinside {         /* thoda kam padding */
+  .boxinside {
     border-radius: 7px;
-    font-size: 14px;       /* text size thoda kam */
+    font-size: clamp(10px, 2.5vw, 14px);
     overflow: hidden;
     inset: 37px;
   }
-  
+
   .button {
-    width: 142px;      /* width chhota kiya */
-    height: 38px;      /* height kam kiya */
-    font-size: 10px;   /* font size chhota kiya */
-    bottom: 100px;      /* position thoda adjust kiya */
-    left: 50%;         /* center align */
+    width: 142px;
+    height: 38px;
+    font-size: clamp(9px, 2vw, 11px);
+    bottom: 100px;
+    left: 50%;
     transform: translateX(-50%);
   }
 
@@ -325,35 +329,35 @@ a:hover::before{
   }
 
   .select {
-    width: 200px;      /* chhota kiya */
-    height: 38px;      /* height kam kiya */
-    font-size: 12px;   /* font size kam kiya */
-    bottom: 40px;      /* position adjust kiya */
-    left: 50%;         /* center align */
+    width: 200px;
+    height: 38px;
+    font-size: clamp(10px, 2vw, 12px);
+    bottom: 40px;
+    left: 50%;
     transform: translateX(-50%);
   }
 
   .scroll-text {
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     padding-left: 50%;
   }
 
-.welcome-container {
+  .welcome-container {
     position: relative;
     display: flex;
-    flex-direction: row; /* or 'column' if you want stacked */
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5px; /* spacing between wel and come */
+    gap: 5px;
     height: auto;
     transform: none;
-  top: 40px;
+    top: 40px;
     margin: 0 0;
   }
 
   .wel, .come {
-    position: relative; /* remove absolute */
-    font-size: 35px;
+    position: relative;
+    font-size: clamp(20px, 6vw, 35px);
     transform: none;
     left: auto;
     right: auto;
@@ -361,7 +365,6 @@ a:hover::before{
 }
 
 @media (orientation: landscape) and (max-width: 900px) {
-
   .wel, .come {
     display: none;
   }
