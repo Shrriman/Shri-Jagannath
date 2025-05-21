@@ -321,8 +321,8 @@ a:hover::before{
   }
 
   .button:hover {
-    width: 148px;
-    height: 40px;
+    width: 142px;
+    height: 38px;
     left: 50%;
     transform: scale(1.05) translateX(-50%);
   }
