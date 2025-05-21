@@ -448,12 +448,24 @@
         const box = document.getElementById('chatboxContainer');
         box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
         
-        // Play mantra sound when chatbox opens
-        if (box.style.display === 'flex') {
-          const audio = new Audio('To Badapana Ku Dhik(KoshalWorld.Com).mp3'); // Replace with mantra sound file URL
-          audio.play();
-        }
-      }
+  // Define audio globally so we can control it later
+  const audio = new Audio('audio.mp3'); // Replace with your actual mantra audio file
+  audio.loop = true; // Optional: loop the mantra
+
+  function toggleChatbot() {
+    const box = document.getElementById('chatbox'); // Make sure this matches your chatbox ID
+
+    if (box.style.display === 'flex') {
+      // If already open, then close it
+      box.style.display = 'none';
+      audio.pause();       // Pause the mantra
+      audio.currentTime = 0; // Reset to start
+    } else {
+      // If closed, then open it
+      box.style.display = 'flex';
+      audio.play();        // Play the mantra
+    }
+  }
       
       function handleEnter(event) {
         if (event.key === 'Enter') {
