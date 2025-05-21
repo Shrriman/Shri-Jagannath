@@ -331,7 +331,7 @@ a:hover::before {
   .select {
     width: 200px;
     height: 38px;
-    font-size: clamp(10px, 2vw, 12px);
+    font-size: clamp(13px, 2vw, 12px);
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
@@ -357,7 +357,7 @@ a:hover::before {
 
   .wel, .come {
     position: relative;
-    font-size: clamp(20px, 6vw, 35px);
+    font-size: clamp(23px, 7vw, 35px);
     transform: none;
     left: auto;
     right: auto;
