@@ -293,10 +293,10 @@ a:hover::before{
   }
 
   .box {
-    width: 50vw;
-    height: 50vw;
-    top: 13px;
-    margin: 20px auto; /* top se thoda space aur horizontally center */
+    width: 61vw;
+    height: 61vw;
+    top: 7px;
+    margin: 10px auto; /* top se thoda space aur horizontally center */
   }
 
   .box:hover {
@@ -322,6 +322,7 @@ a:hover::before{
   }
 
   .button:hover {
+    position: fixed;
     width: 148px;
     height: 40px;
     left: 50%;
