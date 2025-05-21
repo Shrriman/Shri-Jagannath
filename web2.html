@@ -452,9 +452,6 @@
   const audio = new Audio('audio.mp3'); // Replace with your actual mantra audio file
   audio.loop = true; // Optional: loop the mantra
 
-  function toggleChatbot() {
-    const box = document.getElementById('chatbox'); // Make sure this matches your chatbox ID
-
     if (box.style.display === 'flex') {
       // If already open, then close it
       box.style.display = 'none';
@@ -465,7 +462,6 @@
       box.style.display = 'flex';
       audio.play();        // Play the mantra
     }
-  }
       
       function handleEnter(event) {
         if (event.key === 'Enter') {
