@@ -536,6 +536,114 @@
       <button onclick="sendMessage()">➤</button>
     </div>
   </div>
+<style>
+/* Mobile Responsive Styles */
+@media (max-width: 600px) {
+  /* Navbar becomes vertical */
+  .golden-navbar {
+    flex-direction: column;
+    padding: 10px 0;
+  }
 
+  .left-section {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .golden-navbar ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .golden-navbar li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .golden-navbar a {
+    font-size: 14px;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1.1em;
+  }
+
+  /* Learn More Button */
+  button.learn-more {
+    width: 150px;
+    height: 45px;
+    border-radius: 1.5rem;
+    position: relative;
+  }
+
+  .button-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0;
+  }
+
+  /* Button with Icon */
+  .button-with-icon {
+    width: 100%;
+    max-width: 250px;
+    font-size: 14px;
+    left: auto;
+    top: auto;
+    margin: 20px auto 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Chat Icon */
+  #chatIcon {
+    bottom: 20px;
+    right: 20px;
+    font-size: 22px;
+    padding: 14px;
+  }
+
+  /* Chatbox Container */
+  #chatboxContainer {
+    width: 90vw;
+    max-width: 360px;
+    bottom: 80px;
+    right: 5%;
+    max-height: 60vh;
+  }
+
+  /* Chatbox Body */
+  .chatbox-body {
+    height: 250px;
+  }
+
+  /* Adjust font sizes inside chatbox */
+  .chatbox-header {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .chatbox-footer input {
+    font-size: 14px;
+  }
+
+  .user-message, .bot-message {
+    font-size: 14px;
+  }
+}
+</style>
+        
     </body>
 </html>
