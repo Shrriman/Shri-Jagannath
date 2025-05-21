@@ -363,6 +363,10 @@ a:hover::before{
   }
 }
 
+.flower {
+  font-size: 20px;
+}
+
 @media (orientation: landscape) and (max-width: 900px) {
 
   .wel, .come {
