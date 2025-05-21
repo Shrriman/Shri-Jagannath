@@ -349,7 +349,7 @@ a:hover::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     gap: 5px;
   }
   
