@@ -444,13 +444,12 @@
     </style>  
 
     <script>
-      function toggleChatbox() {
-        const box = document.getElementById('chatboxContainer');
-        box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
-
   const audio = new Audio('audio.mp3'); // Define once, globally
   audio.loop = true;
-
+        
+        function toggleChatbox() {
+        const box = document.getElementById('chatboxContainer');
+            
     if (box.style.display === 'flex') {
       box.style.display = 'none';
       audio.pause();
@@ -459,7 +458,7 @@
       box.style.display = 'flex';
       audio.play();
     }
-      
+}
       function handleEnter(event) {
         if (event.key === 'Enter') {
           sendMessage();
