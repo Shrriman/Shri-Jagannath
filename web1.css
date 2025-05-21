@@ -250,7 +250,9 @@ a:hover::before{
   justify-content: center;
   padding-left: 100%;
   animation: scrollWelcome 13s linear infinite;
-  background: #000;
+  background: radial-gradient(circle, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
+  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
