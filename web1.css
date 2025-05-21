@@ -324,6 +324,7 @@ a:hover::before{
     width: 148px;
     height: 40px;
     left: 50%; 
+    right: 50%;
   }
 
   .select {
