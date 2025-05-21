@@ -367,21 +367,14 @@ a:hover::before{
     display: none;
   }
 
-  .button {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    margin: 15px auto 10px auto; /* upar thoda space */
+  .button, .select {
+    position: static;         /* absolute hata diya */
+    margin: 10px auto;        /* center karne ke liye */
     display: block;
+    transform: none;          /* purana transform hata diya */
   }
 
-  .select {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    margin: 0 auto;
-    display: block;
+  .box {
+    margin-bottom: 20px;      /* box ke neeche thoda gap */
   }
 }
