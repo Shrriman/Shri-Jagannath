@@ -300,8 +300,8 @@ a:hover::before{
   }
 
   .box:hover {
-    width: 86vw;
-    height: 86vw;
+    width: 61vw;
+    height: 61vw;
   }
 
   .boxinside {         /* thoda kam padding */
