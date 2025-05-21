@@ -312,7 +312,6 @@ a:hover::before{
   }
   
   .button {
-    position: fixed;
     width: 142px;      /* width chhota kiya */
     height: 38px;      /* height kam kiya */
     font-size: 9px;   /* font size chhota kiya */
@@ -322,7 +321,6 @@ a:hover::before{
   }
 
   .button:hover {
-    position: fixed;
     width: 148px;
     height: 40px;
     left: 50%;
