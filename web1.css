@@ -314,7 +314,7 @@ a:hover::before{
   .button {
     width: 142px;      /* width chhota kiya */
     height: 38px;      /* height kam kiya */
-    font-size: 10px;   /* font size chhota kiya */
+    font-size: 9px;   /* font size chhota kiya */
     bottom: 100px;      /* position thoda adjust kiya */
     left: 50%;         /* center align */
     transform: translateX(-50%);
@@ -327,7 +327,7 @@ a:hover::before{
 
   .select {
     width: 200px;      /* chhota kiya */
-    height: 39px;      /* height kam kiya */
+    height: 38px;      /* height kam kiya */
     font-size: 12px;   /* font size kam kiya */
     bottom: 40px;      /* position adjust kiya */
     left: 50%;         /* center align */
