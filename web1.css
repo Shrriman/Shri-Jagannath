@@ -323,7 +323,7 @@ a:hover::before{
   .button:hover {
     width: 148px;
     height: 40px;
-    transform: scale(1.05);
+    transform: scale(1.05) translateX(-50%);
   }
 
   .select {
