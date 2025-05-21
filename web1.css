@@ -224,8 +224,38 @@ a:hover::before{
 }
 
 .welcome-banner {
-  display: none;
+  position: absolute;
+  background: black;
+  border-radius: 10px 10px 0 0;
+  z-index: 3000;
+  overflow: hidden;
+  background: transparent;
+  width: 96%; /* same as box */
+  height: 100%;
+  top: 10px;
+  bottom: 10px;
+  left: 5px;
 }
+
+.welcome-banner:hover {
+  width: 97%;
+}
+
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  color: rgb(96, 96, 96);
+  font-weight: bold;
+  font-size: 25px;
+  justify-content: center;
+  padding-left: 100%;
+  animation: scrollWelcome 13s linear infinite;
+  background: radial-gradient(circle, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 
 @keyframes scrollWelcome {
   0% {
@@ -336,37 +366,4 @@ a:hover::before{
   .wel, .come {
     display: none;
   }
-}
-
-.welcome-banner {
-  position: absolute;
-  background: black;
-  border-radius: 10px 10px 0 0;
-  z-index: 3000;
-  overflow: hidden;
-  background: transparent;
-  width: 96%; /* same as box */
-  height: 100%;
-  top: 10px;
-  bottom: 10px;
-  left: 5px;
-}
-
-.welcome-banner:hover {
-  width: 97%;
-}
-
-.scroll-text {
-  display: inline-block;
-  white-space: nowrap;
-  color: rgb(96, 96, 96);
-  font-weight: bold;
-  font-size: 25px;
-  justify-content: center;
-  padding-left: 100%;
-  animation: scrollWelcome 13s linear infinite;
-  background: radial-gradient(circle, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
