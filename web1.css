@@ -321,8 +321,8 @@ a:hover::before{
   }
 
   .button:hover {
-    width: 61vw;
-    height: 61vw;
+    width: 148px;
+    height: 40px;
   }
 
   .select {
