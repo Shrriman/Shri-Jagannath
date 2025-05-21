@@ -312,6 +312,7 @@ a:hover::before{
   }
   
   .button {
+    position: fixed;
     width: 142px;      /* width chhota kiya */
     height: 38px;      /* height kam kiya */
     font-size: 9px;   /* font size chhota kiya */
@@ -364,7 +365,7 @@ a:hover::before{
 }
 
 .flower {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 @media (orientation: landscape) and (max-width: 900px) {
