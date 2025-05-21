@@ -334,6 +334,10 @@ a:hover::before{
     transform: translateX(-50%);
   }
 
+  .slide {
+  font-size: 14px;
+  }
+
   .scroll-text {
     font-size: 18px;
     padding-left: 50%;
