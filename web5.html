@@ -442,7 +442,7 @@
         to { transform: translateX(0); opacity: 1; }
       }
 
-          media (max-width: 600px) {
+    @media (max-width: 600px) {
           .right-section {
     display: none;
     flex-direction: column;
@@ -462,7 +462,15 @@
     text-align: center;
     padding: 10px 0;
   }
-          }
+    .left-section .logo {
+    width: 42px;
+    }
+    .left-section .logo-text {
+          font-size: 23px;      
+    }
+   .golden-navbar a {
+          font-size: 13px;
+   }
     </style>  
 
     <script>
