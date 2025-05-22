@@ -1,191 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>5th Web</title>
-        <style>
-        body {
-            margin: 0;
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
-            background-color: #fff4d0;
-            color: #333;
-            padding: 0;
-            height: 100%;
-        }
-        img {
-        object-fit: fill;
-        }
-        .hero {
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 2px 5px #000000;
-        }
-
-            .hero p {
-            font-weight: 500;
-            }
-            
-        .hero h1 {
-            font-size: 3em;
-        }
-
-        button.learn-more {
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>5th Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      body {
+          margin: 0;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+          background-color: #fff4d0;
+          color: #333;
+          padding: 0;
+          height: 100%;
+      }
+      img {
+          object-fit: fill;
+      }
+      .hero {
+          background-size: cover;
+          background-position: center;
+          height: 400px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: rgb(255, 255, 255);
+          text-shadow: 2px 2px 5px #000000;
+          padding: 0 20px;
+          box-sizing: border-box;
+      }
+      .hero p {
+          font-weight: 500;
+          margin: 0.5rem 0 1.5rem 0;
+      }
+      .hero h1 {
+          font-size: 3em;
+          margin: 0;
+      }
+      button.learn-more {
           width: 200px;
           height: 50px;
           border-radius: 40%;
           background-color: transparent;
-          padding: 0 0 0 0;
-          margin: 0 0 0 0;
-          border-radius: 1.625rem;
+          margin: 0;
           border-color: #fff8f0;
-          
-         }
-             button.learn-more .circle {
-              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-              position: relative;
-              display: block;
-              margin: 0;
-              width: 3rem;
-              height: 3rem;
-              background: #373737;
-              border-radius: 1.625rem;
-             }
-             
-             button.learn-more .circle .icon {
-              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              margin: auto;
-              background: #fff;
-             }
-             
-            button.learn-more .circle .icon.arrow {
-              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-              left: 0.625rem;
-              width: 1.125rem;
-              height: 0.125rem;
-              background: none;
-             }
-             
-             button.learn-more .circle .icon.arrow::before {
-              position: absolute;
-              content: "";
-              top: -0.29rem;
-              right: 0.0625rem;
-              width: 0.625rem;
-              height: 0.625rem;
-              border-top: 0.125rem solid #fff8f0;
-              border-right: 0.125rem solid #fff8f0;
-              transform: rotate(45deg);
-             }
-             
-             .button-text {
-              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-              position: absolute;
-              top: 348px;
-              left: 7px;
-              right: 0px;
-              bottom: 0;
-              padding: 0.75rem 0;
-              margin: 0 0 0 1.85rem;
-              color: #000000;
-              font-weight: 700;
-              font-size: 19px;
-              line-height: 1.6;
-              text-align: center;
-              text-transform: uppercase;
-              text-decoration: none;
-              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-             }
-             
-             button:hover .circle {
-              width: 100%;
-             }
-             
-             button:hover .circle .icon.arrow {
-              background: #fff;
-              transform: translate(1rem, 0);
-             }
-             
-             button:hover .button-text {
-              color: #ffffff;
-             }
+          cursor: pointer;
+          position: relative;
+          border: none;
+      }
+      button.learn-more .circle {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          position: relative;
+          display: block;
+          margin: 0;
+          width: 3rem;
+          height: 3rem;
+          background: #373737;
+          border-radius: 1.625rem;
+      }
+      button.learn-more .circle .icon {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          background: #fff;
+      }
+      button.learn-more .circle .icon.arrow {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+      }
+      button.learn-more .circle .icon.arrow::before {
+          position: absolute;
+          content: "";
+          top: -0.29rem;
+          right: 0.0625rem;
+          width: 0.625rem;
+          height: 0.625rem;
+          border-top: 0.125rem solid #fff8f0;
+          border-right: 0.125rem solid #fff8f0;
+          transform: rotate(45deg);
+      }
+      .button-text {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          color: #000000;
+          font-weight: 700;
+          font-size: 19px;
+          line-height: 1.6;
+          text-align: center;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          user-select: none;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 2.25rem;
+      }
+      button:hover .circle {
+          width: 100%;
+      }
+      button:hover .circle .icon.arrow {
+          background: #fff;
+          transform: translate(1rem, 0);
+      }
+      button:hover .button-text {
+          color: #ffffff;
+      }
 
-</style>
-    </head>
-
-    <body>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <nav class="golden-navbar">
-          <div class="left-section">
-            <img src="jaga3.png" alt="Jagannath Logo" class="logo">
-            <span class="logo-text">ଶ୍ରୀ ଜଗନ୍ନାଥ</span>
-          </div>
-          <ul class="right-section">
-            <li><a href="web1.html"><i class="fa fa-arrow-left"></i><span>ପଛକୁ ଯାଆନ୍ତୁ</span></a></li>
-            <li><a href="web8.html"><i class="fa fa-om"></i><span>ସମ୍ପୂର୍ଣ୍ଣ ବିବରଣୀ</span></a></li>
-            <li><a href="#"><i class="fa fa-calendar-day"></i><span>ପର୍ବପର୍ବାଣୀ</span></a></li>
-            <li><a href="web5.html"><i class="fa fa-home"></i><span>ଘର</span></a></li>
-            <li><a href="#"><i class="fa fa-images"></i><span>ଗ୍ୟାଲେରୀ</span></a></li>
-            <li><a onclick="toggleChatbox()"><i class="fa fa-comments"></i><span>ଚାଟ୍‌ ବୋଟ୍‌</span></a></li>
-            <li><a href="#"><i class="fa fa-phone"></i><span>ଯୋଗାଯୋଗ କରନ୍ତୁ</span></a></li>
-          </ul>
-        </nav>
-        
-        <!-- CSS -->
-        <style>
-        .golden-navbar {
+      /* Navbar Styles */
+      .golden-navbar {
           background-color: #970000;
           border-top: 4px solid gold;
           border-bottom: 4px solid gold;
-          padding: 12px 0;
+          padding: 12px 10px;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          flex-wrap: wrap;
-          position: relative;
-            width: 100%;
-        }
-        
-        .left-section {
+          flex-wrap: nowrap; /* Prevent wrapping */
+          overflow: hidden; /* Hide overflow */
+          width: 100%; /* FIX: Make navbar full width */
+      }
+      .left-section {
           display: flex;
           align-items: center;
-        }
-        
-        .left-section .logo {
+      }
+      .left-section .logo {
           width: 42px; /* Adjust the size of the logo */
           height: auto;
           margin-right: 10px; /* Space between logo and text */
-            margin-left: 10px;
-        }
-        
-        .left-section .logo-text {
+          margin-left: 10px;
+      }
+      .left-section .logo-text {
           color: #ffd700;
           font-size: 25px;
           font-weight: bold;
-        }
-        
-        .golden-navbar ul {
+          white-space: nowrap;
+      }
+      .golden-navbar ul {
           list-style: none;
           margin: 0;
           padding: 0;
           display: flex;
-        }
-        
-        .golden-navbar li {
+      }
+      .golden-navbar li {
           display: inline-block;
           margin: 0 15px;
-        }
-        
-        .golden-navbar a {
+          white-space: nowrap;
+      }
+      .golden-navbar a {
           color: #ffd700;
           font-size: 16px;
           font-weight: bold;
@@ -195,407 +162,381 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-        }
-        
-        .golden-navbar a i {
+          white-space: nowrap;
+      }
+      .golden-navbar a i {
           font-size: 19px;
           margin-bottom: 4px;
           display: block;
-        }
-        
-        .golden-navbar a:hover {
+      }
+      .golden-navbar a:hover {
           color: #ffffff;
           text-shadow: 0 0 10px #ffd700;
-        }
-        
-        </style>
-        
+      }
 
-    <section class="hero">
-            <h1>ଦିବ୍ୟ ଯାତ୍ରା ଅନୁଭବ କରନ୍ତୁ</h1>
-            <p>ଭକ୍ତି, ପ୍ରେମ ଏବଂ ଏକତାକୁ ଆପଣାନ୍ତୁ</p>
-            <button class="learn-more">
-        <span class="circle" aria-hidden="true">
-        <span class="icon arrow"></span>
-        </span>
-      <a href="web8.html" class="button-text">ଅଧିକ ଜାଣନ୍ତୁ</a>
-      </button>
-    </section>
-    <a href = "web7.html">
-    <button class="button-with-icon" >
-      <svg
-        class="icon"
-        id="Play"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          class="color000000 svgShape"
-          fill="#ffffff"
-          d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"></path>
-      </svg>
-      <span class="text">ଚଲାନ୍ତୁ</span></button></a>
-    <style>    
+      /* Button with Icon Container and centering */
+      .play-button-container {
+          display: flex;
+          justify-content: center;
+          margin: 2rem 0 3rem 0;
+      }
       .button-with-icon {
-        overflow: hidden;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #0098cb;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        letter-spacing: 1px;
-        padding: 0 12px;
-        text-align: center;
-        width: 120px;
-        height: 40px;
-        font-size: 16px;
-        text-transform: uppercase;
-        font-weight: normal;
-        border-radius: 3px;
-        outline: none;
-        user-select: none;
-        cursor: pointer;
-        transform: translateY(0px);
-        position: relative;
-        box-shadow:
-          inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
-          inset 0 0 0 1px rgba(255, 255, 255, 0.3),
-          inset 0 1px 20px rgba(0, 0, 0, 0),
-          0 3px 0 #0098cb,
-          0 3px 2px rgba(0, 0, 0, 0.2),
-          0 5px 10px rgba(0, 0, 0, 0.1),
-          0 10px 20px rgba(0, 0, 0, 0.1);
-        background: #cb0069;
-        color: rgb(255, 255, 255);
-        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
-        transition: 150ms all ease-in-out;
-        left: 713px;
-        top: -20px;
+          overflow: hidden;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #0098cb;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          letter-spacing: 1px;
+          padding: 0 12px;
+          text-align: center;
+          width: 120px;
+          height: 40px;
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: normal;
+          border-radius: 3px;
+          outline: none;
+          user-select: none;
+          cursor: pointer;
+          position: relative;
+          background: #cb0069;
+          color: rgb(255, 255, 255);
+          text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+          transition: 150ms all ease-in-out;
       }
-      
       .button-with-icon .icon {
-        margin-right: 8px;
-        width: 24px;
-        height: 24px;
-        transition: all 0.5s ease-in-out;
-        
+          margin-right: 8px;
+          width: 24px;
+          height: 24px;
+          transition: all 0.5s ease-in-out;
       }
-      
-      .button-with-icon:active {
-        transform: translateY(3px);
-        box-shadow:
-          inset 0 16px 2px -15px rgba(0, 0, 0, 0),
-          inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-          inset 0 1px 20px rgba(0, 0, 0, 0.1),
-          0 0 0 #0098cb,
-          0 0 0 2px rgba(255, 255, 255, 0.5),
-          0 0 0 rgba(0, 0, 0, 0),
-          0 0 0 rgba(0, 0, 0, 0);
-      }
-      
       .button-with-icon:hover .text {
-        transform: translateX(80px);
+          transform: translateX(80px);
       }
       .button-with-icon:hover .icon {
-        transform: translate(23px);
+          transform: translate(23px);
       }
-      
       .text {
-        transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
       }
-    </style>
-    
-      <div id="chatIcon" onclick="toggleChatbox()">💬</div>
 
-      <style>
-      
       /* Floating Chat Icon */
       #chatIcon {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: Linear-gradient(137deg, #ffd700, #970000);
-        color: rgb(255, 255, 255);
-        font-size: 26px;
-        padding: 16px;
-        border-radius: 50%;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-        z-index: 1000;
-        animation: pulse 2s infinite;
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          background: Linear-gradient(137deg, #ffd700, #970000);
+          color: rgb(255, 255, 255);
+          font-size: 26px;
+          padding: 16px;
+          border-radius: 50%;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+          z-index: 1000;
+          animation: pulse 2s infinite;
       }
       #chatIcon:hover {
-        transform: scale(1.1);
+          transform: scale(1.1);
       }
       @keyframes pulse {
-        0% { box-shadow: 0 0 0 0 rgba(109, 58, 185, 0.5); }
-        70% { box-shadow: 0 0 0 15px rgba(138,58,185,0); }
-        100% { box-shadow: 0 0 0 0 rgba(138,58,185,0); }
+          0% { box-shadow: 0 0 0 0 rgba(109, 58, 185, 0.5); }
+          70% { box-shadow: 0 0 0 15px rgba(138,58,185,0); }
+          100% { box-shadow: 0 0 0 0 rgba(138,58,185,0); }
       }
-      
+
       /* Chatbox Container */
       #chatboxContainer {
-        position: fixed;
-        bottom: 100px;
-        right: 30px;
-        width: 370px;
-        max-height: 550px;
-        background: linear-gradient(to bottom right, #fffefc, #f0f8ff);
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        display: none;
-        flex-direction: column;
-        overflow: hidden;
-        z-index: 999;
-        animation: slideIn 0.4s ease;
-        background-image: url('https://www.puriotdc.com/wp-content/uploads/2017/05/jagannath-temple.jpg');
-        background-size: cover;
+          position: fixed;
+          bottom: 100px;
+          right: 30px;
+          width: 370px;
+          max-height: 550px;
+          background: linear-gradient(to bottom right, #fffefc, #f0f8ff);
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+          display: none;
+          flex-direction: column;
+          overflow: hidden;
+          z-index: 999;
+          animation: slideIn 0.4s ease;
+          background-image: url('https://www.puriotdc.com/wp-content/uploads/2017/05/jagannath-temple.jpg');
+          background-size: cover;
       }
-      
       @keyframes slideIn {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+          from { transform: translateY(50px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
       }
-      
+
       /* Header with Chakra */
       .chatbox-header {
-        background:  Linear-gradient(to left, #ffd700, #970000);
-        color: #ffffff;
-        padding: 15px;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+          background:  Linear-gradient(to left, #ffd700, #970000);
+          color: #ffffff;
+          padding: 15px;
+          font-size: 18px;
+          font-weight: bold;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          gap: 10px;
       }
       .chatbox-header .icon {
-        width: 30px;
-        height: 30px;
+          width: 30px;
+          height: 30px;
       }
-      
+
       /* Body */
       .chatbox-body {
-        flex: 1;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.8);
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        height: 320px;
-        animation: fadeIn 0.5s ease-in-out;
+          flex: 1;
+          padding: 15px;
+          background: rgba(255, 255, 255, 0.8);
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          height: 320px;
+          animation: fadeIn 0.5s ease-in-out;
       }
-      
       @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+          from { opacity: 0; }
+          to { opacity: 1; }
       }
-      
+
       /* Footer */
       .chatbox-footer {
-        display: flex;
-        padding: 10px;
-        border-top: 1px solid #ddd;
+          display: flex;
+          padding: 10px;
+          border-top: 1px solid #ddd;
       }
-      
       .chatbox-footer input {
-        flex: 1;
-        padding: 12px;
-        border-radius: 25px;
-        border: 1px solid #ccc;
-        outline: none;
-        font-size: 15px;
+          flex: 1;
+          padding: 12px;
+          border-radius: 25px;
+          border: 1px solid #ccc;
+          outline: none;
+          font-size: 15px;
       }
-      
       .chatbox-footer button {
-        background: #d7005d;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 42px;
-        height: 42px;
-        margin-left: 10px;
-        cursor: pointer;
-        font-size: 16px;
+          background: #d7005d;
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 42px;
+          height: 42px;
+          margin-left: 10px;
+          cursor: pointer;
+          font-size: 16px;
       }
-      
+
       /* Message Bubbles */
       .user-message, .bot-message {
-        padding: 10px 15px;
-        border-radius: 20px;
-        max-width: 80%;
-        line-height: 1.6;
-        font-size: 15px;
-        animation: messageIn 0.3s ease-in-out;
+          padding: 10px 15px;
+          border-radius: 20px;
+          max-width: 80%;
+          line-height: 1.6;
+          font-size: 15px;
+          animation: messageIn 0.3s ease-in-out;
       }
-      
       .user-message {
-        background: #d5fcd4;
-        align-self: flex-end;
+          background: #d5fcd4;
+          align-self: flex-end;
       }
       .bot-message {
-        background: #d7f0ff;
-        align-self: flex-start;
+          background: #d7f0ff;
+          align-self: flex-start;
       }
-      
       @keyframes messageIn {
-        from { transform: translateX(20px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
+          from { transform: translateX(20px); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
       }
 
-    @media (max-width: 600px) {
-        .golden-navbar {
-       padding: 10px 20px;
-        }
-    .left-section .logo {
-    width: 39px;
-    }
-    .left-section .logo-text {
-          font-size: 23px;      
-    }
-   .golden-navbar a {
-          font-size: 13px;
-   }
-    .golden-navbar a i {
-          font-size: 16px;
-    }
-        .button-text {
-        top: 356px;
-        }
-        .button-with-icon {
-         left: 437px;
-        }
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+          .hero h1 {
+              font-size: 2.5em;
+          }
+          .hero p {
+              font-size: 1.2em;
+          }
+          .golden-navbar {
+              padding: 10px 5px;
+          }
+          .left-section .logo-text {
+              font-size: 20px;
+          }
+          .golden-navbar a {
+              font-size: 14px;
+          }
+          .golden-navbar a i {
+              font-size: 16px;
+          }
+          .button-text {
+              font-size: 16px;
+          }
+      }
+      @media (max-width: 600px) {
+          .hero h1 {
+              font-size: 2em;
+          }
+          .hero p {
+              font-size: 1em;
+          }
+          .golden-navbar {
+              padding: 8px 5px;
+          }
+          .left-section .logo {
+              width: 35px;
+          }
+          .left-section .logo-text {
+              font-size: 18px;
+          }
+          .golden-navbar a {
+              font-size: 12px;
+          }
+          .golden-navbar a i {
+              font-size: 14px;
+          }
+          .button-text {
+              font-size: 14px;
+          }
+          .play-button-container {
+              margin: 1.5rem 0 2.5rem 0;
+          }
+      }
+      @media (max-width: 480px) {
+          .hero h1 {
+              font-size: 1.5em;
+          }
+          .hero p {
+              font-size: 0.9em;
+          }
+          .golden-navbar {
+              padding: 6px 5px;
+          }
+          .left-section .logo {
+              width: 30px;
+          }
+          .left-section .logo-text {
+              font-size: 16px;
+          }
+          .golden-navbar a {
+              font-size: 10px;
+          }
+          .golden-navbar a i {
+              font-size: 12px;
+          }
+          .button-text {
+              font-size: 12px;
+          }
+          .play-button-container {
+              margin: 1rem 0 2rem 0;
+          }
+      }
+    </style>
+</head>
+<body>
+    <nav class="golden-navbar">
+        <div class="left-section">
+            <img src="jaga3.png" alt="Jagannath Logo" class="logo" />
+            <span class="logo-text">ଶ୍ରୀ ଜଗନ୍ନାଥ</span>
+        </div>
+        <ul class="right-section">
+            <li><a href="web1.html"><i class="fa fa-arrow-left"></i><span>ପଛକୁ ଯାଆନ୍ତୁ</span></a></li>
+            <li><a href="web8.html"><i class="fa fa-om"></i><span>ସମ୍ପୂର୍ଣ୍ଣ ବିବରଣୀ</span></a></li>
+            <li><a href="#"><i class="fa fa-calendar-day"></i><span>ପର୍ବପର୍ବାଣୀ</span></a></li>
+            <li><a href="web5.html"><i class="fa fa-home"></i><span>ଘର</span></a></li>
+            <li><a href="#"><i class="fa fa-images"></i><span>ଗ୍ୟାଲେରୀ</span></a></li>
+            <li><a onclick="toggleChatbox()"><i class="fa fa-comments"></i><span>ଚାଟ୍‌ ବୋଟ୍‌</span></a></li>
+            <li><a href="#"><i class="fa fa-phone"></i><span>ଯୋଗାଯୋଗ କରନ୍ତୁ</span></a></li>
+        </ul>
+    </nav>
 
-        .hero h1 {
-                font-size: 2em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-            .golden-navbar {
-                padding: 8px 5px;
-            }
-            .left-section .logo {
-                width: 35px;
-            }
-            .left-section .logo-text {
-                font-size: 18px;
-            }
-            .golden-navbar a {
-                font-size: 12px;
-            }
-            .golden-navbar a i {
-                font-size: 14px;
-            }
-            .button-text {
-                font-size: 14px;
-            }
-    }
-    </style>  
+    <section class="hero">
+        <h1>ଦିବ୍ୟ ଯାତ୍ରା ଅନୁଭବ କରନ୍ତୁ</h1>
+        <p>ଭକ୍ତି, ପ୍ରେମ ଏବଂ ଏକତାକୁ ଆପଣାନ୍ତୁ</p>
+        <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+            </span>
+            <a href="web8.html" class="button-text">ଅଧିକ ଜାଣନ୍ତୁ</a>
+        </button>
+    </section>
+
+    <div class="play-button-container">
+        <a href="web7.html">
+            <button class="button-with-icon">
+                <svg class="icon" id="Play" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path class="color000000 svgShape" fill="#ffffff" d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"></path>
+                </svg>
+                <span class="text">ଚଲାନ୍ତୁ</span>
+            </button>
+        </a>
+    </div>
+
+    <div id="chatIcon" onclick="toggleChatbox()">💬</div>
+
+    <div id="chatboxContainer">
+        <div class="chatbox-header">
+            <img src="jaga4.png" alt="Jagannath" class="icon" /> ଗରୁଡ଼
+        </div>
+        <div class="chatbox-body" id="chatBody">
+            <div class="bot-message">🙏 ନମସ୍ତେ! ଜୟ ଜଗନ୍ନାଥ!</div>
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" id="userInput" placeholder="କିଛି ଜାଣିବାକୁ ଚାହାଁନ୍ତି..?" onkeydown="handleEnter(event)" />
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </div>
 
     <script>
-      const audio = new Audio('audio.mpeg'); // Define once, globally
-  audio.loop = true;
-        
-        function toggleChatbox() {
-        const box = document.getElementById('chatboxContainer');
-            
-    if (box.style.display === 'flex') {
-      box.style.display = 'none';
-      audio.pause();
-      audio.currentTime = 0;
-    } else {
-      box.style.display = 'flex';
-      audio.play();
-    }
-}
-      
-      function handleEnter(event) {
-        if (event.key === 'Enter') {
-          sendMessage();
-        }
-      }
-      
-      function sendMessage() {
-        const input = document.getElementById('userInput');
-        const msg = input.value.trim();
-        if (!msg) return;
-      
-        addMessage('user', msg);
-        input.value = '';
-      
-        setTimeout(() => {
-          const reply = getReply(msg.toLowerCase());
-          addMessage('bot', reply);
-        }, 600);
-      }
-      
-      function addMessage(sender, text) {
-        const chatBody = document.getElementById('chatBody');
-        const div = document.createElement('div');
-        div.className = sender === 'user' ? 'user-message' : 'bot-message';
-        div.innerText = text;
-        chatBody.appendChild(div);
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }
-      
-      function getReply(msg) {
-          msg = msg.toLowerCase();
-        if (msg.includes('where') || msg.includes('kahan par') || msg.includes('कहां पर') || msg.includes('kidhar') || msg.includes('किधर') || msg.includes('kauthi') || msg.includes('keunthi') || msg.includes('keunthare') || msg.includes('keunthaare') || msg.includes('kauthaare') || msg.includes('କେଉଁଠି') || msg.includes('କେଉଁଠାରେ') || msg.includes('କଉଠି') || msg.includes('କଉଠାରେ') || msg.includes('kauthare')) return "ଏହି ମନ୍ଦିରଟି ଭାରତର ଓଡ଼ିଶା ରାଜ୍ୟର ପୁରୀ ସହରରେ ଅବସ୍ଥିତ।";
-          if (msg.includes('temple') || msg.includes('mandir') || msg.includes('मंदिर') || msg.includes('टेम्पल') || msg.includes('ମନ୍ଦିର') || msg.includes('ଟେମ୍ପଲ୍')) {
-          return "ମହାପ୍ରଭୁ ଜଗନ୍ନାଥଙ୍କ ମୁଖ୍ୟ ମନ୍ଦିର ପୁରୀ ସହରରେ ଅବସ୍ଥିତ। ସମୁଦ୍ର କୂଳରେ ଆଧାରିତ ଏହି ପବିତ୍ର ମନ୍ଦିର ଓଡ଼ିଶାର ସାର୍ବଜନୀନ ପ୍ରାର୍ଥନାସ୍ଥଳ ଭାବରେ ପରିଚିତ। ଏହା ହିନ୍ଦୁ ଧର୍ମର ଚାରୋଟି ପବିତ୍ର ଧାମ ମଧ୍ୟରୁ ଗୋଟିଏ ଏବଂ ବିଶ୍ୱର ଶ୍ରେଷ୍ଠ ଓ ସର୍ବପ୍ରମୁଖ ମନ୍ଦିର ମଧ୍ୟରେ ଗଣା ଯାଇଥାଏ। ଏହି ମନ୍ଦିରକୁ ଜଗନ୍ନାଥଙ୍କର ଭୂଲୋକ ନିବାସ ଭାବରେ ବିବେଚିତ କରାଯାଏ, ଯେଉଁଠି ସେ ତାଙ୍କର ଭାଇ ବଳଭଦ୍ର ଓ ଭଉଣୀ ସୁଭଦ୍ରାଙ୍କ ସହିତ ବାସ କରନ୍ତି।";
-        }
-          if(msg.includes('live') || msg.includes('worship') || msg.includes('puja paanti') || msg.includes('puja panti') || msg.includes('ruhanti') || msg.includes('rahuchanti') || msg.includes('rahuchhanti') || msg.includes('basa karanti') || msg.includes('पूजा पाते') || msg.includes('puja paate') || msg.includes('puje jaate') || msg.includes('पूजे जाते') || msg.includes('रेहेते है') || msg.includes('रेहते है') || msg.includes('ରୁହନ୍ତି') || msg.includes('ରହୁଛନ୍ତି') || msg.includes('ବାସ କରନ୍ତି') || msg.includes('rehte') || msg.includes('rehete') || msg.includes('rehate') || msg.includes('bas karte') || msg.includes('ରହନ୍ତି')) { 
-              return "ମୁଖ୍ୟତଃ ଭାରତର ଓଡ଼ିଶା ରାଜ୍ୟର ପୁରୀ ସହରର ଜଗନ୍ନାଥ ମନ୍ଦିରରେ ମହାପ୍ରଭୁ ଜଗନ୍ନାଥଙ୍କ ଉପାସନା କରାଯାଏ, ଯେଉଁଠି ସେ ତାଙ୍କର ବଡ଼ ଭାଇ ବଳଭଦ୍ର ଓ ସାନ ଭଉଣୀ ମା ସୁଭଦ୍ରାଙ୍କ ସହ ବାସ କରନ୍ତି।";
-          }
-         if(msg.includes('with') || msg.includes('kie kie') || msg.includes('kaun kaun') || msg.includes('kiske saath') || msg.includes('kon kon') || msg.includes('saha') || msg.includes('sahita') || msg.includes('sathire') || msg.includes('sangare') || msg.includes('ସହ') || msg.includes('ସହିତ') || msg.includes('ସାଥିରେ') || msg.includes('ସାଙ୍ଗରେ') || msg.includes('କିଏ କିଏ') || msg.includes('कौन कौन') || msg.includes('किसके साथ')) return "ମହାପ୍ରଭୁ ଜଗନ୍ନାଥ ପୁରୀର ଜଗନ୍ନାଥ ମନ୍ଦିରରେ ନିମ୍ନଲିଖିତ ଦେବତାମାନଙ୍କ ସହ ବାସ କରନ୍ତି:\n\n" +
-             "1. ପ୍ରଭୁ ବଳଭଦ୍ର - ତାଙ୍କର ବଡ଼ ଭାଇ, ଯାହାକୁ ବଳରାମ ବୋଲି ମଧ୍ୟ କୁହାଯାଏ; ଯିଏ ଶକ୍ତିଶାଳୀ ଓ ରକ୍ଷାକାରୀ ଭାବେ ପୂଜିତ।\n" +
-             "2. ଦେବୀ ସୁଭଦ୍ରା - ତାଙ୍କର ସାନ ଭଉଣୀ, ଯିଏ ଦିବ୍ୟ, ପବିତ୍ରତା ଓ ଭକ୍ତିର ପ୍ରତୀକ।\n" +
-             "3. ଚକ୍ରରାଜ ସୁଦର୍ଶନ- ଏହାକୁ ଦିବ୍ୟ ଅସ୍ତ୍ର ଓ ରକ୍ଷାକାରୀ ଭାବେ ବିବେଚନା କରାଯାଏ, ଯାହା ଜଗନ୍ନାଥଙ୍କ ପାଖରେ ବିରାଜମାନ।\n\n" +
-             "ଏହି ଚାରି ଦେବତାଙ୍କୁ ମନ୍ଦିରର ଗର୍ଭଗୃହ ମଧ୍ୟରେ ଥିବା ରତ୍ନ ସିଂହାସନ ଉପରେ ସାମୁହିକ ଭାବରେ ପୂଜା କରାଯାଏ।";
-        if (msg.includes('rath yatra') || msg.includes('रथयात्रा') || msg.includes('ରଥଯାତ୍ରା') || msg.includes('car festival')) return "ରଥଯାତ୍ରା ହେଉଛି ମହାପ୍ରଭୁ ଜଗନ୍ନାଥଙ୍କର ବିଶାଳ ଯାତ୍ରା। ଏହି ଅବସରରେ ମହାପ୍ରଭୁ ଜଗନ୍ନାଥ, ପ୍ରଭୁ ବଳଭଦ୍ର ଓ ଦେବୀ ସୁଭଦ୍ରା କାଠ ନିର୍ମିତ ରଥରେ ବିଜେ କରନ୍ତି। ଏହି ରଥଗୁଡ଼ିକୁ ହଜାର ହଜାର ଭକ୍ତ ଟାଣିଥାନ୍ତି। ଏହି ଯାତ୍ରା ଜଗନ୍ନାଥ ମନ୍ଦିରରୁ ଗୁଣ୍ଡିଚା ମନ୍ଦିର ପର୍ଯ୍ୟନ୍ତ ହୁଏ। ଏହି ପବିତ୍ର ଉତ୍ସବ ପ୍ରତିବର୍ଷ ଜୁନ କିମ୍ବା ଜୁଲାଇ (ଆଷାଢ଼ ମାସ) ମାସରେ ପାଳିତ ହୁଏ। ଏହା ବିଶ୍ୱର ସବୁଠାରୁ ବଡ଼ ଧାର୍ମିକ ଯାତ୍ରାଗୁଡ଼ିକ ମଧ୍ୟରୁ ଗୋଟିଏ।";
-        if (msg.includes('kitchen') || msg.includes('rosha shala') || msg.includes('rosei ghara') || msg.includes('rosei sala') || msg.includes('rosa sala') || msg.includes('rosei shala') || msg.includes('rosha gruha') || msg.includes('रोसई ग्रिह') || msg.includes('randhana gruha') || msg.includes('paka shala') || msg.includes('ରୋଷ ଗୃହ') || msg.includes('ରୋଷେଇ ଘର') || msg.includes('ରୋଷେଇ ଶାଳ') || msg.includes('ରୋଷ ଶାଳା') || msg.includes('ରୋଷେଇ ଗୃହ') || msg.includes('रो शाला') || msg.includes('रोसई शाला') || msg.includes('पाक शाला') || msg.includes('ପାକ ଶାଳା') || msg.includes('ରାନ୍ଧନ ଶାଳା') || msg.includes('ରନ୍ଧନ ଗୃହ')) return "ଏହା ବିଶ୍ୱର ସବୁଠାରୁ ବଡ଼ ମନ୍ଦିର ରୋଷେଇଘର। ପ୍ରତିଦିନ ଏଠାରେ ହଜାର ହଜାର ଲୋକଙ୍କ ପାଇଁ ଖାଦ୍ୟ ରନ୍ଧାଯାଏ, କିନ୍ତୁ ଲକ୍ଷାଧିକ ଲୋକ ମଧ୍ୟ ତାହା ଭୋଜନ କରିପାରନ୍ତି।";
-        if (msg.includes('who are you') || msg.includes('your name') || msg.includes('your work') || msg.includes('tumhara naam') || msg.includes('tumahara kaam') || msg.includes('tum kon ho') || msg.includes('tum kaun ho') || msg.includes('tamara naa') || msg.includes('tame kie') || msg.includes('ତମର ନାମ') || msg.includes('तुम्हारा नाम') || msg.includes('तुम्हारा काम') || msg.includes('तुम कौन हो') || msg.includes('ତମେ କିଏ') || msg.includes('ତମର କାମ କଣ')) {
-          return "ମୁଁ ଗରୁଡ଼ ଚାଟ୍‌ ବୋଟ୍, ଶ୍ରୀ ଜଗନ୍ନାଥଙ୍କର ଏକ ସେବକ। ତାଙ୍କ ବିଷୟରେ ଆପଣଙ୍କ ମନରେ ଥିବା ପ୍ରଶ୍ନର ଉତ୍ତର ଦେବା ପାଇଁ ମୁଁ ଏଠାରେ ଅଛି।";
-        }
-        if (msg.includes("10 avatar") || msg.includes("10 abatar") || msg.includes('dashavatar') || msg.includes('avatars') || msg.includes('ten avatar') || msg.includes('୧୦ ଅବତାର') || msg.includes('ଦଶାବତାର') || msg.includes('दसाबतार') || msg.includes('१० अवतार') || msg.includes('अवतारों') || msg.includes('ଅବତାରଗୁଡ଼ିକ')) {
-    return "ଶ୍ରୀ ଜଗନ୍ନାଥ (ବିଷ୍ଣୁ)ଙ୍କ ୧୦ ଅବତାର (ଦଶାବତାର) ହେଲେ:\n" +
-           "୧. ମତ୍ସ୍ୟ (ମାଛ)\n" +
-           "୨. କୂର୍ମ (କଚ୍ଛପ)\n" +
-           "3. ବରାହ (ଶୂକର)\n" +
-           "୪. ନରସିଂହ (ଅର୍ଦ୍ଧ-ମାନବ ଓ ଅର୍ଦ୍ଧ-ସିଂହ)\n" +
-           "୫. ବାମନ (ବାମନ ବ୍ରାହ୍ମଣ)\n" +
-           "୬. ପର୍ଶୁରାମ (ପର୍ଶୁ ଧାରଣ କରିଥିବା ଯୋଦ୍ଧା)\n" +
-           "୭. ରାମ (ଅୟୋଧ୍ୟାର ରାଜକୁମାର)\n" +
-           "୮. କୃଷ୍ଣ (ଦିବ୍ୟ ଗୋପାଳକ)\n" +
-           "୯. ବୁଦ୍ଧ (ଜ୍ଞାନର ଆଲୋକ ଦାତା)\n" +
-           "୧୦. କଳ୍କୀ (ଭବିଷ୍ୟତରେ ଶ୍ଵେତ ଘୋଡ଼ାରେ ଚଢ଼ି ଧରାକୁ ଆସିବାକୁ ଯାଉଥିବା ଯୋଦ୍ଧା)\n\n" +
-        "ମହାପ୍ରଭୁଙ୍କ ନବମ ଅବତାର କିଏ ତାହା ସ୍ପଷ୍ଟ ହେଇନି। ତାକୁ ନେଇ ଏବେ ମଧ୍ୟ ହାଇକୋର୍ଟ ରେ କେସ ଚାଲିଛି। କେହି କେହି ଭଗବାନ ବୁଦ୍ଧଙ୍କୁ ଶ୍ରୀ ବିଷ୍ଣୁ ଙ୍କ ନବମ ଅବତାର ମାନନ୍ତି ଆଉ କେହି କେହି ଶ୍ରୀ ଜଗନ୍ନାଥଙ୍କୁ ଶ୍ରୀ ବିଷ୍ଣୁଙ୍କ ନବମ ଅବତାର କୁହନ୍ତି। ଶ୍ରୀମଦ୍ ଭାଗବତ ଭଳି ଅନେକ ପୁରାଣ ଶାସ୍ତ୍ରଗୁଡ଼ିକରେ ଭଗଵାନ ବୁଦ୍ଧଙ୍କୁ ଶ୍ରୀ ବିଷ୍ଣୁ ଙ୍କ ନବମ ଅବତାର ବୋଲି କୁହାଯାଇଛି।";
-        }
-           if (msg.includes('jay') || msg.includes('ଜୟ') || msg.includes('जय')) return "ଜୟ ଶ୍ରୀ ଜଗନ୍ନାଥ ⚫❗⚫! ମହାପ୍ରଭୁ ଶ୍ରୀ ଜଗନ୍ନାଥଙ୍କ ଆଶୀର୍ବାଦରେ ତମେ ସବୁବେଳେ ଖୁସିରେ ରୁହ।";
-          if (msg.includes('namaste') || msg.includes('namaskar') || msg.includes('pranam') || msg.includes('नमस्ते') || msg.includes('ନମସ୍ତେ') || msg.includes('ନମସ୍କାର') || msg.includes('नमस्कार') || msg.includes('प्रणाम') || msg.includes('ପ୍ରଣାମ')) return "ନମସ୍ତେ! ମହାପ୍ରଭୁ ଜଗନ୍ନାଥଙ୍କ ଆଶୀର୍ବାଦରେ ତମେ ସବୁବେଳେ ଖୁସିରେ ରୁହ।";
-        if (msg.includes('jagannath') || msg.includes('ଜଗନ୍ନାଥ') || msg.includes('जगन्नाथ')) return "‘ଜଗନ୍ନାଥ’ ଶବ୍ଦର ଅର୍ଥ ହେଲା ‘ବିଶ୍ୱର ପ୍ରଭୁ’ (ଜଗତ = ବିଶ୍ୱ, ନାଥ = ପ୍ରଭୁ) । ସେ ଭଗବାନ ବିଷ୍ଣୁଙ୍କ ଏକ ଅବତାର ଭାବେ ବର୍ଣ୍ଣିତ, ଏବଂ ବିଶେଷ କରି ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ରୂପରେ ପୂଜିତ ହୁଅନ୍ତି । ସେ ଓଡ଼ିଶାର ପୁରୀ ଜଗନ୍ନାଥ ମନ୍ଦିରର ମୁଖ୍ୟ ଦେବତା।";
-         if (msg.includes('hi') || msg.includes('hello') || msg.includes('ହାଏ') || msg.includes('ହେଲୋ') || msg.includes('हेलो') || msg.includes('हाए')) {
-          return "ହେଲୋ-ହାଏ ଛାଡ଼ନ୍ତୁ, ଜୟ ଜଗନ୍ନାଥ କୁହନ୍ତୁ! 🙌🏻";
-         }
-        return "କ୍ଷମା କରନ୍ତୁ। ମୁଁ ଏବେ ବି ଶିକ୍ଷା ଗ୍ରହଣ କରୁଅଛି। ତେଣୁ ଆପଣଙ୍କର ଭାଷା ଉପରେ ମୋର ପୂର୍ଣ୍ଣ ଧାରଣା ନଥିବାରୁ ମୁଁ ଏହାକୁ ବୁଝିପାରୁନାହିଁ। ଦୟାକରି ଅନ୍ୟ କିଛି ପଚାରନ୍ତୁ।";
-      }
-    </script>
+        const audio = new Audio('audio.mpeg'); // Define once, globally
+        audio.loop = true;
 
-  <!-- Chatbox -->
-  <div id="chatboxContainer">
-    <div class="chatbox-header">
-      <img src="jaga4.png" alt="Jagannath" class="icon">
-  ଗରୁଡ଼
-    </div>
-    <div class="chatbox-body" id="chatBody">
-      <div class="bot-message">🙏 ନମସ୍ତେ! ଜୟ ଜଗନ୍ନାଥ!</div>
-    </div>
-    <div class="chatbox-footer">
-      <input type="text" id="userInput" placeholder="କିଛି ଜାଣିବାକୁ ଚାହାଁନ୍ତି..?" onkeydown="handleEnter(event)">
-      <button onclick="sendMessage()">➤</button>
-    </div>
-  </div>
-        
-    </body>
+        function toggleChatbox() {
+            const box = document.getElementById('chatboxContainer');
+            if (box.style.display === 'flex') {
+                box.style.display = 'none';
+                audio.pause();
+                audio.currentTime = 0;
+            } else {
+                box.style.display = 'flex';
+                audio.play();
+            }
+        }
+
+        function handleEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            addMessage('user', msg);
+            input.value = '';
+
+            setTimeout(() => {
+                const reply = getReply(msg.toLowerCase());
+                addMessage('bot', reply);
+            }, 600);
+        }
+
+        function addMessage(sender, text) {
+            const chatBody = document.getElementById('chatBody');
+            const div = document.createElement('div');
+            div.className = sender === 'user' ? 'user-message' : 'bot-message';
+            div.innerText = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Placeholder getReply function, replace with full logic as needed
+        function getReply(msg) {
+            return "କ୍ଷମା କରନ୍ତୁ, ମୁଁ ଏକ ସରଳ ଚାଟ୍‌ ବୋଟ୍‌ ହୁଁ ।";
+        }
+    </script>
+</body>
 </html>
