@@ -150,6 +150,8 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
+          flex-wrap: wrap;
+          position: relative;
         }
         
         .left-section {
@@ -438,6 +440,28 @@
         from { transform: translateX(20px); opacity: 0; }
         to { transform: translateX(0); opacity: 1; }
       }
+
+          media (max-width: 600px) {
+          .right-section {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #4b2c04;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .right-section.show {
+    display: flex;
+  }
+
+  .right-section li {
+    text-align: center;
+    padding: 10px 0;
+  }
+          }
     </style>  
 
     <script>
