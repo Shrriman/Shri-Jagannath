@@ -38,13 +38,39 @@
             <li><a href="web2.html"><i class="fa fa-arrow-left"></i><span>Back</span></a></li>
             <li><a onclick="toggleParagraph()"><i class="fa fa-scroll"></i><span>Stories</span></a></li>
             <li><a href="#"><i class="fa fa-calendar-day"></i><span>Festivals</span></a></li>
-            <li><a href="web2.html"><i class="fa fa-home"></i><span>Home</span></a></li>
+            <li><a href="#"><i class="fa fa-question-circle"></i><span>Quiz</span></a></li>
             <li><a href="#"><i class="fa fa-images"></i><span>Gallery</span></a></li>
             <li><a href="#"><i class="fa fa-music"></i><span>Music</span></a></li>
-            <li><a href="#"><i class="fa fa-question-circle"></i><span>Quiz</span></a></li>
+            <li><button id="lang-btn" class="lang-btn"><a><i class="fa fa-globe"></i><span>Language</a></span></button></li>
           </ul>
         </nav>
-        
+
+        <div class="lang-popup" id="lang-popup">
+    <div class="popup-content">
+      <h3>🌺 Change Language</h3>
+      <div class="popup-options">
+
+        <button onclick="location.href='web5.html'">ଓଡ଼ିଆ</button>
+        <button onclick="location.href='web4.html'">हिंदी</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const langBtn = document.getElementById("lang-btn");
+    const popup = document.getElementById("lang-popup");
+
+    langBtn.addEventListener("click", () => {
+      popup.classList.toggle("show");
+    });
+
+    window.addEventListener("click", function(e) {
+      if (!popup.contains(e.target) && !langBtn.contains(e.target)) {
+        popup.classList.remove("show");
+      }
+    });
+  </script>
+
         <!-- CSS -->
         <style>
         .golden-navbar {
@@ -109,7 +135,71 @@
           color: #ffffff;
           text-shadow: 0 0 10px #ffd700;
         }
-        
+
+.lang-btn {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 20px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Bottom Pop-Up */
+.lang-popup {
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 250px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border-radius: 20px 20px 0 0;
+  padding: 25px;
+  transition: bottom 0.4s ease;
+  z-index: 999;
+}
+
+.lang-popup.show {
+  bottom: 0;
+}
+
+.popup-content {
+  text-align: center;
+  font-size: 19px;
+  color: #000;
+}
+
+.popup-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.popup-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-options button {
+  background-color: #e9af00;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popup-options button:hover {
+  background-color: #916c00;
+}
+            
         </style>
 
         <div class="about-section">
