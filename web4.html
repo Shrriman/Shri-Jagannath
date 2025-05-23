@@ -156,11 +156,6 @@
       popup.classList.toggle("show");
     });
 
-    function selectLanguage(lang) {
-      alert("Language selected: " + lang);
-      popup.classList.remove("show");
-    }
-
     window.addEventListener("click", function(e) {
       if (!popup.contains(e.target) && !langBtn.contains(e.target)) {
         popup.classList.remove("show");
