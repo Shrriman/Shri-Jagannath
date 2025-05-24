@@ -355,6 +355,7 @@ a:hover::before{
   }
 
   .wel, .come {
+    top: 0;
     position: relative; /* remove absolute */
     font-size: 35px;
     transform: none;
