@@ -373,4 +373,8 @@ a:hover::before{
   .wel, .come {
     display: none;
   }
+
+  .img {
+    display: none;
+  }
 }
