@@ -283,6 +283,10 @@ a:hover::before{
 .wel { left: 337px; }
 .come { right: 0; }
 
+.img {
+    display: none;
+  }
+
 @media (max-width: 600px) {
 
   body {
