@@ -282,11 +282,11 @@ a:hover::before{
 
 .wel { left: 337px; }
 .come { right: 0; }
-
+@media (max-width: 1024px) {
 .img {
     display: none;
   }
-
+}
 @media (max-width: 600px) {
 
   body {
