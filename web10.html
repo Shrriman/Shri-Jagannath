@@ -394,8 +394,95 @@ text-align: start;
           color: #a70037;
             font-size: 19px;
         }
-    </style>
-  <h2>श्री जगन्नाथ : एक अद्भुत रूप का परिचय</h2>
+
+      h2 {
+      cursor: pointer;
+      background: linear-gradient(135deg, #a70037 0%, #b90000 100%);
+      
+      color: white;
+      padding: 15px 20px 42px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.4s ease, transform 0.3s ease;
+      height: 16px;
+      text-align: center;
+    }
+
+    h2:hover {
+      background: linear-gradient(135deg, #a70037 0%, #b90000 100%);
+      transform: scale(1.02);
+    }
+
+    #hidden-content1, #hidden-content2 {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff8e1;
+      border-left: 5px solid #ffb300;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      line-height: 1.8;
+      transition: all 0.5s ease-in-out;
+    }
+
+    #hidden-content1.show, #hidden-content2.show {
+      display: block;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+     h2 {
+    background: #f3d98d;
+    padding: 16px 22px 42px;
+    margin: 20px 0 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(91, 62, 15, 0.3);
+    transition: background 0.3s ease, color 0.3s ease;
+    user-select: none;
+    color: #6a4f13;
+  }
+  h2:hover {
+    background: #e7c08a;
+    color: #6a4f13;
+  }
+
+  /* Content Box */
+  .content {
+    display: none;
+    background: #fff8e1;
+    border-left: 5px solid #c7a55a;
+    padding: 18px 24px;
+    border-radius: 0 12px 12px 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(199, 165, 90, 0.25);
+    font-size: 1.1rem;
+  }
+
+  /* Paragraph styling */
+  p {
+    margin: 0 0 12px;
+    color: #4a3c2a;
+  }
+</style>
+
+
+  <h2 onclick="toggleParagraph1()" style="color:#333;">श्री जगन्नाथ : एक अद्भुत रूप का परिचय</h2>
+  <script>
+  function toggleParagraph1() {
+    var content = document.getElementById("hidden-content1");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+</script>
+<div id="hidden-content1" style="display: none; margin-top: 20px;">
   <p>
 भगवान जगन्नाथ के प्रकट होने के पीछे एक कहानी। यह द्वापर युग की बात है। एक दिन, जब भगवान कृष्ण सो रहे थे, उनकी दोनों पत्नियाँ, देवी रुक्मिणी और देवी सत्यभामा, भगवान के पास बैठी थीं। वे जानना चाहते थे कि भगवान कृष्ण जागने के बाद सबसे पहले किसका नाम पुकारेंगे। वे चाहते थे कि प्रभु आज सबसे पहले उनका नाम लें। लेकिन जब श्री कृष्ण जागे तो उन्होंने सबसे पहले राधारानी का नाम पुकारा।<br><br>
 
@@ -406,8 +493,19 @@ text-align: start;
 उस समय देवर्षि नारद उस मार्ग से गुजर रहे थे। भगवान को ऐसी अवस्था में देखकर वह भी मंत्रमुग्ध हो गये और उनके दर्शन के लिए आये। देवर्षि के आते ही माता रोहिणी की नज़र त्रिमूर्ति पर पड़ी। भगवान के इस रूप को देखकर सभी लोग अधिक आकर्षित हुए। देवर्षि ने भगवान से प्रार्थना की कि वे समस्त संसार को उनके इस रूप के दर्शन करने का अवसर प्रदान करें। तब भगवान कृष्ण ने कहा कि कलियुग में वो तीनों इसी रूप में पूजे जायेंगे।<br><br>
 
 इसलिए जगन्नाथ जी को आधा निर्मित भगवान कहना गलत हैं। उनकी हाथ अधूरा नहीं है, वह असीमित है, जिसकी कोई सीमा नहीं है। उन्होंने सबको गले लगाने के लिए अपनी बाहें अनंत दूरी तक फैला रखी हैं। वह अपूर्ण के भीतर पूर्ण है, आकार के भीतर निराकार है। उनकी न तो कोई आदि है, न ही कोई अंत। उनकी यह अपूर्णता ही उन्हें पूर्णता प्रदान करती है। वह प्रेम और भक्ति का प्रतीक जगत के नाथ श्री जगन्नाथ है।</p>
-    
-    <h2>श्री मन्दिर : भक्त और भगवान का पवित्र मिलन स्थल</h2>
+
+    <h2 onclick="toggleParagraph2()" style="color:#333;">श्री मन्दिर : भक्त और भगवान का पवित्र मिलन स्थल</h2>
+<script>
+  function toggleParagraph2() {
+    var content = document.getElementById("hidden-content2");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+</script>
+<div id="hidden-content2" style="display: none; margin-top: 20px;">
   <p>
 पुरी में स्थित श्री जगन्नाथ जी की मुख्य मंदिर "श्री मंदिर" (बड़ा देउल) के नाम से जाना जाता है। यह मंदिर समुद्र किनारे स्थित नीलगिरि पर्वत पर निर्मित होने के कारण इस स्थान को नीलाचल भी कहा जाता है। प्राचीन शास्त्रों और पुराणों के अनुसार, ऐसा माना जाता है कि एक समय में वहाँ नीलगिरि नामक एक ऊँचा पर्वत था। लेकिन अब वह पर्वत नहीं है। कालचक्र और प्राकृतिक परिवर्तनों के कारण वह लुप्त हो चुका है। इस मंदिर की ऊँचाई ६५ मीटर (२१४ फीट) है। यह मंदिर पुरी के लगभग ४,००,००० वर्ग फुट (३७,००० वर्ग मीटर) भूमि पर निर्मित है। इसे भारत के सबसे ऊँचे मंदिरों में से एक माना जाता है।<br><br>
 
