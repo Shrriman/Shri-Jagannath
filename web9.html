@@ -223,9 +223,9 @@ It is believed that
 
 Lord Vishnu has incarnated in various forms in every Yuga (age) to protect His devotees. These four places signify His abodes in the four Yugas. In Satya Yuga, He resided as Badrinath in Uttarakhand; in Treta Yuga, as Ramnath in Rameshwaram; in Dwapara Yuga, as Dwarkanath in Dwarka. Now, in this Kali Yuga, to grant salvation to His devotees, He is worshipped as Shri Jagannath in Shri Kshetra Puri.<br><br>
     
-Shri Jagannath is a symbol of pride for every Odia. His glory is world-renowned. Let us now understand the significance of his divine form.</div>
+Shri Jagannath is a symbol of pride for every Odia. His glory is world-renowned. Let us now understand the significance of his divine form.</div></p>
 
-<button onclick="toggleParagraph()" class="custom-button">
+<button  id="storyBtn" onclick="toggleParagraph()" class="custom-button">
   <span class="button-content">
     <span class="button-text">Read Stories  →</span>
   </span>
@@ -235,12 +235,13 @@ Shri Jagannath is a symbol of pride for every Odia. His glory is world-renowned.
             
 <button onclick="toggleReadMore()" id="readBtn" style="background: none; color: #b30000; border: none; font-weight: bold; cursor: pointer;">
   Read More
-</button></p>
+</button>
 <script>
 function toggleReadMore() {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("moreText");
   var btn = document.getElementById("readBtn");
+  var storyBtn = document.getElementById("storyBtn");
 
   if (moreText.style.display === "none") {
     moreText.style.display = "inline";
