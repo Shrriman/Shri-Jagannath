@@ -392,8 +392,95 @@ text-align: start;
           color: #a70037;
             font-size: 19px;
         }
-    </style>
-  <h2>Shri Jagannath: An Introduction to a Wonderful Form</h2>
+
+      h2 {
+      cursor: pointer;
+      background: linear-gradient(135deg, #a70037 0%, #b90000 100%);
+      
+      color: white;
+      padding: 15px 20px 42px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.4s ease, transform 0.3s ease;
+      height: 16px;
+      text-align: center;
+    }
+
+    h2:hover {
+      background: linear-gradient(135deg, #a70037 0%, #b90000 100%);
+      transform: scale(1.02);
+    }
+
+    #hidden-content1, #hidden-content2 {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff8e1;
+      border-left: 5px solid #ffb300;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      line-height: 1.8;
+      transition: all 0.5s ease-in-out;
+    }
+
+    #hidden-content1.show, #hidden-content2.show {
+      display: block;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+  h2 {
+    background: #f3d98d;
+    padding: 16px 22px 42px;
+    margin: 20px 0 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(91, 62, 15, 0.3);
+    transition: background 0.3s ease, color 0.3s ease;
+    user-select: none;
+    color: #6a4f13;
+  }
+  h2:hover {
+    background: #e7c08a;
+    color: #6a4f13;
+  }
+
+  /* Content Box */
+  .content {
+    display: none;
+    background: #fff8e1;
+    border-left: 5px solid #c7a55a;
+    padding: 18px 24px;
+    border-radius: 0 12px 12px 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(199, 165, 90, 0.25);
+    font-size: 1.1rem;
+  }
+
+  /* Paragraph styling */
+  p {
+    margin: 0 0 12px;
+    color: #4a3c2a;
+  }
+</style>
+
+
+  <h2 onclick="toggleParagraph1()" style="color:#333;">Shri Jagannath: An Introduction to a Wonderful Form</h2>
+  <script>
+  function toggleParagraph1() {
+    var content = document.getElementById("hidden-content1");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+</script>
+<div id="hidden-content1" style="display: none; margin-top: 20px;">
   <p>
    There is a story behind the unique form of Lord Jagannath. It dates back to the Dwapara Yuga. One day, while Lord Krishna was resting, his two wives — Devi Rukmini and Devi Satyabhama — were sitting beside him. They wanted to know whose name the Lord would take first upon waking. They hoped he would call one of them first. However, as soon as Lord Krishna woke up, he first uttered the name of Radha.<br><br>
 
@@ -405,7 +492,18 @@ At that moment, the great sage Devarshi Narada happened to pass by. Seeing the L
 
 So, calling Shri Jagannath “half-formed deity” is incorrect. His hand is not incomplete, it is unlimited, which has no limits. He has spread his arms to infinite distance to embrace everyone. He is complete within the incomplete, formless within the form. He has neither any beginning nor any end. This incompleteness of his gives him perfection. He is a divine symbol of unconditional love and supreme devotion Lord of the universe Shri Jagannath.</p>
   
-    <h2>Shri Mandir: The Sacred Meeting Place of Devotees and the Divine</h2>
+    <h2 onclick="toggleParagraph2()" style="color:#333;">Shri Mandir: The Sacred Meeting Place of Devotees and the Divine</h2>
+<script>
+  function toggleParagraph2() {
+    var content = document.getElementById("hidden-content2");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+</script>
+<div id="hidden-content2" style="display: none; margin-top: 20px;">
     <p>
 The main temple of Shri Jagannath located in Puri is known as "Shri Mandir" (Bada Deula). This temple is built on the Nilagiri mountain by the sea shore, and hence this place is also called Nilachal. According to ancient scriptures and Puranas, it is believed that there once stood a high mountain called Nilagiri. However, that mountain no longer exists. Due to the cycle of time (Kalachakra) and natural changes, it has vanished. The height of this temple is 65 meters (214 feet). It is constructed on approximately 400,000 square feet (37,000 square meters) of land in Puri. It is considered one of the tallest temples in India.<br><br>
 
