@@ -391,9 +391,95 @@ text-align: start;
           color: #a70037;
             font-size: 19px;
         }
+
+      h2 {
+      cursor: pointer;
+      background: linear-gradient(135deg, #a70037 0%, #b90000 100%);
       
-    </style>
-  <h2>ଶ୍ରୀ ଜଗନ୍ନାଥ : ଏକ ଅଦ୍ଭୁତ ରୂପର ପରିଚୟ</h2>
+      color: white;
+      padding: 15px 20px 42px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.4s ease, transform 0.3s ease;
+      height: 16px;
+      text-align: center;
+    }
+
+    h2:hover {
+      background: linear-gradient(135deg, #a70037 0%, #b90000 100%);
+      transform: scale(1.02);
+    }
+
+    #hidden-content1, #hidden-content2 {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff8e1;
+      border-left: 5px solid #ffb300;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      line-height: 1.8;
+      transition: all 0.5s ease-in-out;
+    }
+
+    #hidden-content1.show, #hidden-content2.show {
+      display: block;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+  h2 {
+    background: #f3d98d;
+    padding: 16px 22px 42px;
+    margin: 20px 0 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(91, 62, 15, 0.3);
+    transition: background 0.3s ease, color 0.3s ease;
+    user-select: none;
+    color: #6a4f13;
+  }
+  h2:hover {
+    background: #e7c08a;
+    color: #6a4f13;
+  }
+
+  /* Content Box */
+  .content {
+    display: none;
+    background: #fff8e1;
+    border-left: 5px solid #c7a55a;
+    padding: 18px 24px;
+    border-radius: 0 12px 12px 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(199, 165, 90, 0.25);
+    font-size: 1.1rem;
+  }
+
+  /* Paragraph styling */
+  p {
+    margin: 0 0 12px;
+    color: #4a3c2a;
+  }
+</style>
+
+
+  <h2 onclick="toggleParagraph1()" style="color:#333;">ଶ୍ରୀ ଜଗନ୍ନାଥ : ଏକ ଅଦ୍ଭୁତ ରୂପର ପରିଚୟ</h2>
+  <script>
+  function toggleParagraph1() {
+    var content = document.getElementById("hidden-content1");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+</script>
+<div id="hidden-content1" style="display: none; margin-top: 20px;">
   <p>
 ମହାପ୍ରଭୁ ଶ୍ରୀଜଗନ୍ନାଥଙ୍କ ରୂପ ଏପରି ହେବା ପଛରେ ଗୋଟିଏ କାହାଣୀ ରହିଛି। ଦ୍ୱାପର ଯୁଗର କଥା। ଦିନେ ଶ୍ରୀକୃଷ୍ଣ ଶୋଇଥିବା ବେଳେ, ତାଙ୍କର ଦୁଇ ଜଣ ପତ୍ନୀ ଦେବୀ ରୁକ୍ମିଣୀ ଓ ଦେବୀ ସତ୍ୟଭାମା ପ୍ରଭୁଙ୍କ ପାଖରେ ବସିଥିଲେ। ସେମାନେ ଜାଣିବାକୁ ଚାହୁଁଥିଲେ ଯେ ପ୍ରଭୁ ଶ୍ରୀକୃଷ୍ଣ ଉଠିବା ପରେ ପ୍ରଥମେ କାହାର ନାମ ଧରନ୍ତି। ସେମାନେ ଚାହୁଁଥିଲେ ଯେ ଆଜି ପ୍ରଭୁ ପ୍ରଥମେ ସେ ଦୁହିଁଙ୍କ ନାମ ଧରନ୍ତୁ। କିନ୍ତୁ ଶ୍ରୀକୃଷ୍ଣ ଉଠିବା ପରେ ପ୍ରଥମେ ରାଧାରାଣୀଙ୍କ ନାମ ଧରିଲେ।<br><br>
 
@@ -405,7 +491,18 @@ text-align: start;
 
 ତେଣୁ ଜଗନ୍ନାଥଙ୍କୁ ଅଧାଗଢ଼ା ଦିଅଁ କହିବା ଭୁଲ। ତାଙ୍କର ହାତ ଅସମ୍ପୂର୍ଣ୍ଣ ନୁହେଁ, ଏହା ଅସୀମିତ ଯାହାର କି ସୀମା ନାହିଁ। ସେ ସମସ୍ତଙ୍କୁ କୋଳେଇ ନେବା ପାଇଁ ନିଜ ହାତକୁ ଅନନ୍ତ ଦୂର ଯାଏଁ ବିସ୍ତୃତ କରିଛନ୍ତି। ସେ ଅସମ୍ପୂର୍ଣ୍ଣଙ୍କ ଭିତରେ ସମ୍ପୂର୍ଣ୍ଣ, ଆକାର ଭିତରେ ନିରାକାର। ତାଙ୍କର ନା ଆଦି ଅଛି ନା ଅନ୍ତ ଅଛି। ତାଙ୍କର ଏହି ଅପୂର୍ଣ୍ଣତା ହିଁ ତାଙ୍କୁ ପୂର୍ଣ୍ଣତା ପ୍ରଦାନ କରେ। ସେ ପ୍ରେମ ଓ ଭକ୍ତିର ପ୍ରତୀକ ଜଗତର ନାଥ ଶ୍ରୀଜଗନ୍ନାଥ।</p>
 
-    <h2>ଶ୍ରୀ ମନ୍ଦିର : ଭକ୍ତ ଓ ଭଗବାନଙ୍କ ପବିତ୍ର ମିଳନ ସ୍ଥଳ</h2>
+    <h2 onclick="toggleParagraph2()" style="color:#333;">ଶ୍ରୀ ମନ୍ଦିର : ଭକ୍ତ ଓ ଭଗବାନଙ୍କ ପବିତ୍ର ମିଳନ ସ୍ଥଳ</h2>
+<script>
+  function toggleParagraph2() {
+    var content = document.getElementById("hidden-content2");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+</script>
+<div id="hidden-content2" style="display: none; margin-top: 20px;">
   <p>
       ପୁରୀରେ ଅବସ୍ଥିତ ଶ୍ରୀ ଜଗନ୍ନାଥଙ୍କ ମୁଖ୍ୟ ମନ୍ଦିରକୁ ଶ୍ରୀ ମନ୍ଦିର (ବଡ ଦେଉଳ) କୁହାଯାଏ। ଏହି ମନ୍ଦିର ସମୁଦ୍ର କୂଳରେ ଥିବା ନୀଳଗିରି ପର୍ବତ ଉପରେ ନିର୍ମିତ ହେଇଥିବାରୁ ଏହି ସ୍ଥାନକୁ ନୀଳାଚଳ ବୋଲି ମଧ୍ୟ କୁହାଯାଏ। ପୁରାତନ ଶାସ୍ତ୍ର ଏବଂ ପୁରାଣ ଅନୁଯାୟୀ, ବିଶ୍ୱାସ କରାଯାଏ ଯେ, ପୂର୍ବେ ସେଠାରେ ନୀଳଗିରି ନାମକ ଗୋଟିଏ ଉଚ୍ଚ ପାହାଡ଼ ଥିଲା। କିନ୍ତୁ ଏବେ ସେ ପର୍ବତ ଆଉ ନାହିଁ। କାଳଚକ୍ର ଓ ପ୍ରାକୃତିକ ପରିବର୍ତ୍ତନ ଦ୍ୱାରା ଏହା ଲୋପ ପାଇଯାଇଛି। ଏହି ମନ୍ଦିର ପୁରୀର ପ୍ରାୟ ୪,୦୦,୦୦୦ ବର୍ଗ ଫୁଟ୍ (୩୭,୦୦୦ ବର୍ଗ ମିଟର) ଭୂମିରେ ନିର୍ମିତ। ଏହାର ଉଚ୍ଚତା ୬୫ ମିଟର (୨୧୪ ଫୁଟ୍)। ଏହାକୁ ଭାରତର ସବୁଠୁ ଉଚ୍ଚ ମନ୍ଦିରଗୁଡ଼ିକ ମଧ୍ୟରେ ଗଣାଯାଏ।<br><br>
       
