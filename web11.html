@@ -272,6 +272,48 @@
   box-shadow: 0 0 15px #ffd9e6, 0 0 30px #ffd9e6;
 }
 
+button {
+ display: flex;
+ height: 2.86em;
+ width: 100px;
+ align-items: center;
+ justify-content: center;
+ background-color: #eeeeee4b;
+ border-radius: 8px;
+ letter-spacing: 1px;
+ transition: all 0.2s linear;
+ cursor: pointer;
+ border: none;
+ font-size: 16px;
+ font-weight: 700;
+ background: linear-gradient(135deg, #ffb300, #7c0000);
+ margin-left: 0;
+}
+
+button > svg {
+ margin-right: 5px;
+ margin-left: 5px;
+ font-size: 20px;
+ transition: all 0.4s ease-in;
+ font-weight: 700;
+}
+
+button:hover > svg {
+ font-size: 1.2em;
+ transform: translateX(-5px);
+}
+
+button:hover {
+ transform: translateY(-2px);
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* aligns button to the left */
+  padding-left: 10px; /* optional, thoda spacing */
+}
+
     /* Responsive */
     @media (max-width: 480px) {
       .music-player {
@@ -282,9 +324,17 @@
         max-width: 140px;
       }
     }
+    
   </style>
 </head>
 <body>
+
+   <div class="button-container">
+<button>
+  <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
+  <span>Back</span>
+</button></div>
+
   <div class="album-cover">
     <div class="swiper">
       <div class="swiper-wrapper">
