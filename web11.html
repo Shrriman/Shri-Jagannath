@@ -213,6 +213,60 @@
       outline: none;
     }
 
+    /* === Glowing Divine Progress Bar === */
+#progress {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  appearance: none;
+  background: linear-gradient(90deg, #ffdde1, #ee9ca7, #e96443);
+  box-shadow: 0 0 8px rgba(255, 183, 197, 0.7);
+  cursor: pointer;
+  margin-bottom: 32px;
+  -webkit-appearance: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#progress:hover {
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.8);
+}
+
+/* Webkit Slider Thumb (Chrome, Edge) */
+#progress::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff7e6, #ffd6d6);
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px #ffb3ba, 0 0 20px #ffb3ba;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#progress::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #ffd9e6, 0 0 30px #ffd9e6;
+}
+
+/* Firefox Thumb */
+#progress::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff7e6, #ffd6d6);
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px #ffb3ba, 0 0 20px #ffb3ba;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#progress::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #ffd9e6, 0 0 30px #ffd9e6;
+}
+
     /* Responsive */
     @media (max-width: 480px) {
       .music-player {
