@@ -472,6 +472,14 @@
     };
 
     playPauseBtn.addEventListener("click", togglePlayPause);
+
+    audioPlayer.addEventListener("ended", () => {
+  currentSongIndex++;
+  if (currentSongIndex >= songs.length) currentSongIndex = 0;
+  audioPlayer.src = songs[currentSongIndex];
+  audioPlayer.play();
+});
+
   </script>
 </body>
 </html>
