@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divine Bhajan Playlist Player</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  
+  <style>
+    /* === Reset & Root === */
+    :root {
+      --primary-clr: #e4e4e5;
+      --accent-clr: #eb0b0b;
+      --background-blur: rgba(28, 22, 37, 0.6);
+      --control-bg: rgba(163, 162, 164, 0.3);
+    }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+    }
+    body {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/8727c9b1-be21-4932-a221-4257b59a74dd) no-repeat center/cover;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      animation: slidein 120s infinite alternate;
+      padding: 20px;
+      color: var(--primary-clr);
+    }
+    @keyframes slidein {
+      0%, 100% {
+        background-position: 20% 0%;
+        background-size: 3400px;
+      }
+      50% {
+        background-position: 100% 0%;
+        background-size: 2400px;
+      }
+    }
+
+    /* === Album Cover Slider === */
+    .album-cover {
+      width: 90vw;
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+    .swiper {
+      width: 100%;
+      padding: 40px 0 80px;
+    }
+    .swiper-slide {
+      position: relative;
+      max-width: 220px;
+      aspect-ratio: 1/1;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease-out;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      object-fit: cover;
+      -webkit-box-reflect: below -5px linear-gradient(transparent, transparent, rgba(0,0,0,0.4));
+      transform-origin: center;
+      transform: perspective(800px);
+      transition: transform 0.3s ease-out;
+      user-select: none;
+      pointer-events: none;
+    }
+    .swiper-slide-active:hover img {
+      transform: perspective(800px) scale(1.05);
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background-color: var(--background-blur);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      /* removed YouTube icon so keeping overlay hidden */
+      pointer-events: none;
+    }
+    .swiper-slide:hover .overlay,
+    .swiper-slide-active .overlay {
+      opacity: 0; /* keep overlay hidden as no icon */
+    }
+
+    /* === Music Player === */
+    .music-player {
+      width: 90vw;
+      max-width: 400px;
+      background: var(--background-blur);
+      border-radius: 20px;
+      padding: 25px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: center;
+      user-select: none;
+    }
+    .music-player h1 {
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+    .music-player p {
+      font-weight: 400;
+      opacity: 0.7;
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+    }
+
+    /* Progress Bar */
+    #progress {
+      width: 100%;
+      height: 8px;
+      border-radius: 5px;
+      appearance: none;
+      background: rgba(163, 162, 164, 0.4);
+      cursor: pointer;
+      margin-bottom: 32px;
+      -webkit-appearance: none;
+      transition: background 0.3s ease;
+    }
+    #progress:hover {
+      background: rgba(163, 162, 164, 0.7);
+    }
+    #progress::-webkit-slider-thumb {
+      appearance: none;
+      -webkit-appearance: none;
+      background: rgba(163, 162, 164, 0.9);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 3px solid var(--primary-clr);
+      box-shadow: 0 6px 10px rgba(5, 36, 28, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #progress::-webkit-slider-thumb:hover,
+    #progress::-webkit-slider-thumb:focus {
+      background: rgba(163, 162, 164, 1);
+      box-shadow: 0 0 12px var(--primary-clr);
+    }
+    /* Firefox thumb */
+    #progress::-moz-range-thumb {
+      background: rgba(163, 162, 164, 0.9);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 3px solid var(--primary-clr);
+      box-shadow: 0 6px 10px rgba(5, 36, 28, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #progress::-moz-range-thumb:hover,
+    #progress::-moz-range-thumb:focus {
+      background: rgba(163, 162, 164, 1);
+      box-shadow: 0 0 12px var(--primary-clr);
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+    .controls button {
+      width: 52px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      border: none;
+      background: var(--control-bg);
+      color: var(--primary-clr);
+      font-size: 1.3rem;
+      box-shadow: 0 10px 20px rgba(5, 36, 28, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .controls button:hover,
+    .controls button:focus-visible {
+      transform: scale(0.95);
+      outline: none;
+    }
+    .controls button.play-pause-btn {
+      font-size: 1.7rem;
+      background: var(--accent-clr);
+      box-shadow: 0 10px 30px rgba(235, 11, 11, 0.7);
+      color: white;
+      transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+    .controls button.play-pause-btn:hover,
+    .controls button.play-pause-btn:focus-visible {
+      transform: scale(1.1);
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .music-player {
+        width: 95vw;
+        padding: 20px;
+      }
+      .swiper-slide {
+        max-width: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="album-cover">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slides will be inserted dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="music-player">
+    <h1 id="song-title">Loading...</h1>
+    <p id="artist-name">Please wait</p>
+
+    <audio id="song" preload="metadata"></audio>
+
+    <input type="range" id="progress" value="0" min="0" step="0.01" />
+
+    <div class="controls">
+      <button class="backward" aria-label="Previous Song"><i class="fa-solid fa-backward"></i></button>
+      <button class="play-pause-btn" aria-label="Play/Pause"><i id="controlIcon" class="fa-solid fa-play"></i></button>
+      <button class="forward" aria-label="Next Song"><i class="fa-solid fa-forward"></i></button>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    
+    const songs = [
+      {
+        title: "Ram Aayenge 🚩",
+        name: "By Shobhit Asthana",
+        source: "c:\Users\MAA\Music\Shehejadi-O-Shehejadi---Humane-Sagar.mp3",
+        cover: "https://w0.peakpx.com/wallpaper/202/932/HD-wallpaper-shree-ram-sun-background-lord-ram-god.jpg"
+      },
+      {
+        title: "ADHARAM MADHURAM",
+        name: "By Shobhit Asthana",
+        source: "c:\Users\MAA\Music\Saraga-Parite-Sunara-Sarite-Dela-Ta-Suna-Para-Jhadi-(OdiaFresh.Com).mp3",
+        cover: "https://www.shyamparivar.com/uploads/gallery/best-shri-krishna-wallpaper-hd.jpg"
+      },
+      {
+        title: "Keejo Kesari Ke Laal",
+        name: "By Shobhit Asthana",
+        source: "c:\Users\MAA\Music\Mu-Eka-Tumara---Title-Song-(OdiaFresh.Com).mp3",
+        cover: "https://qph.cf2.quoracdn.net/main-qimg-2ff30e6942579741b39a9bfa4462285f"
+      },
+      {
+        title: "Shiv Tandav Stotram",
+        name: "By Shobhit Asthana",
+        source: "c:\Users\MAA\Music\Palake-Nua-Sapana-Basa-Bandhuthila-Are-Re-Re-Mora-Nida-Haji-Gala-(OdiaFresh.Com).mp3",
+        cover: "https://i.pinimg.com/736x/3f/61/d3/3f61d391f49a3996c1c323fb809f7a95.jpg"
+      },
+      {
+        title: "Ganpati Bappa Morya 🙏🙏🚩",
+        name: "By Shobhit Asthana",
+        source: "c:\Users\MAA\Music\Hey-Jaga-(OdiaFresh.Com).mp3",
+        cover: "https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/3275/1393275-i-03928152b533"
+      },
+      {
+        title: "Shakti Hai Bhakti Hai",
+        name: "By Shobhit Asthana",
+        source: "c:\Users\MAA\Music\Maa-Toh-Bina-(OdiaFresh.Com)_1_1_1_1_1.mp3",
+        cover: "https://w0.peakpx.com/wallpaper/394/1015/HD-wallpaper-dhyan-me-lin-vishnu-bhagwan-vishnu-bhagwan-bhakti.jpg"
+      },
+    ];
+
+    const swiperWrapper = document.querySelector(".swiper-wrapper");
+    const songTitle = document.getElementById("song-title");
+    const artistName = document.getElementById("artist-name");
+    const songAudio = document.getElementById("song");
+    const progressBar = document.getElementById("progress");
+    const controlIcon = document.getElementById("controlIcon");
+    const playPauseBtn = document.querySelector(".play-pause-btn");
+    const forwardBtn = document.querySelector(".forward");
+    const backwardBtn = document.querySelector(".backward");
+
+    // Start with the middle song
+    let currentSongIndex = Math.floor(songs.length / 2);
+    let swiper;
+
+    function createSlides() {
+      songs.forEach((song, index) => {
+        const slide = document.createElement("div");
+        slide.classList.add("swiper-slide");
+        slide.innerHTML = `
+          <img src="${song.cover}" alt="${song.title} Cover" />
+        `;
+        slide.addEventListener("click", () => {
+          if (currentSongIndex !== index) {
+            currentSongIndex = index;
+            loadSong(currentSongIndex);
+            playSong();
+            swiper.slideTo(index);
+          }
+        });
+        swiperWrapper.appendChild(slide);
+      });
+    }
+
+    function loadSong(index) {
+      const song = songs[index];
+      songTitle.textContent = song.title;
+      artistName.textContent = song.name;
+      songAudio.src = song.source;
+      progressBar.value = 0;
+      progressBar.max = 0;
+    }
+
+    function playSong() {
+      songAudio.play().catch(err => {
+        console.log("Play prevented:", err);
+      });
+      controlIcon.classList.replace("fa-play", "fa-pause");
+    }
+
+    function pauseSong() {
+      songAudio.pause();
+      controlIcon.classList.replace("fa-pause", "fa-play");
+    }
+
+    function togglePlayPause() {
+      if (songAudio.paused) {
+        playSong();
+      } else {
+        pauseSong();
+      }
+    }
+
+    songAudio.addEventListener("timeupdate", () => {
+      if (!songAudio.paused) {
+        progressBar.value = songAudio.currentTime;
+      }
+    });
+
+    songAudio.addEventListener("loadedmetadata", () => {
+      progressBar.max = songAudio.duration;
+    });
+
+    progressBar.addEventListener("input", () => {
+      songAudio.currentTime = progressBar.value;
+    });
+
+    progressBar.addEventListener("change", () => {
+      playSong();
+    });
+
+    forwardBtn.addEventListener("click", () => {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      loadSong(currentSongIndex);
+      playSong();
+      swiper.slideTo(currentSongIndex);
+    });
+
+    backwardBtn.addEventListener("click", () => {
+      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+      loadSong(currentSongIndex);
+      playSong();
+      swiper.slideTo(currentSongIndex);
+    });
+
+    function initSwiper() {
+      swiper = new Swiper(".swiper", {
+        effect: "coverflow",
+        centeredSlides: true,
+        initialSlide: currentSongIndex, // start with middle song
+        slidesPerView: "auto",
+        allowTouchMove: true,
+        spaceBetween: 40,
+        coverflowEffect: {
+          rotate: 25,
+          stretch: 0,
+          depth: 50,
+          modifier: 1,
+          slideShadows: false,
+        },
+      });
+    }
+
+    window.onload = () => {
+      createSlides();
+      initSwiper();
+      loadSong(currentSongIndex);
+      playSong();  // auto play middle song on load
+    };
+
+    playPauseBtn.addEventListener("click", togglePlayPause);
+  </script>
+</body>
+</html>
