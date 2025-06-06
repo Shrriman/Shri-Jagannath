@@ -699,41 +699,6 @@
   audioPlayer.src = songs[currentSongIndex];
   audioPlayer.play();
 });
-
-    // 🎵 Playlist of songs
-const playlist = [
-  { title: "Jagannath Bhajan 1", src: "songs/bhajan1.mp3" },
-  { title: "Jagannath Bhajan 2", src: "songs/bhajan2.mp3" },
-  { title: "Jagannath Bhajan 3", src: "songs/bhajan3.mp3" }
-];
-
-let currentIndex = 0;
-const audio = document.getElementById('audioPlayer');
-const title = document.getElementById('currentSongTitle');
-
-// 🎶 Function to load and play a song
-function loadSong(index) {
-  if (index < playlist.length) {
-    audio.src = playlist[index].src;
-    title.textContent = playlist[index].title;
-    audio.play();
-  }
-}
-
-// ✅ Load first song on page load
-window.addEventListener('load', () => {
-  loadSong(currentIndex);
-});
-
-// 🔁 When song ends, play next song
-audio.addEventListener('ended', () => {
-  currentIndex++;
-  if (currentIndex < playlist.length) {
-    loadSong(currentIndex);
-  } else {
-    title.textContent = "Bhajan samapt ho gaya 🙏";
-  }
-});
     
   </script>
 </body>
