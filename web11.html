@@ -410,19 +410,18 @@
       </div>
     </div>
   </div>
-
+  
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Baloo+2&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
     }
 
-    /* Intro Fullscreen Splash */
+    /* Fullscreen intro */
     #introScreen {
       position: fixed;
       top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100vw; height: 100vh;
       background: linear-gradient(135deg, #fff3e0, #ffd699);
       z-index: 1000;
       display: flex;
@@ -438,6 +437,11 @@
       animation: fadeInOut 3s ease forwards;
       pointer-events: none;
       user-select: none;
+      text-align: center;
+    }
+
+    #introScreen span {
+      white-space: nowrap;
     }
 
     @keyframes fadeInOut {
@@ -447,38 +451,34 @@
       100% { opacity: 0; visibility: hidden; }
     }
 
-    #introScreen span {
-      white-space: nowrap;
-    }
-
     /* Sticky Header */
     #stickyHeader {
-      position: absolute;
-      top: 13px;
-      left: 56%;
+      position: fixed;
+      top: 10px;
+      left: 50%;
       transform: translateX(-50%);
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 6px 18px 6px 100px; /* extra left space for back button */
+      padding: 10px 20px 10px 70px;
       font-family: 'Cinzel Decorative', cursive;
-      font-size: 1.6rem;
-      color: #b22222;
       background: linear-gradient(90deg, #fff3e0, #ffd699);
       border: 3px double #ff8c00;
-      border-radius: 18px;
+      border-radius: 16px;
       box-shadow: 0 0 22px rgba(255, 140, 0, 0.5);
-      text-shadow: 1.5px 1.5px 3px #ffa500cc;
+      text-shadow: 1px 1px 3px #ffa500cc;
+      color: #b22222;
       opacity: 0;
       pointer-events: none;
       user-select: none;
-      white-space: nowrap;
       z-index: 1100;
+      flex-direction: column;
+      text-align: left;
+      white-space: nowrap;
     }
 
     #stickyHeader img {
       position: absolute;
-      left: 12px;
+      left: 15px;
       top: 50%;
       transform: translateY(-50%);
       width: 42px;
@@ -494,20 +494,23 @@
     @media (max-width: 480px) {
       #stickyHeader {
         padding-left: 61px;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
       }
     }
   </style>
+</head>
+<body>
 
-  <!-- Fullscreen intro -->
+  <!-- Fullscreen Intro -->
   <div id="introScreen">
-    <span><center>🌺Hanumat</center><center>Bhakti</center><center>Mala🌺</center></span>
+    <span>🌺Hanumat Bhakti Mala🌺</span>
   </div>
 
-  <!-- Fixed Header after intro -->
+  <!-- Sticky Header -->
   <div id="stickyHeader">
-    <img src="https://i.imgur.com/F77TH0h.png" alt="Hanuman Ji Bhakti" />
-    <span>Hanumat Bhakti Mala</span>
+    <img src="https://i.imgur.com/F77TH0h.png" alt="Hanuman Ji" />
+    <div>🌺Hanumat</div>
+    <div>Bhakti Mala🌺</div>
   </div>
 
   <script>
@@ -519,6 +522,10 @@
       sticky.style.pointerEvents = 'auto';
     }, 3000);
   </script>
+
+</body>
+</html>
+  
   
   <div class="music-player">
     <h1 id="song-title">Loading...</h1>
