@@ -410,40 +410,41 @@
       </div>
     </div>
   </div>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Baloo+2&display=swap" rel="stylesheet" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hanumat Bhakti Mala</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
     }
 
-    @keyframes fadeInOut {
-      0% { opacity: 0; }
-      20% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
+    body {
+      margin: 0;
+      background: #fff8e7;
+      height: 200vh;
+      font-family: 'Cinzel Decorative', cursive;
     }
-    
-    /* Sticky Header (Transparent + Underline) */
+
+    /* Sticky Heading */
     #stickyHeader {
       position: fixed;
-      top: 7px;
+      top: 10px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       align-items: center;
       padding: 10px 20px 10px 70px;
-      font-family: 'Cinzel Decorative', cursive;
-      color: #8f0000;
-      opacity: 0;
-      pointer-events: none;
-      user-select: none;
-      z-index: 1100;
-      flex-direction: column;
-      white-space: nowrap;
       background: transparent;
       border: none;
       box-shadow: none;
+      color: #8f0000;
+      flex-direction: column;
+      white-space: nowrap;
+      z-index: 1000;
     }
 
     #stickyHeader div {
@@ -462,24 +463,23 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      border: 2px solid #b22222;
+      border: 2px solid #8f0000;
       box-shadow: 0 0 8px rgba(178, 34, 34, 0.7);
       object-fit: cover;
-      user-select: none;
-      pointer-events: none;
     }
 
     @media (max-width: 480px) {
       #stickyHeader {
         padding-left: 61px;
       }
+
       #stickyHeader div {
         font-size: 1.4rem;
       }
     }
   </style>
 
-  <!-- Sticky Header -->
+  <!-- Sticky Header Only -->
   <div id="stickyHeader">
     <img src="https://i.imgur.com/F77TH0h.png" alt="Hanuman Ji" />
     <div>🌺Hanumat</div>
