@@ -583,20 +583,23 @@
     const langBtn = document.getElementById("lang-btn");
     const popup = document.getElementById("lang-popup");
 
-    langBtn.addEventListener("click", () => {
+      langBtn.addEventListener("click", () => {
       popup.classList.toggle("show");
 
       if (popup.classList.contains("show")) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "auto";
-      }
+        document.body.style.overflowX = "auto";   // Horizontal scroll allowed
+        document.body.style.overflowY = "hidden"; // Vertical scroll blocked
+       } else {
+        document.body.style.overflowX = "auto";   // Normal horizontal scroll
+        document.body.style.overflowY = "hidden";   // Vertical scroll allowed (ya apne hisaab se)
+       }
     });
-
+    
     window.addEventListener("click", function (e) {
       if (!popup.contains(e.target) && !langBtn.contains(e.target)) {
         popup.classList.remove("show");
-        document.body.style.overflow = "auto";
+        document.body.style.overflowX = "auto";
+        document.body.style.overflowY = "hidden";
       }
     });
     
