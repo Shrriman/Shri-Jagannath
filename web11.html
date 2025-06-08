@@ -410,6 +410,147 @@
     </div>
   </div>
 
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Baloo+2&display=swap" rel="stylesheet" />
+  <style>
+    /* Basic reset */
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Container for center heading */
+    #introScreen {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1000;
+      pointer-events: none;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      animation: scaleGlowPulse 3s ease forwards;
+      font-family: 'Cinzel Decorative', cursive;
+      color: #b22222;
+      font-size: 4rem;
+      text-shadow:
+        0 0 12px #ff4500cc,
+        0 0 20px #ff6347bb,
+        0 0 30px #ff4500aa;
+    }
+
+    #introScreen .icon {
+      font-size: 3.8rem;
+      animation: iconPulse 3s infinite ease-in-out;
+    }
+
+    /* Sticky header after animation */
+    #stickyHeader {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 6px 18px 6px 70px; /* left padding for image */
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.6rem;
+      color: #b22222;
+      background: linear-gradient(90deg, #fff3e0, #ffd699);
+      border: 3px double #ff8c00;
+      border-radius: 18px;
+      box-shadow: 0 0 22px rgba(255, 140, 0, 0.5);
+      text-shadow: 1.5px 1.5px 3px #ffa500cc;
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+      transition: opacity 0.8s ease;
+      z-index: 1100;
+    }
+    
+    #stickyHeader img {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid #b22222;
+      box-shadow: 0 0 8px rgba(178, 34, 34, 0.7);
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Animations */
+    @keyframes scaleGlowPulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+        text-shadow: none;
+        color: #b22222;
+      }
+      20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+        text-shadow:
+          0 0 20px #ff4500cc,
+          0 0 30px #ff6347bb,
+          0 0 40px #ff4500aa;
+      }
+      60% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        text-shadow:
+          0 0 12px #ff4500cc,
+          0 0 20px #ff6347bb,
+          0 0 30px #ff4500aa;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -120%) scale(0.6);
+      }
+    }
+
+    @keyframes iconPulse {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 6px #ff4500cc);
+      }
+      50% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 14px #ff6347cc);
+      }
+    }
+  </style>
+
+  <!-- Center big heading with glowing animation -->
+  <div id="introScreen" aria-label="Intro Heading">
+    <span>🌺Hanumat Bhakti Mala🌺</span>
+  </div>
+
+  <!-- Sticky header with Hanuman photo -->
+  <div id="stickyHeader" role="banner">
+    <img src="https://i.imgur.com/F77TH0h.png" alt="Hanuman Ji Bhakti" />
+    <span>Hanumat Bhakti Mala</span>
+  </div>
+
+  <script>
+    // After 3 seconds hide introScreen and show stickyHeader
+    setTimeout(() => {
+      const intro = document.getElementById('introScreen');
+      const sticky = document.getElementById('stickyHeader');
+
+      intro.style.display = 'none';
+      sticky.style.opacity = '1';
+      sticky.style.pointerEvents = 'auto';
+    }, 3000);
+  </script>
+
   <div class="music-player">
     <h1 id="song-title">Loading...</h1>
     <p id="artist-name">Please Wait</p>
