@@ -412,41 +412,45 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Baloo+2&display=swap" rel="stylesheet" />
   <style>
-    /* Basic reset */
     * {
       box-sizing: border-box;
     }
-    
-    /* Container for center heading */
+
+    /* Intro Fullscreen Splash */
     #introScreen {
       position: fixed;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #fff3e0, #ffd699);
       z-index: 1000;
-      pointer-events: none;
-      user-select: none;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
-      animation: scaleGlowPulse 3s ease forwards;
       font-family: 'Cinzel Decorative', cursive;
-      color: #b22222;
       font-size: 4rem;
+      color: #b22222;
       text-shadow:
         0 0 12px #ff4500cc,
         0 0 20px #ff6347bb,
         0 0 30px #ff4500aa;
-      background: radial-gradient(circle at center, #fff8e7, #ffecd1);
+      animation: fadeInOut 3s ease forwards;
+      pointer-events: none;
+      user-select: none;
     }
 
-    #introScreen .icon {
-      font-size: 3.8rem;
-      animation: iconPulse 3s infinite ease-in-out;
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
     }
 
-    /* Sticky header after animation */
+    #introScreen span {
+      white-space: nowrap;
+    }
+
+    /* Sticky Header */
     #stickyHeader {
       position: fixed;
       top: 10px;
@@ -455,7 +459,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 6px 18px 6px 70px; /* left padding for image */
+      padding: 6px 18px 6px 100px; /* extra left space for back button */
       font-family: 'Cinzel Decorative', cursive;
       font-size: 1.6rem;
       color: #b22222;
@@ -468,10 +472,9 @@
       pointer-events: none;
       user-select: none;
       white-space: nowrap;
-      transition: opacity 0.8s ease;
       z-index: 1100;
     }
-    
+
     #stickyHeader img {
       position: absolute;
       left: 12px;
@@ -487,71 +490,35 @@
       pointer-events: none;
     }
 
-    /* Animations */
-    @keyframes scaleGlowPulse {
-      0% {
-        transform: translate(-50%, -50%) scale(0.5);
-        opacity: 0;
-        text-shadow: none;
-        color: #b22222;
-      }
-      20% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.1);
-        text-shadow:
-          0 0 20px #ff4500cc,
-          0 0 30px #ff6347bb,
-          0 0 40px #ff4500aa;
-      }
-      60% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-        text-shadow:
-          0 0 12px #ff4500cc,
-          0 0 20px #ff6347bb,
-          0 0 30px #ff4500aa;
-      }
-      100% {
-        opacity: 0;
-        transform: translate(-50%, -120%) scale(0.6);
-      }
-    }
-
-    @keyframes iconPulse {
-      0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 6px #ff4500cc);
-      }
-      50% {
-        transform: scale(1.15);
-        filter: drop-shadow(0 0 14px #ff6347cc);
+    @media (max-width: 480px) {
+      #stickyHeader {
+        padding-left: 80px;
+        font-size: 1.3rem;
       }
     }
   </style>
 
-  <!-- Center big heading with glowing animation -->
-  <div id="introScreen" aria-label="Intro Heading">
+  <!-- Fullscreen intro -->
+  <div id="introScreen">
     <span>🌺Hanumat Bhakti Mala🌺</span>
   </div>
 
-  <!-- Sticky header with Hanuman photo -->
-  <div id="stickyHeader" role="banner">
+  <!-- Fixed Header after intro -->
+  <div id="stickyHeader">
     <img src="https://i.imgur.com/F77TH0h.png" alt="Hanuman Ji Bhakti" />
     <span>Hanumat Bhakti Mala</span>
   </div>
 
   <script>
-    // After 3 seconds hide introScreen and show stickyHeader
     setTimeout(() => {
       const intro = document.getElementById('introScreen');
       const sticky = document.getElementById('stickyHeader');
-
       intro.style.display = 'none';
       sticky.style.opacity = '1';
       sticky.style.pointerEvents = 'auto';
     }, 3000);
   </script>
-
+  
   <div class="music-player">
     <h1 id="song-title">Loading...</h1>
     <p id="artist-name">Please Wait</p>
