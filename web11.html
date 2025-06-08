@@ -417,44 +417,10 @@
       box-sizing: border-box;
     }
 
-    /* Fullscreen intro */
-    #introScreen {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: linear-gradient(135deg, #fff3e0, #ffd699);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 4rem;
-      color: #b22222;
-      text-shadow:
-        0 0 12px #ff4500cc,
-        0 0 20px #ff6347bb,
-        0 0 30px #ff4500aa;
-      animation: fadeInOut 3s ease forwards;
-      pointer-events: none;
-      user-select: none;
-      text-align: center;
-    }
-
-    #introScreen span {
-      white-space: nowrap;
-    }
-
-    @keyframes fadeInOut {
-      0% { opacity: 0; }
-      20% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
-    }
-
     /* Sticky Header (Transparent + Underline) */
     #stickyHeader {
       position: fixed;
-      top: 10px;
+      top: 7px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -505,13 +471,6 @@
       }
     }
   </style>
-</head>
-<body>
-
-  <!-- Fullscreen Intro -->
-  <div id="introScreen">
-    <span><center>🌺Hanumat</center> <center>Bhakti</center> <center>Mala🌺</center></span>
-  </div>
 
   <!-- Sticky Header -->
   <div id="stickyHeader">
