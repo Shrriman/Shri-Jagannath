@@ -472,127 +472,133 @@
     <div>Bhakti Mala</div>
   </div>
 
-  
-  <div class = "li"><button id="lang-btn" class="lang-btn"><a><i class="fa fa-globe"></i></a></button></div>
+  <style>
+        .li {
+      padding: 12px 0;
+      list-style: none;
+      position: absolute;
+      right: 7px;
+      top: 25px;
+    }
 
-        <div class="lang-popup" id="lang-popup">
+    .li a i {
+      color: #ffd700;
+      font-size: 30px;
+      border-radius: 50%;
+      border: 3px solid #8f0000;
+      padding: 10px;
+      transition: 0.3s ease;
+      background-color: #1a0000;
+    }
+
+    .li a:hover i {
+      color: #ffffff;
+      text-shadow: 0 0 10px #ffffff;
+    }
+
+    .lang-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Bottom Pop-Up */
+    .lang-popup {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 100%);
+      width: 100%;
+      max-width: 280px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border-radius: 20px 20px 0 0;
+      padding: 25px;
+      transition: transform 0.4s ease;
+      z-index: 9999;
+    }
+
+    .lang-popup.show {
+      transform: translate(-50%, 0);
+    }
+
+    .popup-content {
+      text-align: center;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .popup-content h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #ffd700;
+    }
+
+    .popup-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .popup-options button {
+      background-color: #e9af00;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .popup-options button:hover {
+      background-color: #916c00;
+    }
+  </style>
+
+  <!-- Language Button -->
+  <div class="li">
+    <button id="lang-btn" class="lang-btn">
+      <a><i class="fa fa-globe"></i></a>
+    </button>
+  </div>
+
+  <!-- Popup Box -->
+  <div class="lang-popup" id="lang-popup">
     <div class="popup-content">
       <h3>🌺 Change Language</h3>
       <div class="popup-options">
-
         <button onclick="location.href='web8.html'">ଓଡ଼ିଆ</button>
         <button onclick="location.href='web10.html'">हिंदी</button>
       </div>
     </div>
   </div>
 
+  <!-- JavaScript -->
   <script>
     const langBtn = document.getElementById("lang-btn");
     const popup = document.getElementById("lang-popup");
 
     langBtn.addEventListener("click", () => {
       popup.classList.toggle("show");
-    });
 
-    window.addEventListener("click", function(e) {
-      if (!popup.contains(e.target) && !langBtn.contains(e.target)) {
-        popup.classList.remove("show");
+      if (popup.classList.contains("show")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
       }
     });
-  </script>
-  <style>
-        .li {
-          padding: 12px 0;
-          display: flex;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          display: flex;
-          display: inline-block;
-          margin: 0 15px;
-          position: absolute;
-          right: 7px;
-          top: 25px;
-        }
-          
-        .li a i {
-          color: #ffd700;
-          font-size: 30px;
-          margin-bottom: 4px;
-          display: block;
-          border-radius: 50%;
-          border: 3px solid #8f0000;
-          transition: 0.3s ease;
-        }
-        .li a:hover {
-          color: #ffffff;
-          text-shadow: 0 0 10px #ffffff;
-        }
 
-.lang-btn {
-  background-color: transparent;
-  padding: 0;
-  border-radius: 20px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-/* Bottom Pop-Up */
-.lang-popup {
-  position: fixed;
-  bottom: -100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 250px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  border-radius: 20px 20px 0 0;
-  padding: 25px;
-  transition: bottom 0.4s ease;
-  z-index: 999;
-}
-
-.lang-popup.show {
-  bottom: 0;
-}
-
-.popup-content {
-  text-align: center;
-  font-size: 16px;
-  color: #000;
-}
-
-.popup-content h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.popup-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.popup-options button {
-  background-color: #e9af00;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.popup-options button:hover {
-  background-color: #916c00;
-}
+    window.addEventListener("click", function (e) {
+      if (!popup.contains(e.target) && !langBtn.contains(e.target)) {
+        popup.classList.remove("show");
+        document.body.style.overflow = "auto";
+      }
+    });
     
-        </style>
+  </script>
 
 
   <div class="music-player">
