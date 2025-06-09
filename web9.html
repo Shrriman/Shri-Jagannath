@@ -146,70 +146,73 @@
           text-shadow: 0 0 10px #ffd700;
         }
 
-.lang-btn {
-  background-color: transparent;
-  padding: 0;
-  border-radius: 20px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
+    .lang-btn {
+      background-color: transparent;
+      padding: 0;
+      border-radius: 20px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
 
-/* Bottom Pop-Up */
-.lang-popup {
-  position: fixed;
-  bottom: -100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 250px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  border-radius: 20px 20px 0 0;
-  padding: 25px;
-  transition: bottom 0.4s ease;
-  z-index: 999;
-}
+    /* Bottom Pop-Up */
+    .lang-popup {
+      position: fixed;
+      bottom: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 250px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border-radius: 20px 20px 0 0;
+      padding: 40px 25px; /* increased padding for height */
+      transition: bottom 0.4s ease;
+      z-index: 999;
+    }
 
-.lang-popup.show {
-  bottom: 0;
-}
+    .lang-popup.show {
+      bottom: 0;
+    }
 
-.popup-content {
-  text-align: center;
-  font-size: 19px;
-  color: #000;
-}
+    .popup-content {
+      text-align: center;
+      font-size: 19px; /* larger message */
+      color: #000;
+      line-height: 1.8; /* more vertical space */
+      padding-bottom: 10px;
+    }
 
-.popup-content h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
+    .popup-content h3 {
+      font-size: 23px; /* larger heading */
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
 
-.popup-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+    .popup-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-.popup-options button {
-  background-color: #e9af00;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+    .popup-options button {
+      background-color: #e9af00;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-.popup-options button:hover {
-  background-color: #916c00;
-}
-            
+    .popup-options button:hover {
+      background-color: #916c00;
+    }
+
         </style>
 
         <div class="about-section">
