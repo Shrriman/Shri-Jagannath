@@ -623,143 +623,239 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
-    
-    const songs = [
+
+const songs = [
       {
         title: "ମୁଁ ତୋ ବଡ଼ ଦେଉଳର ପାରା",
-        name: "ଭିକାରୀ ବଳ",
+        name: "By Bhikari Bala",
         source: "music20.mp3",
         cover: "image7.jpg"
       },
       {
-        title: "ନନ୍ଦିଘୋଷ ତୋର ଅଟକିଗଲା",
-        name: "ବସନ୍ତ ପାତ୍ର",
+        title: "ତୋ ବାହୁଡ଼ାରେ",
+        name: "By Mohammad Aziz",
+        source: "music39.mp3",
+        cover: "image24.jpg"
+      },
+      {
+        title: "ଶ୍ରୀକ୍ଷେତ୍ର ବୋହୂ",
+        name: "By Namita Agrawal",
+        source: "music27.mp3",
+        cover: "image25.jpg"
+      },
+      {
+        title: "ମୋତେ ସିଂହ ଦୁଆରରୁ",
+        name: "By Mohammad Aziz",
+        source: "music31.mp3",
+        cover: "image26.jpg"
+      },
+      {
+        title: "ନନ୍ଦିଘୋଷ ତୋର",
+        name: "By Basant Patra",
         source: "music21.mp3",
         cover: "image14.jpeg"
       },
       {
-        title: "୨୦୧୨ ହେଇଯିବ ପାର",
-        name: "କୁମାର ବାପି",
-        source: "music1.mp3",
-        cover: "image20.jpg"
+        title: "ଥକାମନ ଚାଲ ଯିବା",
+        name: "By Namita Agrawal",
+        source: "music29.mp3",
+        cover: "image27.jpg"
       },
       {
         title: "ଆହେ ମଣିମା",
-        name: "ମହମ୍ମଦ ଅଜିଜ",
+        name: "By Mohammad Aziz",
         source: "music9.mp3",
         cover: "image13.jpg"
       },
       {
+        title: "ଆହାରେ ମୋ ପୁରୀ ଠାକୁର",
+        name: "By Kumar Bapi",
+        source: "music1.mp3",
+        cover: "image20.jpg"
+      },
+      {
+        title: "ଭୋକ ଲାଗିଲେ",
+        name: "By Mohammad Aziz",
+        source: "music36.mp3",
+        cover: "image28.jpg"
+      },
+      {
         title: "ଚାଲୁ ଚାଲୁ ମୁଁ",
-        name: "କୁମାର ବାପି",
+        name: "By Kumar Bapi",
         source: "music8.mp3",
         cover: "image19.jpeg"
       },
       {
+        title: "ମହାଲକ୍ଷ୍ମୀ କହୁଛନ୍ତି",
+        name: "By Mohammad Aziz",
+        source: "music35.mp3",
+        cover: "image29.jpg"
+      },
+      {
+        title: "ମାଆ ଦେଇଥିଲା",
+        name: "By Tapu Mishra",
+        source: "music33.mp3",
+        cover: "image30.jpeg"
+      },
+      {
         title: "ହେ ଜଗା",
-        name: "ସୌରଭ ଭରଦ୍ୱାଜ",
+        name: "By Sourav Bhardwaj",
         source: "music13.mp3",
         cover: "image9.jpg"
       },
       {
         title: "ମୁଁ ଚିଠି ଲେଖିଛି",
-        name: "କୁମାର ବାପି",
+        name: "By Kumar Bapi",
         source: "music12.mp3",
         cover: "image5.jpg"
       },
       {
         title: "ତୋ ବଡ଼ପଣକୁ ଧିକ୍",
-        name: "ସୌରଭ ଭରଦ୍ୱାଜ",
+        name: "By Sourav Bhardwaj",
         source: "music4.mp3",
         cover: "image3.jpg"
       },
       {
         title: "ଭାବର ସହରେ",
-        name: "କୁମାର ବାପି",
+        name: "By Kumar Bapi",
         source: "music7.mp3",
         cover: "image15.jpg"
       },
       {
         title: "ନୀଳାଚଳ ଧାମ",
-        name: "ଶ୍ରୀଚରଣ ମହାନ୍ତି",
+        name: "By Sricharan Mohanty",
         source: "music22.mp3",
         cover: "image10.jpg"
       },
       {
+        title: "ତତେ ନିଦରେ ନିଦରେ",
+        name: "By Anjali Mishra",
+        source: "music32.mp3",
+        cover: "image31.jpg"
+      },
+      {
         title: "ଯୋଗାଡ଼ି ରଖିଥା",
-        name: "କୁମାର ବାପି",
+        name: "By Kumar Bapi",
         source: "music15.mp3",
         cover: "image8.jpg"
       },
       {
         title: "ମୋ ଜଗା କାଳିଆ",
-        name: "ସୌରଭ ଭରଦ୍ୱାଜ",
+        name: "By Sourav Bhardwaj",
         source: "music19.mp3",
         cover: "image2.jpg"
       },
       {
         title: "ନିଃସ୍ଵ କର ହେ ମୋତେ",
-        name: "କୁମାର ବାପି",
+        name: "By Kumar Bapi",
         source: "music23.mp3",
-        cover: "image18.jpg"
+        cover: "image18.png.jpg"
+      },
+      {
+        title: "କାଳିଆରେ ତତେ ଚାହିଁଦେଲେ",
+        name: "By Anjali Mishra",
+        source: "music24.mp3",
+        cover: "image32.jpg"
       },
       {
         title: "ଗୁଣ୍ଡିଚା ରାଣୀ",
-        name: "ସୌରିନ ଭଟ୍ଟ",
+        name: "By Sourin Bhatt",
         source: "music11.mp3",
         cover: "image11.jpg"
       },
       {
         title: "ଯୁଗ ସମ୍ଭବ",
-        name: "କୁମାର ବାପି",
+        name: "By Kumar Bapi",
         source: "music16.mp3",
         cover: "image21.jpg"
       },
       {
         title: "ତୁ ଦେବତା ମୁଁ ମଣିଷ",
-        name: "ସୌରଭ ଭରଦ୍ୱାଜ",
+        name: "By Sourav Bhardwaj",
         source: "music6.mp3",
         cover: "image6.jpg"
       },
       {
         title: "ବଡ଼ଦାଣ୍ଡ ଧୂଳି",
-        name: "କୁମାର ବାପି",
+        name: "By Kumar Bapi",
         source: "music5.mp3",
         cover: "image4.jpg"
       },
       {
-        title: "ଦିନର ସୂରୁଜ ସୂରୁଜ",
-        name: "ମହମ୍ମଦ ଅଜିଜ",
+        title: "ଜଗତର ଜମିଦାର",
+        name: "By Sourav Bhardwaj",
+        source: "music26.mpeg",
+        cover: "image33.jpg"
+      },
+      {
+        title: "କାହ୍ନାରେ କାହ୍ନା",
+        name: "By Namita Agrawal",
+        source: "music25.mp3",
+        cover: "image34.jpg"
+      },
+      {
+        title: "ଦିନର ସୁରୂଜ",
+        name: "By Mohammad Aziz",
         source: "music10.mp3",
         cover: "image22.jpg"
       },
       {
         title: "ମହାବାହୁ",
-        name: "କୁମାର ବାପି",
+        name: "By Kumar Bapi",
         source: "music3.mp3",
         cover: "image1.jpg"
       },
       {
         title: "ତୁଣ୍ଡେ ଥାଉ ତୁମ ନାମ",
-        name: "ମହମ୍ମଦ ଅଜିଜ",
+        name: "By Mohammad Aziz",
         source: "music14.mp3",
         cover: "image23.jpg"
       },
       {
         title: "ଆକାଶ ଠାରୁ ବେଶୀ",
-        name: "କୁମାର ବାପି",
+        name: "By Kumar Bapi",
         source: "music2.mp3",
         cover: "image17.jpeg"
       },
       {
+        title: "ମୁଁ ପାପ ତୁମେ ପୁଣ୍ୟ",
+        name: "By Mohammad Aziz",
+        source: "music34.mp3",
+        cover: "image35.jpg"
+      },
+      {
         title: "ମାଧବ ହେ",
-        name: "ଅନୁପ ଜଲ୍ହୋତା",
+        name: "By Anup Jalhota",
         source: "music18.mp3",
         cover: "image12.jpg"
       },
       {
+        title: "ଅବଢ଼ା ମୁଠିଏ",
+        name: "By Basant Patra",
+        source: "music30.mp3",
+        cover: "image36.jpg"
+      },
+      {
+        title: "ମୋତେ କରିଦେରେ ନନ୍ଦଲାଲା",
+        name: "By Mohammad Aziz",
+        source: "music37.mp3",
+        cover: "image37.jpg"
+      },
+      {
+        title: "ଜଗନ୍ନାଥେ ହୋ",
+        name: "By Namita Agrawal",
+        source: "music26.mp3",
+        cover: "image38.jpg"
+      },
+      {
+        title: "ତୋର ରଥ ଟାଣୁ ଟାଣୁ",
+        name: "By Namita Agrawal",
+        source: "music38.mp3",
+        cover: "image39.jpg"
+      },
+      {
         title: "ଏକା ତୋ ଭକତ ଜୀବନ",
-        name: "ଭକ୍ତ ସାଲବେଗ",
+        name: "By Bhakta Salabega",
         source: "music17.mpeg",
         cover: "image16.jpg"
       },
