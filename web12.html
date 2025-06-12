@@ -623,143 +623,239 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
-    
+
     const songs = [
       {
-        title: "मुँ तो बड़ देउलर पारा",
-        name: "भिकारी बल",
+        title: "ମୁଁ ତୋ ବଡ଼ ଦେଉଳର ପାରା",
+        name: "ଭିକାରି ବଳ",
         source: "music20.mp3",
         cover: "image7.jpg"
       },
       {
-        title: "नंदीघोष तोर",
-        name: "बसंत पात्र",
+        title: "ତୋ ବାହୁଡ଼ାରେ",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
+        source: "music39.mp3",
+        cover: "image24.jpg"
+      },
+      {
+        title: "ଶ୍ରୀକ୍ଷେତ୍ର ବୋହୂ",
+        name: "ନମିତା ଅଗ୍ରୱାଲ",
+        source: "music27.mp3",
+        cover: "image25.jpg"
+      },
+      {
+        title: "ମୋତେ ସିଂହ ଦୁଆରରୁ",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
+        source: "music31.mp3",
+        cover: "image26.jpg"
+      },
+      {
+        title: "ନନ୍ଦିଘୋଷ ତୋର",
+        name: "ବସନ୍ତ ପାତ୍ର",
         source: "music21.mp3",
         cover: "image14.jpeg"
       },
       {
-        title: "२०१२ हेइयिब पार",
-        name: "कुमार बापि",
-        source: "music1.mp3",
-        cover: "image20.jpg"
+        title: "ମାଆ ଦେଇଥିଲା",
+        name: "ତପୁ ମିଶ୍ର",
+        source: "music33.mp3",
+        cover: "image30.jpeg"
       },
       {
-        title: "आहे मणिमा",
-        name: "महम्मद अज़िज",
+        title: "ଆହେ ମଣିମା",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
         source: "music9.mp3",
         cover: "image13.jpg"
       },
       {
-        title: "चालु चालु मुँ",
-        name: "कुमार बापि",
+        title: "ଆହାରେ ମୋ ପୁରୀ ଠାକୁର",
+        name: "କୁମାର ବାପି",
+        source: "music1.mp3",
+        cover: "image20.jpg"
+      },
+      {
+        title: "ଭୋକ ଲାଗିଲେ",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
+        source: "music36.mp3",
+        cover: "image28.jpg"
+      },
+      {
+        title: "ଚାଲୁ ଚାଲୁ ମୁଁ",
+        name: "କୁମାର ବାପି",
         source: "music8.mp3",
         cover: "image19.jpeg"
       },
       {
-        title: "हे जगा",
-        name: "सौरभ भरद्वाज",
+        title: "ମହାଲକ୍ଷ୍ମୀ କହୁଛନ୍ତି",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
+        source: "music35.mp3",
+        cover: "image29.jpg"
+      },
+      {
+        title: "ଝୁଲି ଝୁଲି ଆସୁଛେ",
+        name: "ମାନସୀ ପାଣିଗ୍ରାହୀ",
+        source: "music29.mp3",
+        cover: "image27.jpeg"
+      },
+      {
+        title: "ହେ ଜଗା",
+        name: "ସୌରଭ ଭରଦ୍ୱାଜ",
         source: "music13.mp3",
         cover: "image9.jpg"
       },
       {
-        title: "मुँ चिट्ठि लेखिछि मो नीलमणि",
-        name: "कुमार बापी",
+        title: "ମୁଁ ଚିଠି ଲେଖିଛି",
+        name: "କୁମାର ବାପି",
         source: "music12.mp3",
         cover: "image5.jpg"
       },
       {
-        title: "तो बड़पणकु धिक",
-        name: "सौरभ भरद्वाज",
+        title: "ତୋ ବଡ଼ପଣକୁ ଧିକ୍",
+        name: "ସୌରଭ ଭରଦ୍ୱାଜ",
         source: "music4.mp3",
         cover: "image3.jpg"
       },
       {
-        title: "भाबर सहरे",
-        name: "कुमार बापि",
+        title: "ଭାବର ସହରେ",
+        name: "କୁମାର ବାପି",
         source: "music7.mp3",
         cover: "image15.jpg"
       },
       {
-        title: "नीलाचल धाम",
-        name: "श्रीचरण महांति",
+        title: "ନୀଳାଚଳ ଧାମ",
+        name: "ଶ୍ରୀଚରଣ ମହାନ୍ତି",
         source: "music22.mp3",
         cover: "image10.jpg"
       },
       {
-        title: "योगाड़ि रखिथा",
-        name: "कुमार बापि",
+        title: "ତତେ ନିଦରେ ନିଦରେ",
+        name: "ଅଞ୍ଜଳି ମିଶ୍ର",
+        source: "music32.mp3",
+        cover: "image31.jpg"
+      },
+      {
+        title: "ଯୋଗାଡ଼ି ରଖିଥା",
+        name: "କୁମାର ବାପି",
         source: "music15.mp3",
         cover: "image8.jpg"
       },
       {
-        title: "मो जगा कालिआ",
-        name: "सौरभ भरद्वाज",
+        title: "ମୋ ଜଗା କାଳିଆ",
+        name: "ସୌରଭ ଭରଦ୍ୱାଜ",
         source: "music19.mp3",
         cover: "image2.jpg"
       },
       {
-        title: "निःस्व कर है मोते",
-        name: "कुमार बापि",
+        title: "ନିଃସ୍ଵ କର ହେ ମୋତେ",
+        name: "କୁମାର ବାପି",
         source: "music23.mp3",
-        cover: "image18.jpg"
+        cover: "image18.png.jpg"
       },
       {
-        title: "गुंडिचा राणी",
-        name: "सौरिन भट्ट",
+        title: "କାଳିଆରେ ତତେ ଚାହିଁଦେଲେ",
+        name: "ଅଞ୍ଜଳି ମିଶ୍ର",
+        source: "music24.mp3",
+        cover: "image32.jpg"
+      },
+      {
+        title: "ଗୁଣ୍ଡିଚା ରାଣୀ",
+        name: "ସୌରିନ ଭଟ୍ଟ",
         source: "music11.mp3",
         cover: "image11.jpg"
       },
       {
-        title: "युग संभब",
-        name: "कुमार बापि",
+        title: "ଯୁଗ ସମ୍ଭବ",
+        name: "କୁମାର ବାପି",
         source: "music16.mp3",
         cover: "image21.jpg"
       },
       {
-        title: "तु देबता मुँ मणिष",
-        name: "सौरभ भरद्वाज",
+        title: "ତୁ ଦେବତା ମୁଁ ମଣିଷ",
+        name: "ସୌରଭ ଭରଦ୍ୱାଜ",
         source: "music6.mp3",
         cover: "image6.jpg"
       },
       {
-        title: "बड़दांड़ धूलि",
-        name: "कुमार बापि",
+        title: "ବଡ଼ଦାଣ୍ଡ ଧୂଳି",
+        name: "କୁମାର ବାପି",
         source: "music5.mp3",
         cover: "image4.jpg"
       },
       {
-        title: "दिनर सूरुज",
-        name: "महम्मद अज़िज",
+        title: "ଜଗତର ଜମିଦାର",
+        name: "ସୌରଭ ଭରଦ୍ୱାଜ",
+        source: "music26.mpeg",
+        cover: "image33.jpg"
+      },
+      {
+        title: "କାହ୍ନାରେ କାହ୍ନା",
+        name: "ନମିତା ଅଗ୍ରୱାଲ",
+        source: "music25.mp3",
+        cover: "image34.jpg"
+      },
+      {
+        title: "ଦିନର ସୁରୁଜ",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
         source: "music10.mp3",
         cover: "image22.jpg"
       },
       {
-        title: "महाबाहु",
-        name: "कुमार बापि",
+        title: "ମହାବାହୁ",
+        name: "କୁମାର ବାପି",
         source: "music3.mp3",
         cover: "image1.jpg"
       },
       {
-        title: "तुंडे थाउ तुम नाम",
-        name: "महम्मद अज़िज",
+        title: "ତୁଣ୍ଡେ ଥାଉ ତୁମ ନାମ",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
         source: "music14.mp3",
         cover: "image23.jpg"
       },
       {
-        title: "आकाश ठारु बेशी",
-        name: "कुमार बापि",
+        title: "ଆକାଶ ଠାରୁ ବେଶୀ",
+        name: "କୁମାର ବାପି",
         source: "music2.mp3",
         cover: "image17.jpeg"
       },
       {
-        title: "माधब हे",
-        name: "अनूप जल्होता",
+        title: "ମୁଁ ପାପ ତୁମେ ପୁଣ୍ୟ",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
+        source: "music34.mp3",
+        cover: "image35.jpg"
+      },
+      {
+        title: "ମାଧବ ହେ",
+        name: "ଅନୁପ ଜଳହୋତା",
         source: "music18.mp3",
         cover: "image12.jpg"
       },
       {
-        title: "एका तो भकत जीबन",
-        name: "भक्त सालबेग",
+        title: "ଅବଢ଼ା ମୁଠିଏ",
+        name: "ବସନ୍ତ ପାତ୍ର",
+        source: "music30.mp3",
+        cover: "image36.jpg"
+      },
+      {
+        title: "ମୋତେ କରିଦେରେ ନନ୍ଦଲାଲା",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
+        source: "music37.mp3",
+        cover: "image37.jpg"
+      },
+      {
+        title: "ଜଗନ୍ନାଥେ ହୋ",
+        name: "ନମିତା ଅଗ୍ରୱାଲ",
+        source: "music26.mp3",
+        cover: "image38.jpg"
+      },
+      {
+        title: "ତୋର ରଥ ଟାଣୁ ଟାଣୁ",
+        name: "ମହମ୍ମଦ ଅଜିଜ",
+        source: "music38.mp3",
+        cover: "image39.jpg"
+      },
+      {
+        title: "ଏକା ତୋ ଭକତ ଜୀବନ",
+        name: "ଭକ୍ତ ସାଲବେଗ",
         source: "music17.mpeg",
         cover: "image16.jpg"
       },
