@@ -43,6 +43,13 @@
       // Jab video khatam ho, tab dusri file khol do
       window.location.href = "web1.html";
     };
+
+    window.onload = function() {
+            var audio = document.getElementById("myAudio");
+            audio.muted = false;
+            audio.play().catch(function(e) {
+                console.log('Audio playback failed:', e);
+            });
   </script>
 </body>
 </html>
