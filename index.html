@@ -39,36 +39,27 @@
 
   </style>
   <script>
+  // Redirect after video ends
     const video = document.getElementById('welcomeVideo');
     video.onended = function () {
-      // Jab video khatam ho, tab dusri file khol do
       window.location.href = "web1.html";
     };
 
-    window.onload = function() {
-            var audio = document.getElementById("myAudio");
-            audio.muted = false;
-            audio.play().catch(function(e) {
-                console.log('Audio playback failed:', e);
-            });
+    // Try to autoplay audio or fallback to user interaction
+    const audio = document.getElementById("myAudio");
 
-      const audio = document.getElementById("myAudio");
+    function tryAutoPlay() {
+      audio.muted = false;
+      audio.play().catch(() => {
+        const playOnClick = () => {
+          audio.play();
+          document.removeEventListener("click", playOnClick);
+        };
+        document.addEventListener("click", playOnClick);
+      });
+    }
 
-  function tryAutoPlay() {
-    audio.muted = false;
-    audio.play().catch(() => {
-      // Autoplay block ho gaya — to wait for user interaction anywhere
-      const playOnClick = () => {
-        audio.play();
-        document.removeEventListener("click", playOnClick);
-      };
-
-      document.addEventListener("click", playOnClick);
-    });
-  }
-
-  window.addEventListener("load", tryAutoPlay);
-
+    window.addEventListener("load", tryAutoPlay);
   </script>
 </body>
 </html>
