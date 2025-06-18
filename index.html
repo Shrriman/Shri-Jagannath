@@ -45,23 +45,33 @@
       window.location.href = "web1.html";
     };
 
-   window.onload = function () {
+   const video = document.getElementById("welcomeVideo");
     const audio = document.getElementById("myAudio");
+    const tapToPlay = document.getElementById("tapToPlay");
 
-    // Try playing muted first (some browsers allow this)
-    audio.muted = true;
-    audio.play().then(() => {
-      console.log("Muted audio autoplayed");
-    }).catch((e) => {
-      console.log("Muted autoplay failed:", e);
-    });
+    // Check if user is visiting for the first time
+    const isFirstVisit = !localStorage.getItem("visited");
 
-    // On first click, unmute and play with sound
-    document.body.addEventListener("click", function () {
+    if (isFirstVisit) {
+      // Pehli baar: try autoplay
       audio.muted = false;
-      audio.play().catch(e => console.log("Play with sound failed:", e));
-    }, { once: true }); // Only run once
-     };
+      audio.play().catch(() => {
+        showTapToPlay();
+      });
+      localStorage.setItem("visited", "true");
+    } else {
+      // Doosri baar: wait for user interaction
+      showTapToPlay();
+    }
+
+    function showTapToPlay() {
+      tapToPlay.style.display = "block";
+      tapToPlay.onclick = () => {
+        audio.play();
+        tapToPlay.remove();
+      };
+    }
+
   </script>
 </body>
 </html>
