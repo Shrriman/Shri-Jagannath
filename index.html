@@ -45,32 +45,29 @@
       window.location.href = "web1.html";
     };
 
-   const video = document.getElementById("welcomeVideo");
-    const audio = document.getElementById("myAudio");
-    const tapToPlay = document.getElementById("tapToPlay");
+    window.onload = function() {
+            var audio = document.getElementById("myAudio");
+            audio.muted = false;
+            audio.play().catch(function(e) {
+                console.log('Audio playback failed:', e);
+            });
 
-    // Check if user is visiting for the first time
-    const isFirstVisit = !localStorage.getItem("visited");
+      const audio = document.getElementById("myAudio");
 
-    if (isFirstVisit) {
-      // Pehli baar: try autoplay
-      audio.muted = false;
-      audio.play().catch(() => {
-        showTapToPlay();
-      });
-      localStorage.setItem("visited", "true");
-    } else {
-      // Doosri baar: wait for user interaction
-      showTapToPlay();
-    }
-
-    function showTapToPlay() {
-      tapToPlay.style.display = "block";
-      tapToPlay.onclick = () => {
+  function tryAutoPlay() {
+    audio.muted = false;
+    audio.play().catch(() => {
+      // Autoplay block ho gaya — to wait for user interaction anywhere
+      const playOnClick = () => {
         audio.play();
-        tapToPlay.remove();
+        document.removeEventListener("click", playOnClick);
       };
-    }
+
+      document.addEventListener("click", playOnClick);
+    });
+  }
+
+  window.addEventListener("load", tryAutoPlay);
 
   </script>
 </body>
