@@ -879,9 +879,7 @@
       songs.forEach((song, index) => {
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide");
-        slide.innerHTML = `
-          <img src="${song.cover}" alt="${song.title} Cover" />
-        `;
+        slide.innerHTML = `<img src="${song.cover}" alt="${song.title} Cover" />`;
         slide.addEventListener("click", () => {
           if (currentSongIndex !== index) {
             currentSongIndex = index;
@@ -904,9 +902,7 @@
     }
 
     function playSong() {
-      songAudio.play().catch(err => {
-        console.log("Play prevented:", err);
-      });
+      songAudio.play().catch(err => console.log("Play prevented:", err));
       controlIcon.classList.replace("fa-play", "fa-pause");
     }
 
@@ -988,7 +984,7 @@
     };
 
     playPauseBtn.addEventListener("click", togglePlayPause);
-
+    
   </script>
 </body>
 </html>
