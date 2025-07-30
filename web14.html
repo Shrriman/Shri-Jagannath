@@ -68,7 +68,7 @@
           border-radius: 50%;
           box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
-
+    
         .current {
           background: #fff2cc;
           border: 3px solid #ff9900;
@@ -84,6 +84,12 @@
         p {
           font-size: 1rem;
           line-height: 1.8;
+        }
+
+        @media(max-width: 600px) {
+          .riti-box::before {
+             font-size: 1.2rem;
+          }
         }
 
        .styled-wrapper .button {
