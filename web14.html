@@ -30,7 +30,11 @@
           align-items: center;
         }
 
-        
+     @media (max-width: 600px) {
+        header {
+          padding: 0.2px 0;
+         }
+        }
 
         .container {
           max-width: 1100px;
@@ -83,7 +87,7 @@
           line-height: 1.8;
         }
 
-       .styled-wrapper .button {
+  .styled-wrapper .button {
   display: block;
   position: relative;
   width: 52px;
@@ -252,7 +256,7 @@
       }
 
       #stickyHeader div {
-        font-size: 1.4em;
+        font-size: 1.3em;
       } 
     }
       
@@ -316,12 +320,54 @@
       transform: translate(-50%, 0%);
     }
 
+    .popup-content {
+      text-align: center;
+      font-size: 19px;
+      color: #fff;
+    }
+
+    .popup-content h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #000000;
+      align-items: center;
+    }
+
+    .popup-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .popup-options button {
+      background-color: #e9af00;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .popup-options button:hover {
+      background-color: #916c00;
+    }
+
     @media (max-width: 600px) {
+
+      .li{
+      top: 4px;
+      }
+
+      .lang-popup {
+      width: 61%;
+      }
 
       .lang-popup.show {
       transform: translate(-50%, 0%);
       }
-    }
 
     .popup-content {
       text-align: center;
@@ -357,6 +403,35 @@
     .popup-options button:hover {
       background-color: #916c00;
     }
+
+  .container {
+    padding: 0.5rem;
+    margin: 1rem auto;
+  }
+
+  .riti-box {
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .riti-box::before {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.5rem;
+    top: -8px;
+    left: -8px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
     
   </style>
 
@@ -564,6 +639,7 @@
 
 </body>
 </html>
+
 
 
 
