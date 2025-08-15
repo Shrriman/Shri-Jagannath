@@ -601,11 +601,6 @@
   updateCurrentRiti();
   setInterval(updateCurrentRiti, 60000);
 
-    function openRitualPopup() {
-  document.querySelector('.ritual-popup').style.display = 'block';
-  document.body.style.overflow = 'hidden'; // scroll lock
-}
-
 function closeRitualPopup() {
   document.querySelector('.ritual-popup').style.display = 'none';
   document.body.style.overflow = 'auto'; // restore scroll
@@ -615,6 +610,7 @@ function closeRitualPopup() {
 
 </body>
 </html>
+
 
 
 
