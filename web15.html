@@ -421,19 +421,20 @@
 
   <!-- JavaScript -->
   <script>
-    const langBtn = document.getElementById("lang-btn");
-    const popup = document.getElementById("lang-popup");
+      const langBtn = document.getElementById("lang-btn");
+      const popup = document.getElementById("lang-popup");
+  
+        langBtn.addEventListener("click", () => {
+        popup.classList.toggle("show");
+    
+         if (popup.classList.contains("show")) {
+        document.body.style.overflowX = "hidden";
+        document.body.style.overflowY = "auto";  // ✅ vertical scroll allow
+        } else {
+        document.body.style.overflowX = "auto";
+        document.body.style.overflowY = "auto";  // ✅ vertical scroll wapas normal
+      }
 
-      langBtn.addEventListener("click", () => {
-      popup.classList.toggle("show");
-
-      if (popup.classList.contains("show")) {
-        document.body.style.overflowX = "auto";   // Horizontal scroll allowed
-        document.body.style.overflowY = "hidden"; // Vertical scroll blocked
-       } else {
-        document.body.style.overflowX = "auto";   // Normal horizontal scroll
-        document.body.style.overflowY = "hidden";   // Vertical scroll allowed (ya apne hisaab se)
-       }
     });
     
     window.addEventListener("click", function (e) {
@@ -601,15 +602,11 @@
   updateCurrentRiti();
   setInterval(updateCurrentRiti, 60000);
 
-function closeRitualPopup() {
-  document.querySelector('.ritual-popup').style.display = 'none';
-  document.body.style.overflow = 'auto'; // restore scroll
-}
-
 </script>
 
 </body>
 </html>
+
 
 
 
