@@ -430,11 +430,11 @@
       popup.classList.toggle("show");
 
       if (popup.classList.contains("show")) {
-        document.body.style.overflowX = "auto";   // Horizontal scroll allowed
-        document.body.style.overflowY = "hidden"; // Vertical scroll blocked
+        document.body.style.overflowX = "hidden";  
+        document.body.style.overflowY = "auto"; 
        } else {
-        document.body.style.overflowX = "auto";   // Normal horizontal scroll
-        document.body.style.overflowY = "hidden";   // Vertical scroll allowed (ya apne hisaab se)
+        document.body.style.overflowX = "auto";  
+        document.body.style.overflowY = "auto";  
        }
     });
     
@@ -603,20 +603,11 @@
   updateCurrentRiti();
   setInterval(updateCurrentRiti, 60000);
 
-    function openRitualPopup() {
-  document.querySelector('.ritual-popup').style.display = 'block';
-  document.body.style.overflow = 'hidden'; // scroll lock
-}
-
-function closeRitualPopup() {
-  document.querySelector('.ritual-popup').style.display = 'none';
-  document.body.style.overflow = 'auto'; // restore scroll
-}
-
 </script>
 
 </body>
 </html>
+
 
 
 
