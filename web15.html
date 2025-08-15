@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divine Rituals of the Shri Mandir (Jagannath Temple)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+
+        body {
+          margin: 0;
+          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
+          background-color: #fff4d0;
+          background: linear-gradient(to bottom, #fff8e1, #ffe6cc);
+          color: #333;
+          padding: 0;
+          height: 100%;
+        }
+
+        header {
+          background: linear-gradient(90deg, #8f0000, rgb(116, 0, 0));
+          background: radial-gradient(circle, #8B0000, #4b0000);
+          border-top: 4px solid gold;
+          border-bottom: 4px solid gold;
+          padding: 12px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        @media (max-width: 600px) {
+        header {
+          padding: 0.2px 0;
+         }
+        }
+
+        .container {
+          max-width: 1100px;
+          margin: 2rem auto;
+          padding: 1rem;
+        }
+
+        .riti-box {
+          background: #fffaf0;
+          border: 2px solid #ffd700;
+          box-shadow: 0 0 18px rgba(139, 0, 0, 0.2);
+          padding: 1.8rem;
+          margin-bottom: 2rem;
+          border-radius: 20px;
+          transition: 0.4s ease;
+          position: relative;
+        }
+
+        .riti-box:hover {
+          transform: scale(1.02);
+          box-shadow: 0 0 25px rgba(139, 0, 0, 0.3);
+        }
+
+        .riti-box::before {
+          content: "🔔";
+          font-size: 1.5rem;
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          background: #ffd700;
+          padding: 0.4rem 0.6rem;
+          border-radius: 50%;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        .current {
+          background: #fff2cc;
+          border: 3px solid #ff9900;
+          box-shadow: 0 0 20px rgba(255, 153, 0, 0.4);
+        }
+
+        h2 {
+          color: #b36b00;
+          margin-top: 0;
+          font-size: 1.4rem;
+        }
+
+        p {
+          font-size: 1rem;
+          line-height: 1.8;
+        }
+
+       .styled-wrapper .button {
+  display: block;
+  position: relative;
+  width: 52px;
+  height: 52px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+}
+
+.styled-wrapper .button:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+  border: 4px solid rgb(116, 0, 0); /* Update dynamically for light/dark mode */
+  transition:
+    opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+  border: 5px solid rgb(116, 0, 0);
+  transform: scale(1.3);
+  transition:
+    opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+
+.styled-wrapper .button:hover:before,
+.styled-wrapper .button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.styled-wrapper .button:hover:after,
+.styled-wrapper .button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.styled-wrapper .button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.styled-wrapper .button-elem {
+  display: block;
+  width: 19px;
+  height: 19px;
+  margin: 16px 18px 0 16px;
+  transform: rotate(360deg);
+  fill: #f0eeef;
+  font-weight: 700;
+}
+
+.styled-wrapper .button:hover .button-box,
+.styled-wrapper .button:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-53px);
+}
+
+  </style>
+</head>
+<body>
+<header>
+  
+
+  
+
+
+   <div class = "back">
+<div class="styled-wrapper">
+   <a onclick = "history.back()"><button class="button">
+    <div class="button-box">
+      <span class="button-elem">
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          class="arrow-icon"
+        >
+          <path
+            fill="yellow"
+            d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          ></path>
+        </svg>
+      </span>
+      <span class="button-elem">
+        <svg
+          fill="yellow"
+          viewBox="0 0  24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          class="arrow-icon"
+        >
+          <path
+            d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          ></path>
+        </svg>
+      </span>
+    </div>
+  </button></a>
+</div></div>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <style>
+
+    /* Sticky Heading */
+    #stickyHeader {
+      position: absolute;
+      top: 1.5%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      padding: 10px 20px 10px 70px;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      color: #ffd700;
+      flex-direction: column;
+      white-space: nowrap;
+      z-index: 1000;
+    }
+
+    #stickyHeader div {
+      font-size: 1.6rem;
+      text-decoration: underline;
+      text-decoration-color: #8f0000;
+      text-underline-offset: 6px;
+      text-shadow: 1px 1px 3px #ffa500cc;
+      top: 50%;
+    }
+
+    #stickyHeader img {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      border: 2px solid #8f0000;
+      box-shadow: 0 0 8px rgba(178, 34, 34, 0.7);
+      object-fit: cover;
+    }
+
+     /* Responsive */
+    @media (max-width: 480px) {
+      #stickyHeader {
+        padding-left: 61px;
+        top: 4px;
+      }
+
+      #stickyHeader div {
+        font-size: 1.3rem;
+      } 
+    }
+      
+  </style>
+
+  <!-- Sticky Header Only -->
+  <div id="stickyHeader">
+    <img src="hanuman.jpg" alt="Hanuman Ji" />
+    <div>Brahmaniti</div>
+  </div>
+
+  <style>
+        .li {
+      padding: 5px 0;
+      list-style: none;
+      position: absolute;
+      right: 7px;
+      top: 16px;
+    }
+
+    .li a i {
+      top: 16px;
+      color: #ffd700;
+      font-size: 23px;
+      border-radius: 50%;
+      border: 4px solid #8f0000;
+      padding: 5px;
+      transition: 0.3s ease;
+      background-color: transparent;
+    }
+
+    .li a:hover i {
+      color: #ffffff;
+      text-shadow: 0 0 10px #ffffff;
+    }
+
+    .lang-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Bottom Pop-Up */
+    .lang-popup {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 200vh);
+      width: 100%;
+      max-width: 261px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border-radius: 20px 20px 0 0;
+      padding: 25px;
+      transition: transform 0.4s ease;
+      z-index: 9999;
+    }
+
+    .lang-popup.show {
+      transform: translate(-50%, 0%);
+    }
+
+    @media (max-width: 600px) {
+
+      .li{
+      top: 4px;
+      }
+
+      .lang-popup {
+      width: 61%;
+      }
+
+      .lang-popup.show {
+      transform: translate(-50%, 0%);
+      }
+
+    .popup-content {
+      text-align: center;
+      font-size: 19px;
+      color: #fff;
+    }
+
+    .popup-content h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #000000;
+      align-items: center;
+    }
+
+    .popup-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .popup-options button {
+      background-color: #e9af00;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .popup-options button:hover {
+      background-color: #916c00;
+    }
+
+  .container {
+    padding: 0.5rem;
+    margin: 1rem auto;
+  }
+
+  .riti-box {
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .riti-box::before {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.5rem;
+    top: -8px;
+    left: -8px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+  </style>
+
+  <!-- Language Button -->
+  <div class="li">
+    <button id="lang-btn" class="lang-btn">
+      <a><i class="fa fa-globe"></i></a>
+    </button>
+  </div>
+
+  <!-- Popup Box -->
+  <div class="lang-popup" id="lang-popup">
+    <div class="popup-content">
+      <h3>🌺 Change Language</h3>
+      <div class="popup-options">
+        <button onclick="location.href='web16.html'">ଓଡ଼ିଆ</button>
+        <button onclick="location.href='web14.html'">हिंदी</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const langBtn = document.getElementById("lang-btn");
+    const popup = document.getElementById("lang-popup");
+
+      langBtn.addEventListener("click", () => {
+      popup.classList.toggle("show");
+
+      if (popup.classList.contains("show")) {
+        document.body.style.overflowX = "auto";   // Horizontal scroll allowed
+        document.body.style.overflowY = "hidden"; // Vertical scroll blocked
+       } else {
+        document.body.style.overflowX = "auto";   // Normal horizontal scroll
+        document.body.style.overflowY = "hidden";   // Vertical scroll allowed (ya apne hisaab se)
+       }
+    });
+    
+    window.addEventListener("click", function (e) {
+      if (!popup.contains(e.target) && !langBtn.contains(e.target)) {
+        popup.classList.remove("show");
+        document.body.style.overflowX = "auto";
+        document.body.style.overflowY = "hidden";
+      }
+    });
+    
+  </script>
+  </header>
+  
+
+  
+
+  <div class="container">
+
+    <div class="riti-box">
+      <h2>1. Dwarafita – (4:30 AM - 5:30 AM)</h2>
+      <p>The main doors of the Shreemandir are opened. The priests open the doors for devotees to have the darshan of Lord Shree Jagannath, Balabhadra, and Subhadra. This is the first service of the day.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>2. Mangal Arati – (5:30 AM - 6:00 AM)</h2>
+      <p>Lord Shree Jagannath, Balabhadra, and Subhadra are offered the Mangal Alati (auspicious morning arati). This is the first arati of the day, in which the deities are worshipped with chanting of mantras, the sound of bells, and the blowing of conch shells.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>3. Mailam – (6:00 AM - 6:30 AM)</h2>
+      <p>After the Mangala Alati, Lord Jagannath, Balabhadra, and Subhadra are given a short rest. During this time, the attendants prepare for the deities’ adornment. This service is considered the deities’ personal rest time and a preparation period before the next ritual.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>4. Avakash – (6:30 AM - 7:00 AM)</h2>
+      <p>At this stage, the deities are bathed. Their morning routine — such as symbolic tooth brushing (danta-dhavana), drinking water, and other daily activities — is performed. This is regarded as their personal morning ritual.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>5. Mailam – (7:00 AM - 7:15 AM)</h2>
+      <p>After the Abakash service, the deities are again given rest. During this time, the priests change the old clothes of the deities and dress them in fresh garments. This is seen as a preparatory step for the divine adornment (shringara).</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>6. Beshalagi – (7:15 AM - 7:30 AM)</h2>
+      <p>Next, the deities are dressed in grand clothes and ornaments. The priests, with deep devotion and respect, decorate the deities in their divine form, making them ready for the devotees’ darshan.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>7. Rosa Homa – (7:30 AM - 7:40 AM)</h2>
+      <p>A special fire ritual (yagyan) is performed inside the temple. Offerings are made into the sacred fire, which purifies and sanctifies the temple atmosphere. This tradition follows Vedic procedures and is conducted for the protection of the Lord and the welfare of the entire universe.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>8. Surya Puja – (7:40 AM - 7:50 AM)</h2>
+      <p>During this time, worship is offered to Surya Deva (the Sun God) in the presence of Lord Jagannath. The priests offer water (arghya) to the Sun along with Vedic mantras, expressing gratitude to the Sun for giving light and energy to the Lord. This worship is considered a sign of respect to nature and cosmic forces.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>9. Dwarapala Puja – (7:50 AM - 8:00 AM)</h2>
+      <p>Worship is also offered to the guardian deities of the temple gates — such as Jaya and Vijaya. This service honors and strengthens the divine security and sanctity of the Lord’s abode. The doorkeepers are respectfully worshipped with flowers, water, and mantras.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>10. Gopala Ballava – (8:00 AM - 9:00 AM)</h2>
+      <p>This service is the Lord’s morning meal, Sakala Dhupa. In this, light and simple food items such as fruits, milk, curd, puffed rice, dates, coconut, and kheer are offered. The service is performed with the feeling of feeding the Lord in the form of Bala Gopala (child Krishna). It is considered a loving offering to the Lord.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>11. Sakala Dhupa – (9:00 AM - 10:00 AM)</h2>
+      <p>This is the main daily food offering (Bhoga Seva) to Lord Jagannath. During this time, various types of dishes are offered to the Lord, known as the Morning Dhupa Bhoga. This includes rice, lentils, vegetables, sweets, and other traditional and pure preparations. After the offering, a special worship is performed in the temple with fragrant incense and lamps.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>12. Mailam – (10:00 AM - 11:00 AM)</h2>
+      <p>After the Morning Dhupa Bhoga, the Lord is given some time to rest. During this period, the priests change the Lord’s clothes and perform the necessary services to refresh Him. This service is carried out to prepare the Lord for the next phase of worship.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>13. Bhoga Mandapa – (11:00 AM - 12:00 PM)</h2>
+      <p>At this time, a grand and elaborate food offering is made to Lord Jagannath at a special place called Bhogamandap. This offering is also made available to the general devotees and later distributed as Mahaprasad. The Bhogamandap Seva includes a large quantity of various dishes such as khichdi, lentils, vegetables, sweets, etc. This service is carried out with great devotion and strict ritual procedures.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>14. Madhyahna Dhupa – (12:00 PM - 6:00 PM)</h2>
+      <p>This is the most important and extensive Bhoga Seva of the temple. During this time, the main midday meal is offered to Lord Jagannath, Lord Balabhadra, and Devi Subhadra. The offering consists of many pure vegetarian dishes, cooked in the temple kitchen according to traditional methods. During this service, the food is offered to the Lord with chanting of mantras, incense, lamps, and other ritual worship. After this service, the Lord takes rest.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>15. Sandhya Arati – (6:00 PM - 6:30 PM)</h2>
+      <p>This service is the day’s final aarti of Lord Jagannath, Lord Balabhadra, and Devi Subhadra. In the evening, a grand aarti is performed with lamps, incense, conch shells, and the sound of bells. This aarti marks the conclusion of the day’s services, and the Lord is decorated again for devotees’ darshan. During this time, the temple atmosphere becomes deeply devotional and peaceful.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>16. Sandhya Dhupa – (6:30 PM - 8:00 PM)</h2>
+      <p>In this service, the evening food offering is made to Lord Jagannath, Lord Balabhadra, and Devi Subhadra. It includes a variety of food items — rice, lentils, vegetables, and sweets. Worship is performed with incense, lamps, and chanting of mantras. This is considered the last food offering of the day, after which the Lord is taken for rest.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>17. Mailam & Chandan Lagi – (8:00 PM - 9:00 PM)</h2>
+      <p>After the Evening Dhupa, preparations are made for the Lord’s rest. In this service, the clothes of Lord Jagannath, Lord Balabhadra, and Devi Subhadra are changed, and sandalwood paste is applied to provide coolness. This service is meant to give the Lord peace and rest. Afterwards, the last offering before the night’s rest is made to the Lord.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>18. Bada Singara Besha – (9:00 PM - 10:30 PM)</h2>
+      <p>This is the day’s final and most elaborate Shringar Seva. At this time, Lord Jagannath, Lord Balabhadra, and Devi Subhadra are beautifully adorned with gem-studded clothes, ornaments, flower garlands, and sandal paste. This is called the Bada Singhar Besha (Grand Royal Attire), which represents the Lord’s divine and majestic form. This decoration is done with special mantras and deep devotion, and afterwards the Lord is prepared for the night’s rest.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>19. Bada Singara Dhupa – (10:30 PM - 11:00 PM)</h2>
+      <p>After the Bada Singhar Besha, the last food offering of the day is made to Lord Jagannath, Lord Balabhadra, and Devi Subhadra. This is called the Bada Singhar Dhupa. In this service, delicious and pure dishes are offered to the Lord. Worship is performed with incense, lamps, and mantras, and the offering is made with complete devotion. This is the final worship of the day. After this, the Lord proceeds to His sleeping chamber for the night.</p>
+    </div>
+
+    <div class="riti-box">
+      <h2>20. Khata Seja Lagi & Pahuda – (11:00 PM - till night)</h2>
+      <p>This is the last service of the day, in which the sleeping idols of Lord Jagannath, Lord Balabhadra, and Devi Subhadra are brought from the Bhandar Ghar (treasury room) to the Ratnavedi and placed near Lord Jagannath. The bed for the Lord’s rest is prepared. This service is called Khata Sej Lagi, and Pahuda means the Lord’s rest. The priests ceremonially put the Lord to sleep for the night. With chanting of mantras, peace prayers, and lullaby songs, the Lord is given rest. Afterwards, the temple doors are closed and the day’s services are concluded.</p>
+    </div>
+  </div>
+
+
+  <script>
+  const ritiTimings = [
+    { start: [4, 30], end: [5, 30] },    // ଦ୍ୱାରଫିଟା
+    { start: [5, 30], end: [6, 0] },     // ମଙ୍ଗଳ ଆରତି
+    { start: [6, 0], end: [6, 30] },     // ମେଲମା
+    { start: [6, 30], end: [7, 0] },     // ଅବକାଶ
+    { start: [7, 0], end: [7, 15] },     // ମେଲମା
+    { start: [7, 15], end: [7, 30] },    // ବେଶ ଲାଗି
+    { start: [7, 30], end: [7, 40] },    // ରୋଷ ହୋମ
+    { start: [7, 40], end: [7, 50] },    // ସୂର୍ଯ୍ୟ ପୂଜା
+    { start: [7, 50], end: [8, 0] },     // ଦ୍ୱାରପାଳ ପୂଜା
+    { start: [8, 0], end: [9, 0] },      // ଗୋପାଳ ବଲ୍ଲଭ
+    { start: [9, 0], end: [10, 0] },     // ସକାଳ ଧୂପ
+    { start: [10, 0], end: [11, 0] },    // ମେଲମା
+    { start: [11, 0], end: [12, 0] },    // ଭୋଗ ମଣ୍ଡପ
+    { start: [12, 0], end: [18, 0] },    // ମଧ୍ୟାହ୍ନ ଧୂପ
+    { start: [18, 0], end: [18, 30] },   // ସନ୍ଧ୍ୟା ଆରତି
+    { start: [18, 30], end: [19, 0] },   // ସନ୍ଧ୍ୟା ଧୂପ
+    { start: [19, 0], end: [21, 0] },    // ମେଲମା ଓ ଚନ୍ଦନ ଲାଗି
+    { start: [21, 0], end: [22, 0] },    // ବଡ଼ ସିଂହାର ବେଶ / ଧୂପ
+    { start: [22, 0], end: [24, 0] }     // ଖଟସେଜ ଓ ପାହୁଡା
+  ];
+
+  function updateCurrentRiti() {
+    const now = new Date();
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+    let activeIndex = -1;
+
+    for (let i = 0; i < ritiTimings.length; i++) {
+      const start = ritiTimings[i].start[0] * 60 + ritiTimings[i].start[1];
+      const end = ritiTimings[i].end[0] * 60 + ritiTimings[i].end[1];
+
+      if (currentMinutes >= start && currentMinutes < end) {
+        activeIndex = i;
+        break;
+      }
+    }
+
+    document.querySelectorAll('.riti-box').forEach((box, idx) => {
+      box.classList.toggle('current', idx === activeIndex);
+    });
+  }
+
+  updateCurrentRiti();
+  setInterval(updateCurrentRiti, 60000);
+</script>
+
+</body>
+</html>
+
+
+
