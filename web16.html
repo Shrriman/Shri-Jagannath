@@ -441,8 +441,8 @@
     window.addEventListener("click", function (e) {
       if (!popup.contains(e.target) && !langBtn.contains(e.target)) {
         popup.classList.remove("show");
-        document.body.style.overflowX = "auto";
-        document.body.style.overflowY = "hidden";
+        document.body.style.overflowX = "hidden";
+        document.body.style.overflowY = "auto";
       }
     });
     
@@ -607,6 +607,7 @@
 
 </body>
 </html>
+
 
 
 
