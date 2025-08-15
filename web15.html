@@ -272,7 +272,7 @@
   </div>
 
   <style>
-        .li {
+       .li {
       padding: 5px 0;
       list-style: none;
       position: absolute;
@@ -322,6 +322,42 @@
     .lang-popup.show {
       transform: translate(-50%, 0%);
     }
+
+    .popup-content {
+      text-align: center;
+      font-size: 19px;
+      color: #fff;
+    }
+
+    .popup-content h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #000000;
+      align-items: center;
+    }
+
+    .popup-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .popup-options button {
+      background-color: #e9af00;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .popup-options button:hover {
+      background-color: #916c00;
+    }
+
 
     @media (max-width: 600px) {
 
@@ -608,6 +644,7 @@
 
 </body>
 </html>
+
 
 
 
