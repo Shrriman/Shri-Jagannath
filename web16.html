@@ -638,10 +638,19 @@
   updateCurrentRiti();
   setInterval(updateCurrentRiti, 60000);
 
+    document.querySelectorAll(".riti-box .icon").forEach((icon, index) => {
+  icon.addEventListener("click", () => {
+    const boxes = document.querySelectorAll(".riti-box");
+    boxes[index].scrollIntoView({ behavior: "smooth", block: "center" });
+    boxes[index].classList.add("current");
+  });
+});
+
 </script>
 
 </body>
 </html>
+
 
 
 
