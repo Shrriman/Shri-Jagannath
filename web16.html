@@ -638,10 +638,16 @@
   updateCurrentRiti();
   setInterval(updateCurrentRiti, 60000);
 
+    if (currentMinutes >= startMin && currentMinutes < endMin) {
+  boxes[index].classList.add("current");
+  boxes[index].scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
 </script>
 
 </body>
 </html>
+
 
 
 
