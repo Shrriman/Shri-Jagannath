@@ -638,18 +638,30 @@
   updateCurrentRiti();
   setInterval(updateCurrentRiti, 60000);
 
-    document.querySelectorAll(".riti-box .icon").forEach((icon, index) => {
+   document.querySelectorAll(".riti-box .icon").forEach((icon) => {
   icon.addEventListener("click", () => {
     const boxes = document.querySelectorAll(".riti-box");
-    boxes[index].scrollIntoView({ behavior: "smooth", block: "center" });
-    boxes[index].classList.add("current");
+    const now = new Date();
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+    ritiTimings.forEach((time, index) => {
+      const startMin = time.start[0] * 60 + time.start[1];
+      const endMin = time.end[0] * 60 + time.end[1];
+
+      if (currentMinutes >= startMin && currentMinutes < endMin) {
+        boxes[index].scrollIntoView({ behavior: "smooth", block: "center" });
+        boxes[index].classList.add("current");
+      }
+    });
   });
 });
+
 
 </script>
 
 </body>
 </html>
+
 
 
 
