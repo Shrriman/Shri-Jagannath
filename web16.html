@@ -251,6 +251,44 @@
       object-fit: cover;
     }
 
+#nitiPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: white;
+  border: 2px solid goldenrod;
+  border-radius: 12px;
+  padding: 20px 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 9999;
+  transition: transform 0.3s ease-in-out;
+}
+
+#nitiPopup.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#nitiPopup h2 {
+  margin: 0 0 10px;
+  color: darkorange;
+}
+
+#nitiPopup button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: darkorange;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#nitiPopup button:hover {
+  background: orangered;
+}
+
+
      /* Responsive */
     @media (max-width: 480px) {
       #stickyHeader {
@@ -485,7 +523,12 @@
   </header>
   
 
-  
+  <div id="nitiPopup">
+  <h2>Current Niti</h2>
+  <p id="nitiText"></p>
+  <button onclick="closePopup()">OK</button>
+</div>
+
 
   <div class="container">
 
@@ -638,29 +681,38 @@
   updateCurrentRiti();
   setInterval(updateCurrentRiti, 60000);
 
-   document.querySelectorAll(".riti-box .icon").forEach((icon) => {
-  icon.addEventListener("click", () => {
-    const boxes = document.querySelectorAll(".riti-box");
-    const now = new Date();
-    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+    
 
-    ritiTimings.forEach((time, index) => {
-      const startMin = time.start[0] * 60 + time.start[1];
-      const endMin = time.end[0] * 60 + time.end[1];
+   function showPopup(message) {
+  document.getElementById("nitiText").innerText = message;
+  document.getElementById("nitiPopup").classList.add("show");
+}
 
-      if (currentMinutes >= startMin && currentMinutes < endMin) {
-        boxes[index].scrollIntoView({ behavior: "smooth", block: "center" });
-        boxes[index].classList.add("current");
-      }
-    });
+function closePopup() {
+  document.getElementById("nitiPopup").classList.remove("show");
+}
+
+// 🔔 Example: On page load → current niti show karo
+window.addEventListener("load", () => {
+  const now = new Date();
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+  ritiTimings.forEach((time, index) => {
+    const startMin = time.start[0] * 60 + time.start[1];
+    const endMin = time.end[0] * 60 + time.end[1];
+
+    if (currentMinutes >= startMin && currentMinutes < endMin) {
+      const ritualName = document.querySelectorAll(".riti-box h3")[index].innerText;
+      showPopup(`🕉️ ${ritualName}\nTime: ${time.start[0]}:${time.start[1].toString().padStart(2,'0')} - ${time.end[0]}:${time.end[1].toString().padStart(2,'0')}`);
+    }
   });
 });
-
 
 </script>
 
 </body>
 </html>
+
 
 
 
