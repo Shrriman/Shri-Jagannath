@@ -265,16 +265,13 @@
   z-index: 9999;
   transition: transform 0.3s ease-in-out;
 }
-
 #nitiPopup.show {
   transform: translate(-50%, -50%) scale(1);
 }
-
 #nitiPopup h2 {
   margin: 0 0 10px;
   color: darkorange;
 }
-
 #nitiPopup button {
   margin-top: 15px;
   padding: 8px 15px;
@@ -287,6 +284,7 @@
 #nitiPopup button:hover {
   background: orangered;
 }
+
 
 
      /* Responsive */
@@ -523,7 +521,8 @@
   </header>
   
 
-  <div id="nitiPopup">
+  <!-- Current Niti Popup -->
+<div id="nitiPopup">
   <h2>Current Niti</h2>
   <p id="nitiText"></p>
   <button onclick="closePopup()">OK</button>
@@ -683,7 +682,14 @@
 
     
 
-   function showPopup(message) {
+   // Example niti timings
+const ritiTimings = [
+  { name: "Mangala Arati", start: [5, 0], end: [7, 0] },
+  { name: "Madhyahna Dhupa", start: [11, 0], end: [14, 0] },
+  { name: "Sandhya Arati", start: [18, 0], end: [20, 0] }
+];
+
+function showPopup(message) {
   document.getElementById("nitiText").innerText = message;
   document.getElementById("nitiPopup").classList.add("show");
 }
@@ -692,26 +698,33 @@ function closePopup() {
   document.getElementById("nitiPopup").classList.remove("show");
 }
 
-// 🔔 Example: On page load → current niti show karo
+// Page load hone ke baad current niti popup dikhao
 window.addEventListener("load", () => {
   const now = new Date();
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
-  ritiTimings.forEach((time, index) => {
+  let found = false;
+  ritiTimings.forEach(time => {
     const startMin = time.start[0] * 60 + time.start[1];
     const endMin = time.end[0] * 60 + time.end[1];
 
     if (currentMinutes >= startMin && currentMinutes < endMin) {
-      const ritualName = document.querySelectorAll(".riti-box h3")[index].innerText;
-      showPopup(`🕉️ ${ritualName}\nTime: ${time.start[0]}:${time.start[1].toString().padStart(2,'0')} - ${time.end[0]}:${time.end[1].toString().padStart(2,'0')}`);
+      showPopup(`🕉️ ${time.name}\n(${time.start[0]}:${time.start[1].toString().padStart(2,"0")} - ${time.end[0]}:${time.end[1].toString().padStart(2,"0")})`);
+      found = true;
     }
   });
+
+  if (!found) {
+    showPopup("🙏 Abhi koi niti nahi chal rahi");
+  }
 });
+
 
 </script>
 
 </body>
 </html>
+
 
 
 
