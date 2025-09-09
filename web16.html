@@ -251,83 +251,6 @@
       object-fit: cover;
     }
 
- /* Fullscreen overlay with blur */
-  #desktopOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(20, 20, 20, 0.85);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
-  #desktopOverlay.show {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  /* Modal box */
-  #nitiPopup {
-    background: #222831;
-    padding: 30px 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 150, 255, 0.6);
-    max-width: 360px;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    transform: scale(0.8);
-    animation: modalPop 0.5s forwards;
-  }
-
-  /* Animation for modal pop */
-  @keyframes modalPop {
-    to {
-      transform: scale(1);
-    }
-  }
-
-  #nitiPopup h2 {
-    margin-bottom: 20px;
-    font-size: 1.9rem;
-    font-weight: 700;
-    padding: 7px 23px;
-    background-color: #ffbf00;
-    border-radius: 13px;
-  }
-
-  #nitiPopup p {
-    font-size: 1.15rem;
-    margin-bottom: 25px;
-    line-height: 1.5;
-  }
-
-  /* Stylish button */
-  #nitiPopup button {
-    position: relative;
-    background: #00adb5;
-    color: #ffffff;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 161, 169, 0.7);
-    transition: background 0.3s ease;
-  }
-  #nitiPopup button:hover {
-    background: #00b8c1;
-  }
-
-
      /* Responsive */
     @media (max-width: 480px) {
       #stickyHeader {
@@ -560,14 +483,6 @@
     
   </script>
   </header>
-  
-<div id="desktopOverlay">
-  <div id="nitiPopup">
-    <h2 style="color:#fff;">Current Niti:</h2>
-    <p id="nitiText"></p>
-    <button onclick="closePopup()">Got it</button>
-  </div>
-</div>
 
   <div class="container">
 
@@ -722,44 +637,11 @@
   updateCurrentRiti();
   setInterval(updateCurrentRiti, 60000);
 
-    
-
-   // Example niti timings
-function showPopup(message) {
-  document.getElementById("nitiText").innerText = message;
-  document.getElementById("nitiPopup").classList.add("show");
-}
-
-function closePopup() {
-  document.getElementById("nitiPopup").classList.remove("show");
-}
-
-// Page load hone ke baad current niti popup dikhao
-window.addEventListener("load", () => {
-  const now = new Date();
-  const currentMinutes = now.getHours() * 60 + now.getMinutes();
-
-  let found = false;
-  ritiTimings.forEach(time => {
-    const startMin = time.start[0] * 60 + time.start[1];
-    const endMin = time.end[0] * 60 + time.end[1];
-
-    if (currentMinutes >= startMin && currentMinutes < endMin) {
-      showPopup(`🕉️ ${time.name}\n(${time.start[0]}:${time.start[1].toString().padStart(2,"0")} - ${time.end[0]}:${time.end[1].toString().padStart(2,"0")})`);
-      found = true;
-    }
-  });
-
-  if (!found) {
-    showPopup("🙏 ବର୍ତ୍ତମାନ ଶ୍ରୀମନ୍ଦିରରେ କୌଣସି ସେବା-ନୀତି ଚାଲୁନାହିଁ।");
-  }
-});
-
-
 </script>
 
 </body>
 </html>
+
 
 
 
