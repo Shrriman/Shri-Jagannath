@@ -486,9 +486,9 @@
   
 <div id="desktopOverlay">
   <div id="desktopModal">
-    <h2>🕉️ ବର୍ତ୍ତମାନ ଚାଲୁଅଛି</h2>
-    <p id="nitiText">ଯାଞ୍ଚ କରୁଛୁ...</p>
-    <button onclick="closeModal()">ଠିକ୍ ଅଛି</button>
+    <h2>🕉️ Currently Ongoing</h2>
+    <p id="nitiText">Checking…</p>
+    <button onclick="closeModal()">Got It</button>
   </div>
 </div>
 
@@ -683,25 +683,26 @@
 
   <script>
   const ritiTimings = [
-    { start: [4, 30], end: [5, 30] },    // ଦ୍ୱାରଫିଟା
-    { start: [5, 30], end: [6, 0] },     // ମଙ୍ଗଳ ଆରତି
-    { start: [6, 0], end: [6, 30] },     // ମେଲମା
-    { start: [6, 30], end: [7, 0] },     // ଅବକାଶ
-    { start: [7, 0], end: [7, 15] },     // ମେଲମା
-    { start: [7, 15], end: [7, 30] },    // ବେଶ ଲାଗି
-    { start: [7, 30], end: [7, 40] },    // ରୋଷ ହୋମ
-    { start: [7, 40], end: [7, 50] },    // ସୂର୍ଯ୍ୟ ପୂଜା
-    { start: [7, 50], end: [8, 0] },     // ଦ୍ୱାରପାଳ ପୂଜା
-    { start: [8, 0], end: [9, 0] },      // ଗୋପାଳ ବଲ୍ଲଭ
-    { start: [9, 0], end: [10, 0] },     // ସକାଳ ଧୂପ
-    { start: [10, 0], end: [11, 0] },    // ମେଲମା
-    { start: [11, 0], end: [12, 0] },    // ଭୋଗ ମଣ୍ଡପ
-    { start: [12, 0], end: [18, 0] },    // ମଧ୍ୟାହ୍ନ ଧୂପ
-    { start: [18, 0], end: [18, 30] },   // ସନ୍ଧ୍ୟା ଆରତି
-    { start: [18, 30], end: [19, 0] },   // ସନ୍ଧ୍ୟା ଧୂପ
-    { start: [19, 0], end: [21, 0] },    // ମେଲମା ଓ ଚନ୍ଦନ ଲାଗି
-    { start: [21, 0], end: [22, 0] },    // ବଡ଼ ସିଂହାର ବେଶ / ଧୂପ
-    { start: [22, 0], end: [24, 0] }     // ଖଟସେଜ ଓ ପାହୁଡା
+    { name: "ଦ୍ୱାରଫିଟା", start: [4, 30], end: [5, 30] },
+    { name: "ମଙ୍ଗଳ ଆରତି", start: [5, 30], end: [6, 0] },
+    { name: "ମଇଲମ", start: [6, 0], end: [7, 30] },
+    { name: "ଅବକାଶ", start: [6, 30], end: [7, 0] },
+    { name: "ମଇଲମ", start: [7, 0], end: [7, 15] },
+    { name: "ବେଶ ଲାଗି", start: [7, 15], end: [7, 30] },
+    { name: "ରୋଷ ହୋମ", start: [7, 30], end: [7, 40] },
+    { name: "ସୂର୍ଯ୍ୟ ପୂଜା", start: [7, 40], end: [7, 50] },
+    { name: "ଦ୍ୱାରପାଳ ପୂଜା", start: [7, 50], end: [8, 0] },
+    { name: "ଗୋପାଳ ବଲ୍ଲଭ", start: [8, 0], end: [9, 0] },
+    { name: "ସକାଳ ଧୂପ", start: [9, 0], end: [10, 0] },
+    { name: "ମଇଲମ", start: [10, 0], end: [11, 0] },
+    { name: "ଭୋଗ ମଣ୍ଡପ", start: [11, 0], end: [12, 0] },
+    { name: "ମଧ୍ୟାହ୍ନ ଧୂପ", start: [12, 0], end: [18, 0] },
+    { name: "ସନ୍ଧ୍ୟା ଆରତି", start: [18, 0], end: [18, 30] },
+    { name: "ସନ୍ଧ୍ୟା ଧୂପ", start: [18, 30], end: [20, 0] },
+    { name: "ମଇଲମ ଓ ଚନ୍ଦନ ଲାଗି", start: [20, 0], end: [21, 0] },
+    { name: "ବଡ଼ ସିଂହାର ବେଶ", start: [21, 0], end: [22, 30] },
+    { name: "ବଡ଼ ସିଂହାର ଧୂପ", start: [22, 30], end: [23, 0] },
+    { name: "ଖଟସେଜ ଲାଗି ଓ ପହୁଡ", start: [23, 0], end: [5, 0] }
   ];
 
   function updateCurrentRiti() {
@@ -714,9 +715,17 @@
       const start = ritiTimings[i].start[0] * 60 + ritiTimings[i].start[1];
       const end = ritiTimings[i].end[0] * 60 + ritiTimings[i].end[1];
 
-      if (currentMinutes >= start && currentMinutes < end) {
-        activeIndex = i;
-        break;
+      // riti end agle din (e.g. 23:00 to 5:00)
+      if (end < start) {
+        if (currentMinutes >= start || currentMinutes < end) {
+          activeIndex = i;
+          break;
+        }
+      } else {
+        if (currentMinutes >= start && currentMinutes < end) {
+          activeIndex = i;
+          break;
+        }
       }
     }
 
@@ -728,10 +737,51 @@
   updateCurrentRiti();
   setInterval(updateCurrentRiti, 60000);
 
+  function checkCurrentNiti() {
+    const now = new Date();
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+    let found = false;
+    const boxes = document.querySelectorAll(".riti-box");
+
+    ritiTimings.forEach((niti, i) => {
+      const startMins = niti.start[0] * 60 + niti.start[1];
+      const endMins = niti.end[0] * 60 + niti.end[1];
+
+      if (
+        (endMins < startMins &&
+          (currentMinutes >= startMins || currentMinutes < endMins)) ||
+        (currentMinutes >= startMins && currentMinutes < endMins)
+      ) {
+        if (boxes[i]) boxes[i].classList.add("current");
+        document.getElementById("nitiText").innerText =
+          niti.name;
+        boxes[i].scrollIntoView({ behavior: "smooth", block: "center" });
+        found = true;
+      }
+    });
+
+    if (!found) {
+      document.getElementById("nitiText").innerText =
+        "Now, no niti is going on.";
+    }
+
+    document.getElementById("desktopOverlay").classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    document.getElementById("desktopOverlay").classList.remove("show");
+    document.body.style.overflow = "auto";
+  }
+
+  window.onload = checkCurrentNiti;
+    
 </script>
 
 </body>
 </html>
+
 
 
 
