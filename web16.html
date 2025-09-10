@@ -789,33 +789,52 @@
 </button>
 
 <script>
-    // Back to Top button functionality
-document.getElementById("backToTop").addEventListener("click", function () {
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    backToTop.classList.add("show"); // show button
+  } else {
+    backToTop.classList.remove("show"); // hide button
+  }
+});
+
+backToTop.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"  // smooth scroll effect
+    behavior: "smooth"
   });
 });
+
 
 </script>
   
 <style>
- /* From Uiverse.io by vinodjangid07 */ 
-.Btn {
+  
+  .Btn {
   width: 45px;
   height: 45px;
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  background: linear-gradient(135deg, #f6c9b6, #f0a88c);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
-  position: fixed;   
-  right: 20px;       
-  bottom: 20px;      
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
   border: none;
-  z-index: 999;     
+  z-index: 999;
+  opacity: 0;           
+  pointer-events: none; 
+  transition: opacity 0.4s ease;
 }
+
+.Btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 .arrow path {
   fill: white;
@@ -859,6 +878,7 @@ document.getElementById("backToTop").addEventListener("click", function () {
 
 </body>
 </html>
+
 
 
 
