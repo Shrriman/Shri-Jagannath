@@ -116,10 +116,12 @@
       .hamburger {
         display: block;
       }
+         
+    #menu-toggle:checked ~ .golden-navbar {
+  max-height: 300px; /* jitni height chahiye utni do */
+  transition: max-height 0.4s ease-in;
+}
 
-      #menu-toggle:checked ~ .golden-navbar {
-        display: flex;
-      }
     }
 
 </style>
@@ -721,6 +723,7 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
 
