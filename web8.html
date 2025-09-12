@@ -51,18 +51,19 @@
             <li><a href="#"><i class="fa fa-question-circle"></i><span>ପ୍ରଶ୍ନୋତ୍ତର</span></a></li>
             <li><button id="lang-btn" class="lang-btn"><a><i class="fa fa-globe"></i><span>ଭାଷା</a></span></button></li>
           </ul>
-        </nav>
-
-       <!-- From Uiverse.io by JulanDeAlb --> 
 <label class="hamburger">
-  <input type="checkbox">
+  <input type="checkbox" id="menu-toggle">
   <svg viewBox="0 0 32 32">
     <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
     <path class="line" d="M7 16 27 16"></path>
   </svg>
 </label>
 
-       <style>
+        </nav>
+
+       <!-- From Uiverse.io by JulanDeAlb --> 
+
+<style>
 .hamburger {
   cursor: pointer;
 }
@@ -101,7 +102,27 @@
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
-       </style>
+    .hamburger {
+  display: none;
+}
+     @media (max-width: 768px) {
+      .golden-navbar {
+        display: none;
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 10px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      #menu-toggle:checked ~ .golden-navbar {
+        display: flex;
+      }
+    }
+
+</style>
 
         <div class="lang-popup" id="lang-popup">
     <div class="popup-content">
@@ -700,5 +721,6 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
