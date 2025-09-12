@@ -123,6 +123,27 @@
   transition: max-height 0.4s ease-in;
 }
 
+  .golden-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-section {
+    display: none;
+    flex-direction: column; /* vertical menu */
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px; /* thoda space between items */
+  }
+
+  #menu-toggle:checked ~ .right-section {
+    display: flex; /* show menu on click */
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto; /* right side pe rahe */
+  }
     }
 
 </style>
@@ -724,6 +745,7 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
 
