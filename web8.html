@@ -43,14 +43,18 @@
     <span class="logo-text">ଶ୍ରୀ ଜଗନ୍ନାଥ</span>
   </div>
 
-  <label class="hamburger">
-    <input type="checkbox" id="menu-toggle">
+  <!-- Checkbox (toggle) -->
+  <input type="checkbox" id="menu-toggle">
+
+  <!-- Hamburger -->
+  <label class="hamburger" for="menu-toggle">
     <svg viewBox="0 0 32 32">
       <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
       <path class="line" d="M7 16 27 16"></path>
     </svg>
   </label>
-  
+
+  <!-- Menu Items -->
   <ul class="right-section">
     <li><a href="web5.html"><i class="fa fa-arrow-left"></i><span>ପଛକୁ ଯାଆନ୍ତୁ</span></a></li>
     <li><a onclick="toggleParagraph()"><i class="fa fa-scroll"></i><span>କାହାଣୀ</span></a></li>
@@ -63,13 +67,14 @@
 </nav>
 
 <style>
+/* ====== Hamburger Style ====== */
 .hamburger {
   cursor: pointer;
-  display: none; /* by default hidden */
+  display: none; /* default: hidden (desktop pe nahi dikhna) */
 }
 
-.hamburger input {
-  display: none;
+#menu-toggle {
+  display: none; /* input ko chhupao */
 }
 
 .hamburger svg {
@@ -91,16 +96,16 @@
   stroke-dasharray: 12 63;
 }
 
-.hamburger input:checked + svg {
+#menu-toggle:checked + .hamburger svg {
   transform: rotate(-45deg);
 }
 
-.hamburger input:checked + svg .line-top-bottom {
+#menu-toggle:checked + .hamburger svg .line-top-bottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
 
-/* ---------- Mobile View ---------- */
+/* ====== Mobile View ====== */
 @media (max-width: 600px) {
   .golden-navbar {
     flex-direction: column;
@@ -115,7 +120,7 @@
     gap: 10px;
   }
 
-  /* show when checkbox checked */
+  /* Show when checkbox checked */
   #menu-toggle:checked ~ .right-section {
     display: flex;
   }
@@ -123,6 +128,14 @@
   .hamburger {
     display: block;
     margin-left: auto;
+  }
+}
+
+/* ====== Desktop View ====== */
+@media (min-width: 601px) {
+  .right-section {
+    display: flex;
+    gap: 20px;
   }
 }
 </style>
@@ -725,6 +738,7 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
 
