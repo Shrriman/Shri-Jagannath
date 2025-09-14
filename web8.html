@@ -105,7 +105,7 @@
   stroke-dashoffset: -32.42;
 }
 
-/* ====== Mobile View ====== */
+    /* ====== Mobile View ====== */
 @media (max-width: 600px) {
   .golden-navbar {
     flex-direction: column;
@@ -113,14 +113,14 @@
   }
 
   .right-section {
-    display: none;
+    display: none; /* pehle se hide */
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
     gap: 10px;
   }
 
-  /* Show when checkbox checked */
+  /* Checkbox checked -> menu show */
   #menu-toggle:checked ~ .right-section {
     display: flex;
   }
@@ -134,10 +134,11 @@
 /* ====== Desktop View ====== */
 @media (min-width: 601px) {
   .right-section {
-    display: flex;
+    display: flex; /* Desktop pe hamesha visible */
     gap: 20px;
   }
 }
+
 </style>
 
 
@@ -738,6 +739,7 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
 
