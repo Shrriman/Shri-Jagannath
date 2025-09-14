@@ -72,8 +72,8 @@
   justify-content: space-between;
   align-items: center;
   background: #2c2c2c;
-  color: white;
   padding: 10px 20px;
+  position: relative;
 }
 
 .left-section {
@@ -92,7 +92,9 @@
   color: gold;
 }
 
-/* Right Menu */
+/* =======================
+   Right Menu
+======================= */
 .right-section {
   display: flex;
   gap: 20px;
@@ -105,6 +107,8 @@
   color: white;
   font-size: 16px;
   transition: color 0.3s;
+  background: none;
+  border: none;
 }
 
 .right-section li a:hover,
@@ -113,7 +117,9 @@
   cursor: pointer;
 }
 
-/* Hamburger */
+/* =======================
+   Hamburger Menu
+======================= */
 #menu-toggle {
   display: none;
 }
@@ -133,7 +139,9 @@
   transition: 0.4s;
 }
 
-/* Mobile View */
+/* =======================
+   Mobile View
+======================= */
 @media (max-width: 600px) {
   .right-section {
     display: none;
@@ -142,14 +150,34 @@
     width: 100%;
     margin-top: 10px;
     padding: 10px;
+    border-top: 1px solid #444;
   }
 
   #menu-toggle:checked ~ .right-section {
     display: flex;
+    animation: slideDown 0.3s ease-in-out;
   }
 
   .hamburger {
     display: flex;
+  }
+}
+
+/* Slide Animation */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   Desktop View
+======================= */
+@media (min-width: 601px) {
+  .right-section {
+    display: flex !important;
+  }
+  .hamburger {
+    display: none;
   }
 }
 </style>
@@ -752,6 +780,7 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
 
