@@ -48,9 +48,9 @@
 
   <!-- Hamburger -->
   <label class="hamburger" for="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="line1"></span>
+    <span class="line2"></span>
+    <span class="line3"></span>
   </label>
 
   <!-- Menu Items -->
@@ -92,124 +92,109 @@
   color: gold;
 }
 
+/* Right Menu (desktop default) */
+.right-section {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.right-section li a,
+.lang-btn {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s;
+  background: none;
+  border: none;
+}
+
+.right-section li a:hover,
+.lang-btn:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
 /* =======================
-   Right Menu
+   Tablet/Mobile (<=768px)
 ======================= */
-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #2c2c2c;
-      padding: 10px 20px;
-      position: relative;
-    }
+@media (max-width: 768px) {
+  .right-section {
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 60px;
+    right: -250px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    transition: right 0.4s ease;
+  }
 
-    .logo-text {
-      font-size: 20px;
-      font-weight: bold;
-      color: gold;
-    }
+  /* Show when checked */
+  #menu-toggle:checked ~ .right-section {
+    right: 20px;
+  }
 
-    .right-section {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      transition: all 0.3s ease-in-out;
-    }
+  .hamburger {
+    display: flex;
+  }
 
-    .right-section li a {
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
+  /* Cross animation */
+  #menu-toggle:checked + .hamburger .line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  #menu-toggle:checked + .hamburger .line2 {
+    opacity: 0;
+  }
+  #menu-toggle:checked + .hamburger .line3 {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
 
-    .right-section li a:hover {
-      color: gold;
-    }
+/* =======================
+   Mobile Small (<=600px)
+======================= */
+@media (max-width: 600px) {
+  .right-section {
+    width: 100%;
+    right: -100%;
+    border-radius: 0;
+  }
 
-    /* Hamburger */
-   /* Hide checkbox */
-    #menu-toggle {
-      display: none;
-    }
+  #menu-toggle:checked ~ .right-section {
+    right: 0;
+    animation: slideDown 0.3s ease-in-out;
+  }
+}
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: #fff;
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      ul {
-        flex-direction: column;
-        background: #444;
-        position: absolute;
-        top: 60px;
-        right: -250px;
-        width: 200px;
-        padding: 20px;
-        border-radius: 5px;
-        transition: right 0.4s ease;
-      }
-
-      /* Show when checkbox checked */
-      #menu-toggle:checked ~ ul {
-        right: 20px;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      /* Cross effect */
-      #menu-toggle:checked + label .line1 {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-      #menu-toggle:checked + label .line2 {
-        opacity: 0;
-      }
-      #menu-toggle:checked + label .line3 {
-        transform: rotate(-45deg) translate(6px, -6px);
-      }
-    }
-    /* Mobile */
-    @media (max-width: 600px) {
-      .right-section {
-        display: none;
-        flex-direction: column;
-        background: #2c2c2c;
-        width: 100%;
-        margin-top: 10px;
-        padding: 10px;
-        border-top: 1px solid #444;
-      }
-
-      .right-section.show {
-        display: flex;
-        animation: slideDown 0.3s ease-in-out;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    /* Animation */
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+/* Slide Animation */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 
        
        
@@ -810,6 +795,7 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
 
