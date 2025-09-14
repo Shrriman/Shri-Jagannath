@@ -95,94 +95,105 @@
 /* =======================
    Right Menu
 ======================= */
-.right-section {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
+nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 10px 20px;
+      position: relative;
+    }
 
-.right-section li a,
-.lang-btn {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  transition: color 0.3s;
-  background: none;
-  border: none;
-}
+    .logo-text {
+      font-size: 20px;
+      font-weight: bold;
+      color: gold;
+    }
 
-.right-section li a:hover,
-.lang-btn:hover {
-  color: gold;
-  cursor: pointer;
-}
+    .right-section {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      transition: all 0.3s ease-in-out;
+    }
 
-/* =======================
-   Hamburger Menu
-======================= */
-#menu-toggle {
-  display: none;
-}
+    .right-section li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
+    .right-section li a:hover {
+      color: gold;
+    }
 
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-  transition: 0.4s;
-}
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1001;
+    }
 
-/* =======================
-   Mobile View
-======================= */
-@media (max-width: 600px) {
-  .right-section {
-    display: none;
-    flex-direction: column;
-    background: #2c2c2c;
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    border-top: 1px solid #444;
-  }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
 
-  #menu-toggle:checked ~ .right-section {
-    display: flex;
-    animation: slideDown 0.3s ease-in-out;
-  }
+    /* Cross Effect */
+    .hamburger.active .line1 {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active .line2 {
+      opacity: 0;
+    }
+    .hamburger.active .line3 {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
 
-  .hamburger {
-    display: flex;
-  }
-}
+    /* Mobile */
+    @media (max-width: 600px) {
+      .right-section {
+        display: none;
+        flex-direction: column;
+        background: #2c2c2c;
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        border-top: 1px solid #444;
+      }
 
-/* Slide Animation */
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+      .right-section.show {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+      }
 
-/* =======================
-   Desktop View
-======================= */
-@media (min-width: 601px) {
-  .right-section {
-    display: flex !important;
-  }
-  .hamburger {
-    display: none;
-  }
-}
-</style>
+      .hamburger {
+        display: flex;
+      }
+    }
 
+    /* Animation */
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 
+       <script>
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      menu.classList.toggle("show");
+    });
+  </script>
+       
         <div class="lang-popup" id="lang-popup">
     <div class="popup-content">
       <h3>🌺 ଭାଷା ବଦଳାନ୍ତୁ</h3>
@@ -780,6 +791,7 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
 
