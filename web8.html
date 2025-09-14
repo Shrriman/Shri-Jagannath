@@ -292,6 +292,11 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
  /* Bottom Pop-Up */
@@ -349,6 +354,52 @@
     .popup-options button:hover {
       background-color: #916c00;
     }
+
+@media (max-width: 600px) {
+  .lang-popup {
+    width: 100vw;
+    padding: 30px 15px;
+  }
+
+  .popup-content {
+    font-size: 28px;
+    line-height: 1.6;
+  }
+
+  .popup-content h3 {
+    font-size: 34px;
+  }
+
+  .popup-options button {
+    font-size: 24px;
+    padding: 10px;
+  }
+  .lang-btn {
+    margin: 10px 0;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .lang-popup {
+    width: 75vw;
+    padding: 45px 25px;
+  }
+
+  .popup-content {
+    font-size: 36px;
+  }
+
+  .popup-content h3 {
+    font-size: 46px;
+  }
+
+  .popup-options button {
+    font-size: 36px;
+    padding: 12px;
+  }
+}
+
             
         </style>
 
@@ -779,6 +830,7 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
 
