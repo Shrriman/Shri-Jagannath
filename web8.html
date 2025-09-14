@@ -179,27 +179,33 @@
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
-    
+
+/* =======================
+   Tablet/Mobile (<=768px)
+======================= */
 @media (max-width: 768px) {
   .right-section {
     flex-direction: column;
     background: #444;
     position: absolute;
     top: 72px;
-    right: -100%;  /* initially hidden */
-    width: 70%;     /* responsive width */
+    right: -250px;
+    width: 200px;
     padding: 20px;
     border-radius: 5px;
     transition: right 0.4s ease;
-  }
-
-  #menu-toggle:checked ~ .right-section {
-    right: 0;  /* slide in */
+    right: -100%; /* hide off-screen */
+    width: 33%; /* ya jitna chaho */
   }
 
   .hamburger {
     display: flex;
+    cursor: pointer;
   }
+
+  #menu-toggle:checked ~ .right-section {
+    right: 0; 
+}
 
 .right-section li a,
 .lang-btn {
@@ -869,6 +875,7 @@ text-align: start;
 </div>
    </body></center>
 </html>
+
 
 
 
