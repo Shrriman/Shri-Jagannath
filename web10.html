@@ -8,15 +8,18 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-        body {
+         body {
             margin: 0;
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             background-color: #fff4d0;
             color: #333;
             padding: 0;
             height: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
-
+            
         .about-section h1 {
             background-size: cover;
             background-position: center;
@@ -28,8 +31,19 @@
             color: rgb(255, 255, 255);
             text-shadow: 2px 2px 5px #000000;
             font-size: 4em;
-            text-shadow: 2px 2px 6px #000;  
+            text-shadow: 2px 2px 6px #000; 
+            font-size: 4em;
+            text-shadow: 2px 2px 6px #000;
+            margin-top: 72px;
         }
+
+      @media (max-width: 768px) {
+        .about-section h1 {
+            font-size: 3em;
+            margin-top: 50px;
+        }
+      }
+            
     </style>
     </head>
     <center><body>
@@ -40,6 +54,15 @@
             <img src="jaga3.png" alt="Jagannath Logo" class="logo">
             <span class="logo-text">श्री जगन्नाथ</span>
           </div>
+             
+<input type="checkbox" id="menu-toggle">  
+<label class="hamburger" for="menu-toggle">          
+  <svg viewBox="0 0 32 32">
+    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+    <path class="line" d="M7 16 27 16"></path>
+  </svg>
+</label>
+             
           <ul class="right-section">
             <li><a href="web4.html"><i class="fa fa-arrow-left"></i><span>पिछे जाऐं</span></a></li>
             <li style="cursor: pointer;"><a onclick="toggleParagraph()"><i class="fa fa-scroll"></i><span>कहानियां</span></a></li>
@@ -50,6 +73,147 @@
             <li><button id="lang-btn" class="lang-btn"><a><i class="fa fa-globe"></i><span>भाषा</a></span></button></li>
           </ul>
         </nav>
+
+<style>
+/* Navbar Base */
+.golden-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c2c2c;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: gold;
+}
+
+/* Right Menu (desktop default) */
+.right-section {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+  color: golden;
+}
+
+.right-section:hover {
+    color: white;
+}
+
+.right-section li a,
+.lang-btn {
+  text-decoration: none;
+  color: gold;
+  font-size: 23px;
+  transition: color 0.3s;
+  background: none;
+  border: none;
+}
+
+.right-section li a:hover,
+.lang-btn:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: #ffd700;
+  text-shadow: 2px 2px 6px #000;
+}
+    
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 3em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* =======================
+   Tablet/Mobile (<=768px)
+======================= */
+@media (max-width: 768px) {
+  .right-section {
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 72px;
+    right: -250px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    transition: right 0.4s ease;
+    right: -100%; /* hide off-screen */
+    width: 33%; /* ya jitna chaho */
+  }
+
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+
+  #menu-toggle:checked ~ .right-section {
+    right: 0; 
+}
+
+.right-section li a,
+.lang-btn {
+  font-size: 19px;
+}
+}
+    
+</style>
 
         <div class="lang-popup" id="lang-popup">
     <div class="popup-content">
@@ -80,7 +244,6 @@
         
         <!-- CSS -->
         <style>
-
         .golden-navbar {
           background: linear-gradient(90deg, #8f0000, rgb(116, 0, 0));
           background: radial-gradient(circle, #8B0000, #4b0000);
@@ -100,7 +263,7 @@
         .left-section .logo {
           width: 48px; /* Adjust the size of the logo */
           height: auto;
-          margin-right: 10px; /* Space between logo and text */
+          margin-right: 10px;/* Space between logo and text */
           margin-left: 10px;
           border: 3px solid gold;
           border-radius: 50%;
@@ -113,8 +276,7 @@
           color: #ffd700;
           font-size: 30px;
           font-weight: bold;
-          text-shadow: 0 0 8px gold;
-          text-shadow: 2px 2px 6px #000;
+          text-shadow: 2px 2px 6px #000;  
         }
         
         .golden-navbar ul {
@@ -131,7 +293,7 @@
         
         .golden-navbar a {
           color: #ffd700;
-          font-size: 23px;
+          font-size: 19px;
           font-weight: bold;
           text-decoration: none;
           transition: 0.3s ease;
@@ -139,20 +301,20 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          text-shadow: 2px 2px 6px #000;
+          text-shadow: 2px 2px 6px #000;  
         }
         
         .golden-navbar a i {
-          font-size: 26px;
+          font-size: 23px;
           margin-bottom: 4px;
           display: block;
-          text-shadow: 2px 2px 6px #000;
+          text-shadow: 2px 2px 6px #000;  
         }
         
         .golden-navbar a:hover {
           color: #ffffff;
           text-shadow: 0 0 10px #ffd700;
-          text-shadow: 2px 2px 6px #000;
+          text-shadow: 2px 2px 6px #000;  
         }
 
 .lang-btn {
@@ -163,6 +325,12 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 6px #000;
 }
 
  /* Bottom Pop-Up */
@@ -194,7 +362,7 @@
     }
 
     .popup-content h3 {
-      font-size: 48px;
+      font-size: 46px;
       margin-top: 0px;
       margin-bottom: 23px;
     }
@@ -220,7 +388,63 @@
     .popup-options button:hover {
       background-color: #916c00;
     }
-        
+
+@media (max-width: 600px) {
+  .lang-popup {
+    width: 100vw;
+    padding: 30px 15px;
+  }
+
+  .popup-content {
+    font-size: 28px;
+    line-height: 1.6;
+  }
+
+  .popup-content h3 {
+    font-size: 34px;
+  }
+
+  .popup-options button {
+    font-size: 24px;
+    padding: 10px;
+  }
+  .lang-btn {
+    margin: 7px 0;
+  }
+  .golden-navbar a {
+    margin: 4px 0;
+  }
+  .left-section .logo {
+    width: 39px;
+    margin-right: 5px;
+  }
+  .left-section .logo-text {
+    font-size: 26px;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .lang-popup {
+    width: 75vw;
+    padding: 45px 25px;
+  }
+
+  .popup-content {
+    font-size: 36px;
+  }
+
+  .popup-content h3 {
+    font-size: 46px;
+  }
+
+  .popup-options button {
+    font-size: 36px;
+    padding: 12px;
+  }
+}
+
+            
         </style>
 
         <div class="about-section">
@@ -475,10 +699,37 @@ text-align: start;
     margin: 0 0 12px;
     color: #4a3c2a;
   }
+
+  #h2 {
+    color: #a70037; 
+    font-size: 36px;
+  }
+
+@media (max-width: 768px) {
+  .about-section h3 {
+      font-size: 19px;
+  }
+  .about-section p, b,
+  .p {
+      font-size: 16px;
+}
+  .button-content {
+      font-size: 16px;
+  }
+  #h2 {
+    font-size: 21px;
+    height: 10px;
+    margin-top: 0;
+  }
+   #hidden-content1, #hidden-content2 {
+      border-left: 4px solid #ffb300;
+  }
+}
+      
 </style>
 
 
-  <h2 onclick="toggleParagraph1()" style="color: #a70037; font-size: 37px;">श्री जगन्नाथ : एक अद्भुत रूप का परिचय</h2>
+  <h2 onclick="toggleParagraph1()" id="h2">श्री जगन्नाथ : एक अद्भुत रूप का परिचय</h2>
   <script>
   function toggleParagraph1() {
     var content = document.getElementById("hidden-content1");
@@ -503,7 +754,7 @@ text-align: start;
 
 इसलिए जगन्नाथ जी को आधा निर्मित भगवान कहना गलत हैं। उनकी हाथ अधूरा नहीं है, वह असीमित है, जिसकी कोई सीमा नहीं है। उन्होंने सबको गले लगाने के लिए अपनी बाहें अनंत दूरी तक फैला रखी हैं। वह अपूर्ण के भीतर पूर्ण है, आकार के भीतर निराकार है। उनकी न तो कोई आदि है, न ही कोई अंत। उनकी यह अपूर्णता ही उन्हें पूर्णता प्रदान करती है। वह प्रेम और भक्ति का प्रतीक जगत के नाथ श्री जगन्नाथ है।</p></div>
 
-    <h2 onclick="toggleParagraph2()" style="color: #a70037; font-size: 37px;">श्री मन्दिर : भक्त और भगवान का पवित्र मिलन स्थल</h2>
+    <h2 onclick="toggleParagraph2()" id="h2">श्री मन्दिर : भक्त और भगवान का पवित्र मिलन स्थल</h2>
 <script>
   function toggleParagraph2() {
     var content = document.getElementById("hidden-content2");
@@ -652,3 +903,4 @@ text-align: start;
 </div>
     </body></center>
 </html>
+
