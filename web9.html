@@ -182,9 +182,7 @@
   stroke-dashoffset: -32.42;
 }
 
-/* =======================
-   Tablet/Mobile (<=768px)
-======================= */
+
 @media (max-width: 768px) {
   .right-section {
     flex-direction: column;
@@ -346,7 +344,7 @@
     }
 
     .lang-popup.show {
-      transform: translate(-50%, -23%);
+      transform: translate(-50%, 0);
     }
 
     .popup-content {
@@ -424,7 +422,6 @@
     }
 }
 
-/* Tablet Responsive */
 @media (min-width: 601px) and (max-width: 1024px) {
   .lang-popup {
     width: 75vw;
@@ -553,7 +550,6 @@ Shri Jagannath is a symbol of pride for every Odia. His glory is world-renowned.
     0 -2px 4px rgba(79, 70, 229, 0.1);
 }
 
-/* Optional: Add a subtle shine effect */
 @keyframes shine {
   from {
     transform: translateX(-100%) rotate(45deg);
@@ -987,3 +983,4 @@ backToTop.addEventListener("click", () => {
 </style>
     </body></center>
 </html>
+
