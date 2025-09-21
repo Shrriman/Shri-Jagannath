@@ -53,37 +53,45 @@
             button.learn-more {
               width: 226px;
               height: 50px;
-              border-radius: 1.625rem;
+              border-radius: 40%;
               background-color: transparent;
-              border: 2px solid #fff8f0;
-              position: relative;
-              overflow: hidden;
-              cursor: pointer;
-            }
-            
+              padding: 0 0 0 0;
+              margin: 0 0 0 0;
+              border-radius: 1.625rem;
+              border-color: #fff8f0;
+              
+             }
             button.learn-more .circle {
               transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-              position: absolute;
-              top: 0;
-              left: 0;
-              display: flex;
-              align-items: center;
-              justify-content: center;
+              position: relative;
+              display: block;
+              margin: 0;
               width: 3rem;
               height: 3rem;
               background: #373737;
-              border-radius: 50%;
+              border-radius: 1.625rem;
             }
-            
+             
+             button.learn-more .circle .icon {
+              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              background: #fff;
+             }
+             
             button.learn-more .circle .icon.arrow {
-              position: relative;
+              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+              left: 0.625rem;
               width: 1.125rem;
               height: 0.125rem;
-            }
-            
-            button.learn-more .circle .icon.arrow::before {
-              content: "";
+              background: none;
+             }
+             
+             button.learn-more .circle .icon.arrow::before {
               position: absolute;
+              content: "";
               top: -0.29rem;
               right: 0.0625rem;
               width: 0.625rem;
@@ -91,38 +99,39 @@
               border-top: 0.125rem solid #fff8f0;
               border-right: 0.125rem solid #fff8f0;
               transform: rotate(45deg);
-            }
-            
-            .button-text {
+             }
+             
+             .button-text {
+              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
               position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
+              top: 376px;
+              left: 8px;
+              right: 0px;
               bottom: 0;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: #000;
+              padding: 0.75rem 0;
+              margin: 0 0 0 1.85rem;
+              color: #000000;
               font-weight: 700;
-              font-size: 18px;
+              font-size: 17.5px;
+              line-height: 1.6;
               text-align: center;
               text-transform: uppercase;
+              text-decoration: none;
               font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-            }
-            
-            /* Hover Effects */
-            button:hover .circle {
+             }
+             
+             button:hover .circle {
               width: 100%;
-            }
-            
-            button:hover .circle .icon.arrow {
-              transform: translateX(1rem);
-            }
-            
-            button:hover .button-text {
-              color: #fff;
-            }
+             }
+             
+             button:hover .circle .icon.arrow {
+              background: #fff;
+              transform: translate(1rem, 0);
+             }
+             
+             button:hover .button-text {
+              color: #ffffff;
+             }
             
             /* Mobile Responsiveness */
             @media (max-width: 768px) {
@@ -909,6 +918,7 @@
   </style>
     </body>
 </html>
+
 
 
 
