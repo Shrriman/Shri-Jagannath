@@ -49,18 +49,6 @@
             text-align: center;
         }
 
-        @media(max-width: 768px) {
-            .hero {
-                margin-top: 5px;
-            }
-            .hero h1 {
-                font-size: 1.8em;
-            }         
-            .hero p {
-                font-size: 0.9em;
-            }
-         }
-
             button.learn-more {
               width: 226px;
               height: 50px;
@@ -115,7 +103,7 @@
              .button-text {
               transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
               position: absolute;
-              top: 255px;
+              top: 320px;
               left: 8px;
               right: 0px;
               bottom: 0;
@@ -143,6 +131,21 @@
              button:hover .button-text {
               color: #ffffff;
              }
+
+            @media(max-width: 768px) {
+            .hero {
+                margin-top: 5px;
+            }
+            .hero h1 {
+                font-size: 1.8em;
+            }         
+            .hero p {
+                font-size: 0.9em;
+            }
+            .button-text {
+                top: 255px;
+            }
+         }
 
 </style>
     </head>
@@ -902,6 +905,7 @@
   </style>
     </body>
 </html>
+
 
 
 
