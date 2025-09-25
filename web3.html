@@ -331,10 +331,22 @@
 
                 window.addEventListener("resize", checkScreen);
                 window.addEventListener("load", checkScreen);
+
+                const menuToggle = document.getElementById('menu-toggle');
+                const video = document.querySelector('video');
                 
+                menuToggle.addEventListener('change', () => {
+                    if(menuToggle.checked){
+                        video.style.pointerEvents = 'none'; 
+                    } else {
+                        video.style.pointerEvents = 'auto'; 
+                    }
+                });
+
             </script>
     </body>
 </html>
+
 
 
 
