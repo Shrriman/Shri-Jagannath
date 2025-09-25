@@ -157,6 +157,79 @@
   stroke-dashoffset: -32.42;
 }
 
+       .golden-navbar {
+          background: linear-gradient(90deg, #8f0000, rgb(116, 0, 0));
+          background: radial-gradient(circle, #8B0000, #4b0000);
+          border-top: 4px solid gold;
+          border-bottom: 4px solid gold;
+          padding: 12px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        .left-section {
+          display: flex;
+          align-items: center;
+        }
+        
+        .left-section .logo {
+          width: 48px; /* Adjust the size of the logo */
+          height: auto;
+          margin-right: 10px;/* Space between logo and text */
+          margin-left: 10px;
+          border: 3px solid gold;
+          border-radius: 50%;
+          box-shadow: 0 0 12px gold;
+          object-fit: cover;
+          text-shadow: 2px 2px 6px #000;
+        }
+        
+        .left-section .logo-text {
+          color: #ffd700;
+          font-size: 30px;
+          font-weight: bold;
+          text-shadow: 2px 2px 6px #000;  
+        }
+        
+        .golden-navbar ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+        }
+        
+        .golden-navbar li {
+          display: inline-block;
+          margin: 0 15px;
+        }
+        
+        .golden-navbar a {
+          color: #ffd700;
+          font-size: 19px;
+          font-weight: bold;
+          text-decoration: none;
+          transition: 0.3s ease;
+          text-align: center;  /* Center the text */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-shadow: 2px 2px 6px #000;  
+        }
+        
+        .golden-navbar a i {
+          font-size: 23px;
+          margin-bottom: 4px;
+          display: block;
+          text-shadow: 2px 2px 6px #000;  
+        }
+        
+        .golden-navbar a:hover {
+          color: #ffffff;
+          text-shadow: 0 0 10px #ffd700;
+          text-shadow: 2px 2px 6px #000;  
+        }
+
 
 @media (max-width: 768px) {
   .right-section {
@@ -184,6 +257,19 @@
 .logo-text {
   font-size: 16px;
 }
+  .golden-navbar a {
+    margin: 4px 0;
+  }
+  .left-section .logo {
+    width: 39px;
+    margin-right: 5px;
+  }
+  .left-section .logo-text {
+    font-size: 26px;
+  }
+  .right-section li a {
+    font-size: 18px;
+  }
 }
     
 </style>
@@ -205,6 +291,7 @@
         </video> </center>
     </body>
 </html>
+
 
 
 
