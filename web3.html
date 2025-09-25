@@ -274,9 +274,10 @@
     
 </style>
 
-        <center> <video src="jagannath.mp4" type="video/mp4" controls autoplay loop>
+        <center> <video id="desktop-video" src="jagannath.mp4" autoplay loop muted playsinline class="desktop-video"></video>
+    <video id="mobile-video" src="jagannath 2.mp4" autoplay loop muted playsinline class="mobile-video"></video>
             <style>
-               video {
+               .desktop-video {
                  top: 0;
                  left: 0;
                  height: 100%;
@@ -288,9 +289,28 @@
                  border: none;
                  margin-top: 70px;
                 }
+                
+                .desktop-video {
+                    display: block;
+                }
+                
+                .mobile-video {
+                    display: none;
+                }
+                
+                /* Mobile devices */
+                @media (max-width: 768px) {
+                    .desktop-video {
+                        display: none;
+                    }
+                    .mobile-video {
+                        display: block; 
+                    }
+                }
             </style>
         </video> </center>
     </body>
 </html>
+
 
 
