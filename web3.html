@@ -275,7 +275,8 @@
 </style>
 
         <center> <video id="desktop-video" src="jagannath.mp4" controls autoplay loop playsinline class="desktop-video"></video>
-    <video id="mobile-video" src="jagannath 2.mp4" controls autoplay loop playsinline class="mobile-video"></video>
+    <video id="mobile-video" src="jagannath 2.mp4" controls autoplay loop playsinline class="mobile-video"></video> </center>
+        
             <style>
                video {
                  top: 0;
@@ -308,9 +309,27 @@
                     }
                 }
             </style>
-        </video> </center>
+            <script>
+                const desktopVideo = document.getElementById("desktop-video");
+                const mobileVideo = document.getElementById("mobile-video");
+                
+                function checkScreen() {
+                    if(window.innerWidth <= 768){
+                        desktopVideo.pause();
+                        mobileVideo.play();
+                    } else {
+                        mobileVideo.pause();
+                        desktopVideo.play();
+                    }
+                }
+
+                window.addEventListener("resize", checkScreen);
+                window.addEventListener("load", checkScreen);
+                
+            </script>
     </body>
 </html>
+
 
 
 
