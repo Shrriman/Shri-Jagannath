@@ -4,62 +4,119 @@
   <title>Intro Page</title>
 </head>
 <body>
-   <audio id="myAudio" autoplay playsinline loop>
+  
+  <audio id="myAudio" autoplay playsinline loop>
         <source src="chanakya.mp3" type="audio/mp3">
      Your browser does not support the audio tag.
     </audio>
 
   <div id="introVideo">
     <video id="welcomeVideo" autoplay muted>
-      <source src="jaga5.mp4" type="video/mp4">
+      <source src="jagannath.mp4" type="video/mp4" class="desktop-video" id="desktop-video">
+      <source src="jagannath 2.mp4" type="video/mp4" class="mobile-video" id="mobile-video">
       Your browser does not support the video tag.
     </video>
   </div>
+        
+            <style>
+                
+            </style>
+            <script>
+                
+            </script>
+  
   <style>
 
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-    
-    #introVideo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  z-index: 9999;
-}
-
-#introVideo video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+                * {
+                    -webkit-tap-highlight-color: transparent;
+                }
+                      
+                #introVideo {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: black;
+                    z-index: 9999;
+                }
+                  
+                #introVideo video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                  
+                .desktop-video {
+                    display: block;
+                }
+                
+                .mobile-video {
+                    display: none;
+                }
+                
+                /* Mobile devices */
+                @media (max-width: 768px) {
+                .desktop-video {
+                    display: none;
+                }
+                .mobile-video {
+                    display: block; 
+                }
+                }
   </style>
   <script>
-  // Redirect after video ends
-    const video = document.getElementById('welcomeVideo');
-    video.onended = function () {
-      window.location.href = "web1.html";
-    };
 
-    // Try to autoplay audio or fallback to user interaction
-    const audio = document.getElementById("myAudio");
+                const desktopVideo = document.getElementById("desktop-video");
+                const mobileVideo = document.getElementById("mobile-video");
+                
+                function checkScreen() {
+                    if(window.innerWidth <= 768){
+                        desktopVideo.pause();
+                        mobileVideo.play();
+                    } else {
+                        mobileVideo.pause();
+                        desktopVideo.play();
+                    }
+                }
 
-    function tryAutoPlay() {
-      audio.muted = false;
-      audio.play().catch(() => {
-        const playOnClick = () => {
-          audio.play();
-          document.removeEventListener("click", playOnClick);
-        };
-        document.addEventListener("click", playOnClick);
-      });
-    }
+                window.addEventListener("resize", checkScreen);
+                window.addEventListener("load", checkScreen);
 
-    window.addEventListener("load", tryAutoPlay);
+                const menuToggle = document.getElementById('menu-toggle');
+                const video = document.querySelector('video');
+                
+                menuToggle.addEventListener('change', () => {
+                    if(menuToggle.checked){
+                        video.style.pointerEvents = 'none'; 
+                    } else {
+                        video.style.pointerEvents = 'auto'; 
+                    }
+                });
+
+    
+              // Redirect after video ends
+                const video = document.getElementById('welcomeVideo');
+                video.onended = function () {
+                  window.location.href = "web1.html";
+                };
+            
+                // Try to autoplay audio or fallback to user interaction
+                const audio = document.getElementById("myAudio");
+            
+                function tryAutoPlay() {
+                  audio.muted = false;
+                  audio.play().catch(() => {
+                    const playOnClick = () => {
+                      audio.play();
+                      document.removeEventListener("click", playOnClick);
+                    };
+                    document.addEventListener("click", playOnClick);
+                  });
+                }
+
+                  window.addEventListener("load", tryAutoPlay);
   </script>
 </body>
 </html>
+
