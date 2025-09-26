@@ -1,104 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Intro Page</title>
 </head>
 <body>
   
-  <audio id="myAudio" autoplay playsinline loop>
-        <source src="Jagannath.mp3" type="audio/mp3">
-     Your browser does not support the audio tag.
-    </audio>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
 
+    #introVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: 9999;
+    }
+
+    #introVideo video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Default desktop */
+    .desktop-video {
+      display: block;
+    }
+    .mobile-video {
+      display: none;
+    }
+
+    /* For mobile screen */
+    @media (max-width: 768px) {
+      .desktop-video {
+        display: none;
+      }
+      .mobile-video {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Background Audio -->
+  <audio id="myAudio" autoplay muted loop playsinline>
+    <source src="Jagannath.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <!-- Intro Video -->
   <div id="introVideo">
-    <video id="welcomeVideo" autoplay muted>
-      <source src="jagannath.mp4" type="video/mp4" class="desktop-video" id="desktop-video">
-      <source src="jagannath 2.mp4" type="video/mp4" class="mobile-video" id="mobile-video">
-      Your browser does not support the video tag.
+    <video id="desktopVideo" class="desktop-video" autoplay muted playsinline>
+      <source src="jagannath.mp4" type="video/mp4">
+    </video>
+    <video id="mobileVideo" class="mobile-video" autoplay muted playsinline>
+      <source src="jagannath2.mp4" type="video/mp4">
     </video>
   </div>
 
-  <style>
-
-                * {
-                    -webkit-tap-highlight-color: transparent;
-                }
-                      
-                #introVideo {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: black;
-                    z-index: 9999;
-                }
-                  
-                #introVideo video {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-                  
-                .desktop-video {
-                    display: block;
-                }
-                
-                .mobile-video {
-                    display: none;
-                }
-                
-                /* Mobile devices */
-                @media (max-width: 768px) {
-                .desktop-video {
-                    display: none;
-                }
-                .mobile-video {
-                    display: block; 
-                }
-                }
-  </style>
   <script>
+    const desktopVideo = document.getElementById("desktopVideo");
+    const mobileVideo = document.getElementById("mobileVideo");
+    const audio = document.getElementById("myAudio");
 
-const desktopVideo = document.getElementById("desktop-video");
-const mobileVideo = document.getElementById("mobile-video");
-const videoElement = document.getElementById("welcomeVideo");
-const audio = document.getElementById("myAudio");
-
-// ✅ Screen size check
-function checkScreen() {
-    if (window.innerWidth <= 768) {
-        desktopVideo.pause();
-        mobileVideo.play();
-    } else {
-        mobileVideo.pause();
-        desktopVideo.play();
+    // Redirect when video ends
+    function redirectAfterVideo() {
+      window.location.href = "web1.html";
     }
-}
-window.addEventListener("resize", checkScreen);
-window.addEventListener("load", checkScreen);
 
-// ✅ Redirect after video ends
-videoElement.onended = function () {
-    window.location.href = "web1.html";
-};
+    desktopVideo.onended = redirectAfterVideo;
+    mobileVideo.onended = redirectAfterVideo;
 
-// ✅ Audio autoplay handling
-function tryAutoPlay() {
-    audio.muted = false;
-    audio.play().catch(() => {
+    // Audio autoplay handling
+    function tryAutoPlay() {
+      audio.muted = false;
+      audio.play().catch(() => {
         const playOnClick = () => {
-            audio.play();
-            document.removeEventListener("click", playOnClick);
+          audio.play();
+          document.removeEventListener("click", playOnClick);
         };
         document.addEventListener("click", playOnClick);
-    });
-}
-window.addEventListener("load", tryAutoPlay);
-    
+      });
+    }
+    window.addEventListener("load", tryAutoPlay);
   </script>
 </body>
 </html>
+
 
 
 
