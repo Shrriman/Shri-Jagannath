@@ -67,56 +67,44 @@
   </style>
   <script>
 
-                const desktopVideo = document.getElementById("desktop-video");
-                const mobileVideo = document.getElementById("mobile-video");
-                
-                function checkScreen() {
-                    if(window.innerWidth <= 768){
-                        desktopVideo.pause();
-                        mobileVideo.play();
-                    } else {
-                        mobileVideo.pause();
-                        desktopVideo.play();
-                    }
-                }
+const desktopVideo = document.getElementById("desktop-video");
+const mobileVideo = document.getElementById("mobile-video");
+const videoElement = document.getElementById("welcomeVideo");
+const audio = document.getElementById("myAudio");
 
-                window.addEventListener("resize", checkScreen);
-                window.addEventListener("load", checkScreen);
+// ✅ Screen size check
+function checkScreen() {
+    if (window.innerWidth <= 768) {
+        desktopVideo.pause();
+        mobileVideo.play();
+    } else {
+        mobileVideo.pause();
+        desktopVideo.play();
+    }
+}
+window.addEventListener("resize", checkScreen);
+window.addEventListener("load", checkScreen);
 
-                const menuToggle = document.getElementById('menu-toggle');
-                const video = document.querySelector('video');
-                
-                menuToggle.addEventListener('change', () => {
-                    if(menuToggle.checked){
-                        video.style.pointerEvents = 'none'; 
-                    } else {
-                        video.style.pointerEvents = 'auto'; 
-                    }
-                });
+// ✅ Redirect after video ends
+videoElement.onended = function () {
+    window.location.href = "web1.html";
+};
 
+// ✅ Audio autoplay handling
+function tryAutoPlay() {
+    audio.muted = false;
+    audio.play().catch(() => {
+        const playOnClick = () => {
+            audio.play();
+            document.removeEventListener("click", playOnClick);
+        };
+        document.addEventListener("click", playOnClick);
+    });
+}
+window.addEventListener("load", tryAutoPlay);
     
-              // Redirect after video ends
-                const video = document.getElementById('welcomeVideo');
-                video.onended = function () {
-                  window.location.href = "web1.html";
-                };
-            
-                // Try to autoplay audio or fallback to user interaction
-                const audio = document.getElementById("myAudio");
-            
-                function tryAutoPlay() {
-                  audio.muted = false;
-                  audio.play().catch(() => {
-                    const playOnClick = () => {
-                      audio.play();
-                      document.removeEventListener("click", playOnClick);
-                    };
-                    document.addEventListener("click", playOnClick);
-                  });
-                }
-
-                  window.addEventListener("load", tryAutoPlay);
   </script>
 </body>
 </html>
+
 
