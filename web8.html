@@ -478,6 +478,7 @@
   </div>
 
   <style>
+    
     .li {
       padding: 5px 0;
       list-style: none;
@@ -503,19 +504,28 @@
     }
 
     .lang-btn {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-    }
+  background-color: transparent;
+  padding: 0;
+  border-radius: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 6px #000;
+}
 
-    /* Bottom Pop-Up */
     .lang-popup {
       position: fixed;
       left: 50%;
       bottom: 0;
       transform: translate(-50%, 200vh);
       width: 100%;
-      max-width: 261px;
+      max-width: 400px;
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(12px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -526,19 +536,20 @@
     }
 
     .lang-popup.show {
-      transform: translate(-50%, -23%);
+      transform: translate(-50%, 0);
     }
 
     .popup-content {
       text-align: center;
-      font-size: 16px;
+      font-size: 30px;
       color: #fff;
     }
 
     .popup-content h3 {
       margin-top: 0;
       margin-bottom: 15px;
-      color: #fff;
+      color: #000;
+      font-size: 26px;
     }
 
     .popup-options {
@@ -554,7 +565,7 @@
       padding: 10px;
       border-radius: 8px;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 23px;
       cursor: pointer;
       transition: background 0.3s;
     }
@@ -562,11 +573,64 @@
     .popup-options button:hover {
       background-color: #916c00;
     }
+            
+@media (max-width: 768px) {
+  .lang-popup {
+    width: 61vw;
+    padding: 30px 15px;
+    
+  }
+
+  .popup-content {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+
+  .popup-content h3 {
+    font-size: 19px;
+  }
+
+  .popup-options button {
+    font-size: 17px;
+    padding: 10px;
+  }
+  .lang-btn {
+    margin: 7px 0;
+  }
+  .lang-btn {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .lang-popup {
+    width: 75vw;
+    padding: 45px 25px;
+  }
+
+  .popup-content {
+    font-size: 36px;
+  }
+
+  .popup-content h3 {
+    font-size: 46px;
+  }
+
+  .popup-options button {
+    font-size: 36px;
+    padding: 12px;
+  }
+
+  .lang-btn {
+    font-size: 19px;
+  }
+}
+    
   </style>
 
   <!-- Language Button -->
   <div class="li">
-    <button id="lang-btn" class="lang-btn">
+    <button id="lang-btn" class="lang-btn" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';">
       <a><i class="fa fa-globe"></i></a>
     </button>
   </div>
@@ -993,6 +1057,7 @@
   </script>
 </body>
 </html>
+
 
 
 
