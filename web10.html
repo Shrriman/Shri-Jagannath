@@ -58,7 +58,7 @@
     .album-cover {
       width: 90vw;
       max-width: 800px;
-      margin-bottom: 30px;
+      margin-bottom: 61px;
       overflow-x: auto;
       overflow-y: hidden;
     }
@@ -278,8 +278,8 @@
 .styled-wrapper .button {
   display: block;
   position: relative;
-  width: 52px;
-  height: 52px;
+  width: 61px;
+  height: 61px;
   margin: 0;
   overflow: hidden;
   outline: none;
@@ -339,9 +339,9 @@
 
 .styled-wrapper .button-elem {
   display: block;
-  width: 19px;
-  height: 19px;
-  margin: 16px 18px 0 16px;
+  width: 28px;
+  height: 28px;
+  margin: 16px 9px 0 16px;
   transform: rotate(360deg);
   fill: #f0eeef;
   font-weight: 700;
@@ -355,7 +355,7 @@
 .back {
   position: absolute;
   left: 7px;
-  top: 16px;
+  top: 14px;
 }
 
     /* Responsive */
@@ -424,23 +424,26 @@
       flex-direction: column;
       white-space: nowrap;
       z-index: 1000;
+      margin-left: 13px;
     }
 
     #stickyHeader div {
-      font-size: 1.8rem;
       text-decoration: underline;
       text-decoration-color: #8f0000;
       text-underline-offset: 6px;
       text-shadow: 1px 1px 3px #ffa500cc;
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: gold;
     }
 
     #stickyHeader img {
       position: absolute;
-      left: 15px;
+      left: 9px;
       top: 50%;
       transform: translateY(-50%);
-      width: 42px;
-      height: 42px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       border: 2px solid #8f0000;
       box-shadow: 0 0 8px rgba(178, 34, 34, 0.7);
@@ -456,6 +459,10 @@
       #stickyHeader div {
         font-size: 1.4rem;
       } 
+      #stickyHeader img {
+        width: 48px;
+        height: 48px;
+      }
     }
       
   </style>
@@ -468,18 +475,19 @@
   </div>
 
   <style>
-        .li {
+    
+    .li {
       padding: 5px 0;
       list-style: none;
       position: absolute;
       right: 7px;
-      top: 19px;
+      top: 16px;
     }
 
     .li a i {
       top: 16px;
       color: #ffd700;
-      font-size: 23px;
+      font-size: 28px;
       border-radius: 50%;
       border: 4px solid #8f0000;
       padding: 5px;
@@ -493,19 +501,28 @@
     }
 
     .lang-btn {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-    }
+  background-color: transparent;
+  padding: 0;
+  border-radius: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 6px #000;
+}
 
-    /* Bottom Pop-Up */
     .lang-popup {
       position: fixed;
       left: 50%;
       bottom: 0;
       transform: translate(-50%, 200vh);
       width: 100%;
-      max-width: 261px;
+      max-width: 400px;
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(12px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -516,19 +533,20 @@
     }
 
     .lang-popup.show {
-      transform: translate(-50%, -23%);
+      transform: translate(-50%, 0);
     }
 
     .popup-content {
       text-align: center;
-      font-size: 16px;
+      font-size: 30px;
       color: #fff;
     }
 
     .popup-content h3 {
       margin-top: 0;
       margin-bottom: 15px;
-      color: #fff;
+      color: #000;
+      font-size: 26px;
     }
 
     .popup-options {
@@ -544,7 +562,7 @@
       padding: 10px;
       border-radius: 8px;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 23px;
       cursor: pointer;
       transition: background 0.3s;
     }
@@ -552,11 +570,66 @@
     .popup-options button:hover {
       background-color: #916c00;
     }
-  </style>
+            
+@media (max-width: 768px) {
+  .lang-popup {
+    width: 61vw;
+    padding: 30px 15px;
+    
+  }
 
+  .popup-content {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+
+  .popup-content h3 {
+    font-size: 19px;
+  }
+
+  .popup-options button {
+    font-size: 17px;
+    padding: 10px;
+  }
+  .lang-btn {
+    margin: 7px 0;
+  }
+  .lang-btn {
+    font-size: 18px;
+  }
+  .li {
+      top: 9px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .lang-popup {
+    width: 75vw;
+    padding: 45px 25px;
+  }
+
+  .popup-content {
+    font-size: 36px;
+  }
+
+  .popup-content h3 {
+    font-size: 46px;
+  }
+
+  .popup-options button {
+    font-size: 36px;
+    padding: 12px;
+  }
+
+  .lang-btn {
+    font-size: 19px;
+  }
+}
+    
+  </style>
   <!-- Language Button -->
   <div class="li">
-    <button id="lang-btn" class="lang-btn">
+    <button id="lang-btn" class="lang-btn" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';">
       <a><i class="fa fa-globe"></i></a>
     </button>
   </div>
@@ -991,4 +1064,5 @@ const songs = [
   </script>
 </body>
 </html>
+
 
