@@ -448,11 +448,11 @@
 
     #stickyHeader img {
       position: absolute;
-      left: 15px;
+      left: 9px;
       top: 50%;
       transform: translateY(-50%);
-      width: 52px;
-      height: 52px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       border: 2px solid #8f0000;
       box-shadow: 0 0 8px rgba(178, 34, 34, 0.7);
@@ -461,13 +461,19 @@
 
      /* Responsive */
     @media (max-width: 480px) {
-      #stickyHeader {
+       #stickyHeader {
         padding-left: 61px;
       }
 
-      #stickyHeader div {
+       #stickyHeader div {
         font-size: 1.5rem;
       } 
+
+       #stickyHeader img {
+        left: 5px;
+        width: 52px;
+        height: 52px;
+      }
     }
       
   </style>
@@ -1062,6 +1068,7 @@
   </script>
 </body>
 </html>
+
 
 
 
