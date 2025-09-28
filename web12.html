@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
 
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+    
         body {
           margin: 0;
           font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
@@ -89,11 +93,11 @@
           line-height: 1.8;
         }
 
-       .styled-wrapper .button {
+.styled-wrapper .button {
   display: block;
   position: relative;
-  width: 52px;
-  height: 52px;
+  width: 61px;
+  height: 61px;
   margin: 0;
   overflow: hidden;
   outline: none;
@@ -153,9 +157,9 @@
 
 .styled-wrapper .button-elem {
   display: block;
-  width: 19px;
-  height: 19px;
-  margin: 16px 18px 0 16px;
+  width: 28px;
+  height: 28px;
+  margin: 16px 9px 0 16px;
   transform: rotate(360deg);
   fill: #f0eeef;
   font-weight: 700;
@@ -166,7 +170,25 @@
   transition: 0.4s;
   transform: translateX(-53px);
 }
+.back {
+  position: absolute;
+  left: 7px;
+  top: 14px;
+}
 
+    /* Responsive */
+    @media (max-width: 480px) {
+       .styled-wrapper .button {
+        width: 56px;
+        height: 56px;
+      }
+      .styled-wrapper .button-elem {
+        width: 23px;
+        height: 23px;
+        margin: 16px 14px 0 16px;
+        margin-top: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -860,6 +882,7 @@ backToTop.addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
