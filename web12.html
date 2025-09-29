@@ -30,10 +30,13 @@
           background: radial-gradient(circle, #8B0000, #4b0000);
           border-top: 4px solid gold;
           border-bottom: 4px solid gold;
-          padding: 40px 0;
+          padding: 40px 50%;
           display: flex;
+          top: 0;
           justify-content: space-between;
           align-items: center;
+          position: fixed;
+          z-index: 9999;
         }
 
         @media(max-width: 780px) {
@@ -44,7 +47,7 @@
     
         .container {
           max-width: 1700px;
-          margin: 2rem auto;
+          margin: 7.5rem auto;
           padding: 1rem;
         }
 
@@ -180,7 +183,7 @@
 .back {
   position: absolute;
   left: 7px;
-  top: 13px;
+  top: 9px;
 }
 
     /* Responsive */
@@ -244,7 +247,7 @@
     /* Sticky Heading */
     #stickyHeader {
       position: absolute;
-      top: 19px;
+      top: 12px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -316,7 +319,7 @@
       list-style: none;
       position: absolute;
       right: 7px;
-      top: 13px;
+      top: 9px;
     }
 
     .li a i {
@@ -1004,6 +1007,7 @@ backToTop.addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
