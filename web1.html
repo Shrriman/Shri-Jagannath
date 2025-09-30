@@ -2,7 +2,7 @@
 <html lang = "en">
     <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>1st Web</title>
         <link rel="stylesheet" href="web1.css">
         <style>
@@ -131,8 +131,13 @@
           align-items: center;
           height: 30%;
           width: 50%;
-
+          display: none;
         }
+     @media(max-width: 768px) {
+        .img {
+            display: block;
+        }
+     }
     </style>
     
      <body background = "jaga2.png">
@@ -191,4 +196,5 @@
   </button>
     </body>
 </html>
+
 
