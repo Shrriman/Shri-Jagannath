@@ -477,8 +477,8 @@
         100% { box-shadow: 0 0 0 0 rgba(138,58,185,0); }
       }
       
-      /* Chatbox Container */
-      #chatboxContainer {
+      /* /* Chatbox Container */
+      /* #chatboxContainer {
         position: fixed;
         bottom: 113px;
         right: 30px;
@@ -494,15 +494,15 @@
         animation: slideIn 0.4s ease;
         background-image: url('https://www.puriotdc.com/wp-content/uploads/2017/05/jagannath-temple.jpg');
         background-size: cover;
-      }
+      } */
       
-      @keyframes slideIn {
+      /* @keyframes slideIn {
         from { transform: translateY(50px); opacity: 0; }
         to { transform: translateY(0); opacity: 1; }
-      }
+      } */
       
       /* Header with Chakra */
-      .chatbox-header {
+      /* .chatbox-header {
         background:  Linear-gradient(to left, #ffd700, #970000);
         color: #ffffff;
         padding: 15px;
@@ -516,10 +516,10 @@
       .chatbox-header .icon {
         width: 30px;
         height: 30px;
-      }
+      } */
       
       /* Body */
-      .chatbox-body {
+      /* .chatbox-body {
         flex: 1;
         padding: 15px;
         background: rgba(255, 255, 255, 0.8);
@@ -534,10 +534,10 @@
       @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
-      }
+      } */
       
       /* Footer */
-      .chatbox-footer {
+      /* .chatbox-footer {
         display: flex;
         padding: 10px;
         border-top: 1px solid #ddd;
@@ -562,10 +562,10 @@
         margin-left: 10px;
         cursor: pointer;
         font-size: 16px;
-      }
+      } */
       
       /* Message Bubbles */
-      .user-message, .bot-message {
+      /* .user-message, .bot-message {
         padding: 10px 15px;
         border-radius: 20px;
         max-width: 80%;
@@ -586,7 +586,7 @@
       @keyframes messageIn {
         from { transform: translateX(20px); opacity: 0; }
         to { transform: translateX(0); opacity: 1; }
-      }
+      } */
 
       @media (max-width: 768px) {
           #chatIcon {
@@ -597,7 +597,7 @@
       }
     </style>  
 
-    <script>
+    <!-- <script>
   const audio = new Audio('audio.mpeg'); // Define once, globally
   audio.loop = true;
         
@@ -685,10 +685,10 @@
         return "Sorry, I'm still learning. Since I do not have a complete understanding of your language, I am unable to understand it. Please ask another question.";
       }
       
-    </script>
+    </script> -->
 
   <!-- Chatbox -->
-  <div id="chatboxContainer">
+  <!-- <div id="chatboxContainer">
     <div class="chatbox-header">
       <img src="jaga4.png" alt="Jagannath" class="icon">
   Garuda
@@ -700,7 +700,7 @@
       <input type="text" id="userInput" placeholder="Want To Know Something..?" onkeydown="handleEnter(event)">
       <button onclick="sendMessage()">➤</button>
     </div>
-  </div>
+  </div> -->
 
   <center><img src = "laxmi.png" class = "laxmi"></center>
         
@@ -719,4 +719,5 @@
   </style>
     </body>
 </html>
+
 
