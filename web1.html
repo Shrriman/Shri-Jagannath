@@ -496,12 +496,14 @@ a:hover::before{
 </div>
 
 <script>
- // Function to detect tablet devices only
-function isTabletDevice() {
+// Detect tablet in horizontal mode
+function isTabletHorizontal() {
   const ua = navigator.userAgent;
   const isTablet = /iPad|Android/.test(ua) && !/Mobile/.test(ua);
-  const screenWidth = window.innerWidth;
-  return isTablet || (screenWidth >= 768 && screenWidth <= 1024);
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  
+  return isTablet && width > height; // Horizontal if width > height
 }
 
 // Close modal function
@@ -511,14 +513,25 @@ function closeModal() {
   document.body.style.overflow = 'auto';
 }
 
-// Show overlay only on tablets
-window.onload = function() {
-  if (isTabletDevice()) {
-    const overlay = document.getElementById('desktopOverlay');
+// Show overlay only on tablet horizontal
+function checkOverlay() {
+  const overlay = document.getElementById('desktopOverlay');
+  if (isTabletHorizontal()) {
     overlay.classList.add('show');
-    document.body.style.overflow = 'hidden'; // Prevent background scroll
+    document.body.style.overflow = 'hidden';
+  } else {
+    overlay.classList.remove('show');
+    document.body.style.overflow = 'auto';
   }
 }
+
+// Run on load
+window.onload = checkOverlay;
+
+// Run on orientation change or resize
+window.addEventListener('resize', checkOverlay);
+window.addEventListener('orientationchange', checkOverlay);
+
 
 </script>
     
@@ -595,6 +608,7 @@ window.onload = function() {
   </button>
     </body>
 </html>
+
 
 
 
