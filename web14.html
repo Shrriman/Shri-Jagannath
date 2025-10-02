@@ -6,46 +6,42 @@
     <title>ChatBot</title>
 </head>
 <style>
-    body {
-        background: #fff4d0;
-        padding: 0;
-    }
-/* Chatbox Container */
-      #chatboxContainer {
-        padding: 0;
-        margin: 0;
+    * {
+          -webkit-tap-highlight-color: transparent;
+        }
+    
+        body {
+          margin: 0;
+          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
+          background-color: #fff4d0;
+          background: linear-gradient(to bottom, #fff8e1, #ffe6cc);
+          color: #333;
+          padding: 0;
+          height: 100%;
+          -webkit-tap-highlight-color: transparent;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch; 
+        }
+
+        header {
+          background: radial-gradient(circle, #8B0000, #4b0000);
+          border-top: 4px solid gold;
+          border-bottom: 4px solid gold;
+          padding: 41px 50%;
+          display: flex;
+          top: 0;
+          justify-content: space-between;
+          align-items: center;
+          position: fixed;
+          z-index: 9999;
+        }
+
+      @media(max-width: 768px) {
+        header {
+          padding: 36px 50%;
+        }
       }
 
-/* Scrollbar */
-.chatbox-body::-webkit-scrollbar {
-    width: 6px; /* Scrollbar ka width patla kar diya */
-}
-
-.chatbox-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #ffd700, #970000);
-    border-radius: 10px;
-    min-height: 10px; /* Thumb ki minimum height chhoti kar di */
-}
-
-
-
-      /* Header with Chakra */
-      .chatbox-header {
-        background:  Linear-gradient(to left, #ffd700, #970000);
-        color: #ffffff;
-        padding: 15px;
-        font-size: 19px;
-        font-weight: bold;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        position: fixed;
-        width: 100vw;
-        margin-top: -8px;
-        margin-left: -8px;
-        justify-content: center;
-      }
       .chatbox-header .icon {
         width: auto;
         height: 37px;
@@ -216,3 +212,4 @@
   </div>
 </body>
 </html>
+
