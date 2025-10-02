@@ -496,14 +496,15 @@ a:hover::before{
 </div>
 
 <script>
-// Detect tablet in horizontal mode
-function isTabletHorizontal() {
-  const ua = navigator.userAgent;
-  const isTablet = /iPad|Android/.test(ua) && !/Mobile/.test(ua);
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  
-  return isTablet && width > height; // Horizontal if width > height
+// Function to detect mobile device
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Function to detect tablet device
+function isTabletDevice() {
+  return /iPad|Android/i.test(navigator.userAgent) && !/Mobile/i.test(navigator.userAgent) ||
+         (window.innerWidth >= 768 && window.innerWidth <= 1024); // common tablet widths
 }
 
 // Close modal function
@@ -513,25 +514,28 @@ function closeModal() {
   document.body.style.overflow = 'auto';
 }
 
-// Show overlay only on tablet horizontal
-function checkOverlay() {
+// Function to update overlay visibility
+function updateOverlay() {
   const overlay = document.getElementById('desktopOverlay');
-  if (isTabletHorizontal()) {
+  const isLandscape = window.innerWidth > window.innerHeight;
+
+  if (isTabletDevice() || (isMobileDevice() && isLandscape)) {
+    // Show overlay
     overlay.classList.add('show');
     document.body.style.overflow = 'hidden';
   } else {
+    // Hide overlay
     overlay.classList.remove('show');
     document.body.style.overflow = 'auto';
   }
 }
 
 // Run on load
-window.onload = checkOverlay;
+window.onload = updateOverlay;
 
 // Run on orientation change or resize
-window.addEventListener('resize', checkOverlay);
-window.addEventListener('orientationchange', checkOverlay);
-
+window.addEventListener('resize', updateOverlay);
+window.addEventListener('orientationchange', updateOverlay);
 
 </script>
     
@@ -608,6 +612,7 @@ window.addEventListener('orientationchange', checkOverlay);
   </button>
     </body>
 </html>
+
 
 
 
