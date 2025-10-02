@@ -23,19 +23,19 @@
           -webkit-overflow-scrolling: touch; 
         }
 
-        .chatbox-header {
-          background: radial-gradient(circle, #8B0000, #4b0000);
-          border-top: 4px solid gold;
-          border-bottom: 4px solid gold;
-          padding: 41px 50%;
-          display: flex;
-          top: 0;
-          justify-content: space-between;
-          align-items: center;
-          position: fixed;
-          z-index: 9999;
-        }
-
+    .chatbox-header {
+        background: radial-gradient(circle, #8B0000, #4b0000);
+        border-top: 4px solid gold;
+        border-bottom: 4px solid gold;
+        padding: 13px 50%;
+        display: flex;
+        top: 0;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        z-index: 9999;
+    }
+    
       @media(max-width: 768px) {
         .chatbox-header {
           padding: 36px 50%;
@@ -43,9 +43,17 @@
       }
 
       .chatbox-header .icon {
-        width: auto;
-        height: 37px;
+        width: 50px;
+        height: auto;
       } 
+
+      .garuda {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: gold;
+          margin-top: -5px;
+          text-shadow: 2px 2px 6px #000;
+      }
       
       /* Body */
       .chatbox-body {
@@ -201,7 +209,7 @@
   <div id="chatboxContainer">
     <div class="chatbox-header">
       <img src="jaga4.png" alt="Jagannath" class="icon">
-  Garuda
+  <div class="garuda">Garuda</div>
     </div>
     <div class="chatbox-body" id="chatBody">
       <div class="bot-message">🙏 Namaste! Jay Jagannath.</div>
@@ -213,6 +221,7 @@
   </div>
 </body>
 </html>
+
 
 
 
