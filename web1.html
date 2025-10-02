@@ -490,14 +490,14 @@ a:hover::before{
 <div id="desktopOverlay">
   <div id="desktopModal">
     <h2 style="color:#fff;">Oops!</h2>
-    <p style="color:#fff">This website is still under construction.<br>Please open it on your laptop to continue.</p>
+    <p style="color:#fff">This website is still under construction.<br>Please open it on other device to continue.</p>
     <button onclick="closeModal()">Got it</button>
   </div>
 </div>
 
 <script>
- // Function to detect mobile or tablet devices
-function isMobileOrTablet() {
+ // Function to detect tablet devices
+function isTablet() {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
@@ -510,7 +510,7 @@ function closeModal() {
 
 // Show overlay only on mobile/tablet
 window.onload = function() {
-  if (isMobileOrTablet()) {
+  if (isTablet()) {
     const overlay = document.getElementById('desktopOverlay');
     overlay.classList.add('show');
     document.body.style.overflow = 'hidden'; // Prevent background scroll
@@ -592,6 +592,7 @@ window.onload = function() {
   </button>
     </body>
 </html>
+
 
 
 
