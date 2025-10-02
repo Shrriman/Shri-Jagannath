@@ -496,9 +496,12 @@ a:hover::before{
 </div>
 
 <script>
- // Function to detect tablet devices
-function isTablet() {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+ // Function to detect tablet devices only
+function isTabletDevice() {
+  const ua = navigator.userAgent;
+  const isTablet = /iPad|Android/.test(ua) && !/Mobile/.test(ua);
+  const screenWidth = window.innerWidth;
+  return isTablet || (screenWidth >= 768 && screenWidth <= 1024);
 }
 
 // Close modal function
@@ -508,9 +511,9 @@ function closeModal() {
   document.body.style.overflow = 'auto';
 }
 
-// Show overlay only on mobile/tablet
+// Show overlay only on tablets
 window.onload = function() {
-  if (isTablet()) {
+  if (isTabletDevice()) {
     const overlay = document.getElementById('desktopOverlay');
     overlay.classList.add('show');
     document.body.style.overflow = 'hidden'; // Prevent background scroll
@@ -592,6 +595,7 @@ window.onload = function() {
   </button>
     </body>
 </html>
+
 
 
 
