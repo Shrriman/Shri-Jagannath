@@ -482,23 +482,27 @@ a:hover::before{
 </div>
 
 <script>
-  function isMobileDevice() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
+ // Function to detect mobile or tablet devices
+function isMobileOrTablet() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
-  function closeModal() {
+// Close modal function
+function closeModal() {
+  const overlay = document.getElementById('desktopOverlay');
+  overlay.classList.remove('show');
+  document.body.style.overflow = 'auto';
+}
+
+// Show overlay only on mobile/tablet
+window.onload = function() {
+  if (isMobileOrTablet()) {
     const overlay = document.getElementById('desktopOverlay');
-    overlay.classList.remove('show');
-    document.body.style.overflow = 'auto';
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
   }
+}
 
-  window.onload = function() {
-    if (!isMobileDevice()) {
-      const overlay = document.getElementById('desktopOverlay');
-      overlay.classList.add('show');
-      document.body.style.overflow = 'hidden'; // Prevent background scroll
-    }
-  }
 </script>
     
     <style>
@@ -574,6 +578,7 @@ a:hover::before{
   </button>
     </body>
 </html>
+
 
 
 
