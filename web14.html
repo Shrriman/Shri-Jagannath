@@ -682,9 +682,35 @@ userInput.addEventListener('focus', () => {
     }, 300); // keyboard open animation ke baad
 });
 
+const chatBody = document.getElementById('chatBody');
+const userInput = document.getElementById('userInput');
+
+function adjustChatHeight() {
+    const viewportHeight = window.innerHeight;
+    const headerHeight = document.querySelector('.chatbox-header').offsetHeight;
+    const footerHeight = document.querySelector('.chatbox-footer').offsetHeight;
+    chatBody.style.height = (viewportHeight - headerHeight - footerHeight) + 'px';
+}
+
+// Initial adjustment
+adjustChatHeight();
+
+// Window resize (keyboard open/close) pe adjust
+window.addEventListener('resize', adjustChatHeight);
+
+// Input focus pe last message visible karne ke liye
+userInput.addEventListener('focus', () => {
+    setTimeout(() => {
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }, 300);
+});
+
+        
+
     </script>
 </body>
 </html>
+
 
 
 
