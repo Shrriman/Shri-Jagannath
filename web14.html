@@ -607,6 +607,70 @@
         document.body.style.overflowY = "auto";
       }
     });
+
+      // NEW: Dynamic resize handler for keyboard (add this after your existing functions)
+let currentViewportHeight = window.innerHeight;
+
+function updateChatLayout() {
+    const chatBody = document.getElementById('chatBody');
+    const header = document.querySelector('.chatbox-header');
+    const footer = document.querySelector('.chatbox-footer');
+    
+    // Get actual heights
+    const headerHeight = header ? header.offsetHeight : 80;
+    const footerHeight = footer ? footer.offsetHeight : 70;
+    
+    // Use visualViewport for mobile keyboard handling (better than window.innerHeight)
+    const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+    
+    // Update body height
+    chatBody.style.height = `calc(${viewportHeight}px - ${headerHeight + footerHeight}px)`;
+    
+    // Scroll to bottom if needed
+    chatBody.scrollTop = chatBody.scrollHeight;
+    
+    // Update global var
+    currentViewportHeight = viewportHeight;
+}
+
+// Call on load and resize (keyboard events)
+window.addEventListener('load', updateChatLayout);
+window.addEventListener('resize', updateChatLayout);
+
+// NEW: Better keyboard handling for mobile (focus/blur on input)
+const userInput = document.getElementById('userInput');
+userInput.addEventListener('focus', function() {
+    setTimeout(updateChatLayout, 100); // Small delay for keyboard animation
+    // Scroll to bottom to show input area
+    const chatBody = document.getElementById('chatBody');
+    chatBody.scrollTop = chatBody.scrollHeight;
+});
+
+userInput.addEventListener('blur', function() {
+    setTimeout(updateChatLayout, 100);
+});
+
+// VisualViewport support for iOS/Android (if available)
+if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateChatLayout);
+    window.visualViewport.addEventListener('scroll', updateChatLayout);
+}
+
+// UPDATED: Your existing addMessage function (scroll ko improve kiya)
+function addMessage(sender, text) {
+    const chatBody = document.getElementById('chatBody');
+    const div = document.createElement('div');
+    div.className = sender === 'user' ? 'user-message' : 'bot-message';
+    div.innerText = text;
+    chatBody.appendChild(div);
+    // Better scroll to bottom
+    setTimeout(() => {
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }, 100);
+}
+
+// Baaki functions (sendMessage, getReply, handleEnter) same rakh lo
+
     
   </script>
         
@@ -624,6 +688,7 @@
   </div>
 </body>
 </html>
+
 
 
 
