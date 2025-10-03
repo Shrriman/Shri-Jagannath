@@ -673,34 +673,40 @@
     </style>
 
     <script>
+const footer = document.querySelector('.chatbox-footer');
 const chatBody = document.getElementById('chatBody');
-const userInput = document.getElementById('userInput');
 
-function adjustChatHeight() {
+function adjustFooter() {
     const viewportHeight = window.innerHeight;
     const headerHeight = document.querySelector('.chatbox-header').offsetHeight;
-    const footerHeight = document.querySelector('.chatbox-footer').offsetHeight;
+    const footerHeight = footer.offsetHeight;
+
     chatBody.style.height = (viewportHeight - headerHeight - footerHeight) + 'px';
 }
 
-// Initial adjustment
-adjustChatHeight();
+// Keyboard open/close detect karne ke liye resize event use karo
+window.addEventListener('resize', () => {
+    adjustFooter();
+    chatBody.scrollTop = chatBody.scrollHeight; // last message dikhai de
+});
 
-// Window resize (keyboard open/close) pe adjust
-window.addEventListener('resize', adjustChatHeight);
-
-// Input focus pe last message visible karne ke liye
-userInput.addEventListener('focus', () => {
+// Input focus pe scroll last message
+document.getElementById('userInput').addEventListener('focus', () => {
     setTimeout(() => {
         chatBody.scrollTop = chatBody.scrollHeight;
     }, 300);
 });
+
+// Initial adjust
+adjustFooter();
+
 
         
 
     </script>
 </body>
 </html>
+
 
 
 
