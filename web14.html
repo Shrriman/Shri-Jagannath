@@ -619,36 +619,19 @@
       }
     });
 
-      // ======================
-  // Keyboard friendly input
-  // ======================
-  const footer = document.querySelector('.chatbox-footer');
-  const chatBody = document.getElementById('chatBody');
-  let originalHeight = chatBody.offsetHeight;
+const input = document.getElementById('userInput');
 
-  function adjustChatHeight() {
-    // Agar window height chhoti ho gayi => keyboard open hua
-    if(window.innerHeight < window.screen.height * 0.7) {
-      footer.style.position = 'absolute';
-      footer.style.bottom = '0px';
-      chatBody.style.height = (window.innerHeight - footer.offsetHeight) + 'px';
-    } else {
-      footer.style.position = 'fixed';
-      footer.style.bottom = '0';
-      chatBody.style.height = originalHeight + 'px';
-    }
-  }
+input.addEventListener('focus', () => {
+  // Mobile keyboard open hone par input ko view me le aao
+  setTimeout(() => {
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 300);
+});
 
-  window.addEventListener('resize', adjustChatHeight);
-  window.addEventListener('load', adjustChatHeight);
-
-  // Scroll input into view when focused (mobile)
-  const input = document.getElementById('userInput');
-  input.addEventListener('focus', () => {
-    setTimeout(() => {
-      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 300);
-  });
+input.addEventListener('blur', () => {
+  // Keyboard close hone par body height wapas adjust
+  chatBody.style.height = 'calc(100vh - 108px - 70px)';
+});
 
     
   </script>
@@ -667,6 +650,7 @@
   </div>
 </body>
 </html>
+
 
 
 
