@@ -673,15 +673,6 @@
     </style>
 
     <script>
-        // Scroll chat to bottom when input is focused (mobile-friendly)
-const userInput = document.getElementById('userInput');
-userInput.addEventListener('focus', () => {
-    setTimeout(() => {
-        const chatBody = document.getElementById('chatBody');
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }, 300); // keyboard open animation ke baad
-});
-
 const chatBody = document.getElementById('chatBody');
 const userInput = document.getElementById('userInput');
 
@@ -710,6 +701,7 @@ userInput.addEventListener('focus', () => {
     </script>
 </body>
 </html>
+
 
 
 
