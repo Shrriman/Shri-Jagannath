@@ -175,12 +175,6 @@
         gap: 12px;
         height: 623px;
         animation: fadeIn 0.5s ease-in-out;
-    padding: 108px 15px 70px 15px; /* bottom padding = footer height */
-    overflow-y: auto;
-    height: calc(100vh - 108px - 70px); /* 108px = header, 70px = footer */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
       }
       
       @keyframes fadeIn {
@@ -190,14 +184,9 @@
       
       /* Footer */
       .chatbox-footer {
-        bottom: 0;      /* hamesha screen bottom pe */
-        left: 0;
-        width: 100%;
         display: flex;
         padding: 10px;
         border-top: 1px solid #ddd;
-        background: #fff4d0;
-        z-index: 9999;
       }
       
       .chatbox-footer input {
@@ -263,7 +252,7 @@
         
     .chatbox-body {
         padding: 100px 15px;   /* top padding thoda kam */
-        /* height: 467px;*/        /* mobile pe height thoda kam */
+        height: 467px;        /* mobile pe height thoda kam */
     }
 
     .chatbox-footer input {
@@ -617,21 +606,6 @@
         document.body.style.overflowY = "auto";
       }
     });
-
-const input = document.getElementById('userInput');
-
-input.addEventListener('focus', () => {
-  // Mobile keyboard open hone par input ko view me le aao
-  setTimeout(() => {
-    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 300);
-});
-
-input.addEventListener('blur', () => {
-  // Keyboard close hone par body height wapas adjust
-  chatBody.style.height = 'calc(100vh - 108px - 70px)';
-});
-
     
   </script>
         
@@ -649,6 +623,7 @@ input.addEventListener('blur', () => {
   </div>
 </body>
 </html>
+
 
 
 
