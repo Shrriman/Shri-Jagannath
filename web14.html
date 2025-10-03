@@ -606,6 +606,23 @@
         document.body.style.overflowY = "auto";
       }
     });
+
+      // Mobile keyboard adjust fix
+const input = document.querySelector("#chatInput");
+
+if (window.visualViewport) {
+  visualViewport.addEventListener("resize", () => {
+    const chat = document.getElementById("chatboxContainer");
+    chat.style.height = visualViewport.height + "px";  // keyboard ke hisab se adjust
+  });
+}
+
+input.addEventListener("focus", () => {
+  setTimeout(() => {
+    input.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, 300); // thoda delay taki keyboard fully open ho jaye
+});
+
     
   </script>
         
@@ -623,6 +640,7 @@
   </div>
 </body>
 </html>
+
 
 
 
