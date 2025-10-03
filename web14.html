@@ -6,7 +6,7 @@
     <title>ChatBot</title>
 </head>
 <style>
-    * {
+      * {
           -webkit-tap-highlight-color: transparent;
         }
     
@@ -36,17 +36,21 @@
         z-index: 9999;
     }
     
-      @media(max-width: 768px) {
-        .chatbox-header {
-          padding: 8px 50%;
-        }
+@media(max-width: 768px) {
+    .chatbox-header {
+        padding: 8px 50%;
+    }
 
-        .chatbox-header .icon {
+    .chatbox-header .icon {
         margin-left: -61px;
-      } 
-      }
+    } 
 
-      .chatbox-header .icon {
+    .chatbox-body {
+        margin-left: -86px;
+    }
+}
+
+    .chatbox-header .icon {
         object-fit: cover;
         width: 50px;
         height: auto;
@@ -56,15 +60,15 @@
         box-shadow: 0 0 12px gold;
         text-shadow: 2px 2px 6px #000;
         border-radius: 50%;
-      } 
+    } 
 
-      .garuda {
+    .garuda {
           font-size: 1.8rem;
           font-weight: bold;
           color: gold;
           margin-top: -5px;
           text-shadow: 2px 2px 6px #000;
-      }
+    }
       
       /* Body */
       .chatbox-body {
@@ -238,6 +242,7 @@
   </div>
 </body>
 </html>
+
 
 
 
