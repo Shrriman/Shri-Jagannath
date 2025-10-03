@@ -621,8 +621,71 @@
       <button onclick="sendMessage()">➤</button>
     </div>
   </div>
+
+    <style>
+        /* Chatbox footer ko mobile-friendly sticky karna */
+.chatbox-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    position: sticky;
+    bottom: 0;
+    background: #fff4d0;
+    z-index: 9999;
+}
+
+/* Input box styling */
+.chatbox-footer input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.chatbox-footer input:focus {
+    border-color: #d7005d;
+    box-shadow: 0 0 12px #d7005d;
+}
+
+/* Send button styling */
+.chatbox-footer button {
+    background: #d7005d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.chatbox-footer button:active {
+    transform: scale(0.95);
+}
+
+    </style>
+
+    <script>
+        // Scroll chat to bottom when input is focused (mobile-friendly)
+const userInput = document.getElementById('userInput');
+userInput.addEventListener('focus', () => {
+    setTimeout(() => {
+        const chatBody = document.getElementById('chatBody');
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }, 300); // keyboard open animation ke baad
+});
+
+    </script>
 </body>
 </html>
+
 
 
 
