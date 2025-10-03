@@ -7,8 +7,8 @@
         <style>
 
            * {
-  -webkit-tap-highlight-color: transparent;
-}
+              -webkit-tap-highlight-color: transparent;
+            }
 
        body {
             margin: 0;
@@ -202,7 +202,7 @@
             <li><a href="web1.html"><i class="fa fa-arrow-left"></i><span>पिछे जाऐं</span></a></li>
             <li><a href="web7.html"><i class="fa fa-om"></i>संपूर्ण तथ्य</i></span></a></li>
             <li><a href="web11.html"><i class="fa fa-spa"></i><span>नित्य सेवा</span></a></li>
-            <li style="cursor: pointer;"><a onclick="toggleChatbox()"><i class="fa fa-comments"></i><span>चैट बॉट</span></a></li>
+            <li style="cursor: pointer;"><a href="web15.html"><i class="fa fa-comments"></i><span>चैट बॉट</span></a></li>
             <li><a href="#"><i class="fa fa-images"></i><span>गैलरी</span></a></li>
             <li><a href="#"><i class="fa fa-question-circle"></i><span>प्रश्नोत्तर</span></a></li>
             <li><a href="#"><i class="fa fa-phone"></i><span>संपर्क करें</span></a></li>
@@ -454,7 +454,7 @@
       </button>
     </section>
 
-    <div id="chatIcon" onclick="toggleChatbox()">💬</div>
+    <div id="chatIcon" href="web15.html">💬</div>
 
       <style>
       
@@ -481,232 +481,15 @@
         70% { box-shadow: 0 0 0 15px rgba(138,58,185,0); }
         100% { box-shadow: 0 0 0 0 rgba(138,58,185,0); }
       }
-      
-      /* Chatbox Container */
-      #chatboxContainer {
-        position: fixed;
-        bottom: 113px;
-        right: 30px;
-        width: 383px;
-        max-height: 550px;
-        background: linear-gradient(to bottom right, #fffefc, #f0f8ff);
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        display: none;
-        flex-direction: column;
-        overflow: hidden;
-        z-index: 999;
-        animation: slideIn 0.4s ease;
-        background-image: url('https://www.puriotdc.com/wp-content/uploads/2017/05/jagannath-temple.jpg');
-        background-size: cover;
-      }
-      
-      @keyframes slideIn {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-      }
-      
-      /* Header with Chakra */
-      .chatbox-header {
-        background:  Linear-gradient(to left, #ffd700, #970000);
-        color: #ffffff;
-        padding: 15px;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .chatbox-header .icon {
-        width: 30px;
-        height: 30px;
-      }
-      
-      /* Body */
-      .chatbox-body {
-        flex: 1;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.8);
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        height: 400px;
-        animation: fadeIn 0.5s ease-in-out;
-      }
-      
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-      
-      /* Footer */
-      .chatbox-footer {
-        display: flex;
-        padding: 10px;
-        border-top: 1px solid #ddd;
-      }
-      
-      .chatbox-footer input {
-        flex: 1;
-        padding: 12px;
-        border-radius: 25px;
-        border: 1px solid #ccc;
-        outline: none;
-        font-size: 15px;
-      }
-      
-      .chatbox-footer button {
-        background: #d7005d;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 42px;
-        height: 42px;
-        margin-left: 10px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-      
-      /* Message Bubbles */
-      .user-message, .bot-message {
-        padding: 10px 15px;
-        border-radius: 20px;
-        max-width: 80%;
-        line-height: 1.6;
-        font-size: 15px;
-        animation: messageIn 0.3s ease-in-out;
-      }
-      
-      .user-message {
-        background: #d5fcd4;
-        align-self: flex-end;
-      }
-      .bot-message {
-        background: #d7f0ff;
-        align-self: flex-start;
-      }
-      
-      @keyframes messageIn {
-        from { transform: translateX(20px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-      }
 
       @media (max-width: 768px) {
-          #chatIcon {
+      #chatIcon {
         font-size: 19px;
         bottom: 16px;
         right: 16px;
       }
       }
-    </style>  
-
-    <script>
-      const audio = new Audio('audio.mpeg'); // Define once, globally
-  audio.loop = true;
-        
-        function toggleChatbox() {
-        const box = document.getElementById('chatboxContainer');
-            
-    if (box.style.display === 'flex') {
-      box.style.display = 'none';
-      audio.pause();
-      audio.currentTime = 0;
-    } else {
-      box.style.display = 'flex';
-      audio.play();
-    }
-}
-      
-      function handleEnter(event) {
-        if (event.key === 'Enter') {
-          sendMessage();
-        }
-      }
-      
-      function sendMessage() {
-        const input = document.getElementById('userInput');
-        const msg = input.value.trim();
-        if (!msg) return;
-      
-        addMessage('user', msg);
-        input.value = '';
-      
-        setTimeout(() => {
-          const reply = getReply(msg.toLowerCase());
-          addMessage('bot', reply);
-        }, 600);
-      }
-      
-      function addMessage(sender, text) {
-        const chatBody = document.getElementById('chatBody');
-        const div = document.createElement('div');
-        div.className = sender === 'user' ? 'user-message' : 'bot-message';
-        div.innerText = text;
-        chatBody.appendChild(div);
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }
-
-        function getReply(msg) {
-          msg = msg.toLowerCase();
-        if (msg.includes('where') || msg.includes('kahan par') || msg.includes('कहां पर') || msg.includes('kidhar') || msg.includes('किधर') || msg.includes('kauthi') || msg.includes('keunthi') || msg.includes('keunthare') || msg.includes('keunthaare') || msg.includes('kauthaare') || msg.includes('କେଉଁଠି') || msg.includes('କେଉଁଠାରେ') || msg.includes('କଉଠି') || msg.includes('କଉଠାରେ') || msg.includes('kauthare')) return "यह मंदिर भारत के ओडिशा राज्य के पुरी शहर में स्थित है।";
-          if (msg.includes('temple') || msg.includes('mandir') || msg.includes('मंदिर') || msg.includes('टेम्पल') || msg.includes('ମନ୍ଦିର') || msg.includes('ଟେମ୍ପଲ୍')) {
-          return "महाप्रभु श्री जगन्नाथ जी के मुख्य मंदिर पुरी शहर में स्थित है। समुद्र तट पर बसे इस पवित्र मंदिर को ओडिशा का सार्वजानिक प्रार्थना स्थल माना जाता है। यह हिंदू धर्म के चार प्रमुख पवित्र धामों में से एक है और विश्व के श्रेष्ठतम और प्रमुख मंदिरों में गिना जाता है। इस मंदिर को भगवान जगन्नाथ जी के पृथ्वी लोक निवास माना जाता है, जहाँ वो अपने भाई बलभद्र और बहन सुभद्रा के साथ वास करते हैं।";
-        }
-          if(msg.includes('live') || msg.includes('worship') || msg.includes('puja paanti') || msg.includes('puja panti') || msg.includes('ruhanti') || msg.includes('rahuchanti') || msg.includes('rahuchhanti') || msg.includes('basa karanti') || msg.includes('पूजा पाते') || msg.includes('puja paate') || msg.includes('puje jaate') || msg.includes('पूजे जाते') || msg.includes('रेहेते है') || msg.includes('रेहते है') || msg.includes('ରୁହନ୍ତି') || msg.includes('ରହୁଛନ୍ତି') || msg.includes('ବାସ କରନ୍ତି') || msg.includes('rehte') || msg.includes('rehete') || msg.includes('rehate') || msg.includes('bas karte') || msg.includes('ରହନ୍ତି')) { 
-              return "मुख्यतः भारत के ओडिशा राज्य के पुरी शहर में स्थित श्री जगन्नाथ मंदिर में महाप्रभु जगन्नाथ जी की उपासना की जाती है, जहाँ वो अपने बड़े भाई प्रभु बलभद्र और छोटी बहन मां सुभद्रा के साथ निवास करते हैं।";
-          }
-         if(msg.includes('with') || msg.includes('kie kie') || msg.includes('kaun kaun') || msg.includes('kiske saath') || msg.includes('kon kon') || msg.includes('saha') || msg.includes('sahita') || msg.includes('sathire') || msg.includes('sangare') || msg.includes('ସହ') || msg.includes('ସହିତ') || msg.includes('ସାଥିରେ') || msg.includes('ସାଙ୍ଗରେ') || msg.includes('କିଏ କିଏ') || msg.includes('कौन कौन') || msg.includes('किसके साथ')) return "महाप्रभु श्री जगन्नाथ पुरी के जगन्नाथ मंदिर में निम्नलिखित देवताओं के साथ निवास करते हैं:\n\n" +
-             "१. प्रभु बलभद्र – उनके बड़े भाई, जिन्हें बलराम भी कहा जाता है; जिन्हें शक्तिशाली और रक्षक के रूप में पूजा जाता है।\n" +
-             "२. देवी सुभद्रा – उनकी छोटी बहन, जो दिव्यता, पवित्रता और भक्ति का प्रतीक हैं।\n" +
-             "३. चक्रराज सुदर्शन – जिन्हें दिव्य अस्त्र और रक्षक के रूप में माना जाता है; जो भगवान जगन्नाथ जी के साथ विराजमान है।\n\n" +
-             "इन चारों देवताओं को मंदिर के गर्भगृह में स्थित रत्न सिंहासन पर एक साथ पूजा की जाती है।";
-        if (msg.includes('rath yatra') || msg.includes('रथयात्रा') || msg.includes('ରଥଯାତ୍ରା') || msg.includes('car festival')) return "रथयात्रा महाप्रभु जगन्नाथ जी की विशाल यात्रा है। इस अवसर पर महाप्रभु जगन्नाथ, प्रभु बलभद्र और देवी सुभद्रा लकड़ी के बने रथ में विराजमान होते हैं। इन रथों को हजारों भक्त खींचते हैं। यह यात्रा जगन्नाथ मंदिर से गुंडिचा मंदिर तक होती है। यह पवित्र उत्सव हर साल जून या जुलाई (आषाढ़ माह) में मनाया जाता है। यह विश्व की सबसे बड़ी धार्मिक यात्राओं में से एक है।";
-        if (msg.includes('kitchen') || msg.includes('rosha shala') || msg.includes('rosei ghara') || msg.includes('rosei sala') || msg.includes('rosa sala') || msg.includes('rosei shala') || msg.includes('rosha gruha') || msg.includes('रोसई ग्रिह') || msg.includes('randhana gruha') || msg.includes('paka shala') || msg.includes('ରୋଷ ଗୃହ') || msg.includes('ରୋଷେଇ ଘର') || msg.includes('ରୋଷେଇ ଶାଳ') || msg.includes('ରୋଷ ଶାଳା') || msg.includes('ରୋଷେଇ ଗୃହ') || msg.includes('रो शाला') || msg.includes('रोसई शाला') || msg.includes('पाक शाला') || msg.includes('ପାକ ଶାଳା') || msg.includes('ରାନ୍ଧନ ଶାଳା') || msg.includes('ରନ୍ଧନ ଗୃହ')) return "यह विश्व का सबसे बड़ा मंदिर का रसोईघर है। यहाँ प्रतिदिन हजारों लोगों के लिए भोजन पकाया जाता है, लेकिन लाखों लोग भी यह भोजन कर पाते हैं।";
-        if (msg.includes('who are you') || msg.includes('your name') || msg.includes('your work') || msg.includes('tumhara naam') || msg.includes('tumahara kaam') || msg.includes('tum kon ho') || msg.includes('tum kaun ho') || msg.includes('tamara naa') || msg.includes('tame kie') || msg.includes('ତମର ନାମ') || msg.includes('तुम्हारा नाम') || msg.includes('तुम्हारा काम') || msg.includes('तुम कौन हो') || msg.includes('ତମେ କିଏ') || msg.includes('ତମର କାମ କଣ')) {
-          return "मैं गरुड़ चैट बोट हूँ, श्री जगन्नाथ जी का एक सेवक। उनके विषय में आपके मन में जो भी प्रश्न हों, उनके उत्तर देने के लिए मैं यहाँ हूँ।";
-        }
-        if (msg.includes("10 avatar") || msg.includes("10 abatar") || msg.includes('dashavatar') || msg.includes('avatars') || msg.includes('ten avatar') || msg.includes('୧୦ ଅବତାର') || msg.includes('ଦଶାବତାର') || msg.includes('दसाबतार') || msg.includes('१० अवतार') || msg.includes('अवतारों') || msg.includes('ଅବତାରଗୁଡ଼ିକ')) {
-    return "श्री जगन्नाथ (विष्णु) जी के १० अवतार (दशावतार) हैं:\n" +
-           "୧. मत्स्य (मछली)\n" +
-           "୨. कूर्म (कछुआ)\n" +
-           "3. वराह (सूअर)\n" +
-           "୪. नरसिंह (अर्ध मानव-आधि पशु)\n" +
-           "୫. वामन (वामन ब्राह्मण)\n" +
-           "୬. परशुराम (परशु धारण करने वाला योद्धा)\n" +
-           "୭. राम (अयोध्या के राजकुमार) \n" +
-           "୮. कृष्ण (दिव्य गोपालक) \n" +
-           "୯.  बुद्ध (ज्ञान के प्रकाशदाता)\n" +
-           "୧୦. कल्की (भविष्य में सफेद घोड़े पर सवार होकर धरती पर आने वाले योद्धा)\n\n" +
-        "महाप्रभु के नवम अवतार कौन हैं, यह स्पष्ट नहीं है। इस विषय में अभी भी हाईकोर्ट में मामला चल रहा है। कुछ लोग भगवान बुद्ध को श्री विष्णु के नवम अवतार मानते हैं, जबकि कुछ लोग श्री जगन्नाथ जी को श्री विष्णु के नवम अवतार कहते हैं। श्रीमद्भागवत सहित कई पुराणों और शास्त्रों में भगवान बुद्ध को श्री विष्णु के नवम अवतार कहा गया है।";
-        }
-           if (msg.includes('jay') || msg.includes('ଜୟ') || msg.includes('जय')) return "जय श्री जगन्नाथ! ⚫❗⚫ महाप्रभु जगन्नाथ जी के आशीर्वाद से आप हमेशा खुश और स्वस्थ रहें।";
-          if (msg.includes('namaste') || msg.includes('namaskar') || msg.includes('pranam') || msg.includes('नमस्ते') || msg.includes('ନମସ୍ତେ') || msg.includes('ନମସ୍କାର') || msg.includes('नमस्कार') || msg.includes('प्रणाम') || msg.includes('ପ୍ରଣାମ')) return "नमस्ते! महाप्रभु जगन्नाथ के आशीर्वाद से आप हमेशा खुश और स्वस्थ रहें।";
-        if (msg.includes('jagannath') || msg.includes('ଜଗନ୍ନାଥ') || msg.includes('जगन्नाथ')) return "'जगन्नाथ' शब्द का अर्थ है 'जगत के स्वामी' (जगत = विश्व, नाथ = स्वामी)। वो भगवान विष्णु के एक अवतार के रूप में वर्णित हैं, और विशेष रूप से भगवान श्रीकृष्ण के रूप में पूजे जाते हैं। वो ओडिशा के पुरी स्थित जगन्नाथ मंदिर के मुख्य देवता हैं।";
-         if (msg.includes('hi') || msg.includes('hello') || msg.includes('ହାଏ') || msg.includes('ହେଲୋ') || msg.includes('हेलो') || msg.includes('हाए')) {
-          return "हेलो-हाए छोड़ो, जय जगन्नाथ बोलो! 🙌🏻";
-         }
-        return "माफ़ कीजिए। मैं अभी भी सीख रहा हूँ, इसलिए आपकी भाषा की पूरी समझ न होने के कारण मैं इसे ठीक से नहीं समझ नहीं पा रहा हूँ। कृपया कुछ और पूछें।";
-      }
-      
-      
-    </script>
-
-  <!-- Chatbox -->
-  <div id="chatboxContainer">
-    <div class="chatbox-header">
-      <img src="jaga4.png" alt="Jagannath" class="icon">
-  गरुड़
-    </div>
-    <div class="chatbox-body" id="chatBody">
-      <div class="bot-message">🙏 नमस्ते! जय जगन्नाथ!</div>
-    </div>
-    <div class="chatbox-footer">
-      <input type="text" id="userInput" placeholder="कुछ जानना चाहते हैं..?" onkeydown="handleEnter(event)">
-      <button onclick="sendMessage()">➤</button>
-    </div>
-  </div>
+    </style>
 
 <center><img src = "laxmi.png" class = "laxmi"></center>
   
@@ -726,6 +509,7 @@
   </style>
     </body>
 </html>
+
 
 
 
