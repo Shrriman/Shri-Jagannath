@@ -510,7 +510,19 @@ footer {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1056px) {
+@media (max-width: 768px) {
+  .close-btn {
+    top: -16px;
+    right: 14%;
+  }
+  .lightbox img, .lightbox video {
+    width: 61%;
+    height: auto;
+    margin-left: 23%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1056px) {
   .close-btn {
     top: -16px;
     right: 14%;
@@ -716,6 +728,7 @@ videosBtn.addEventListener('click', showVideosGallery);
 
 </body>
 </html>
+
 
 
 
