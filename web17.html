@@ -158,17 +158,16 @@ body {
       top: 0px;
       left: 50%;
       transform: translateX(-50%);
-      display: flex;
-      align-items: center;
       padding: 10px 20px 10px 70px;
       background: transparent;
       border: none;
       box-shadow: none;
       color: #ffd700;
-      flex-direction: column;
       white-space: nowrap;
       z-index: 1000;
       margin-left: 13px;
+      justify-content: center;
+      align-items: center;
     }
 
     #stickyHeader div {
@@ -176,6 +175,9 @@ body {
       font-weight: bold;
       color: gold;
       text-shadow: 2px 2px 6px #000;  
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
     }
 
     #stickyHeader img {
@@ -202,13 +204,13 @@ body {
 
       #stickyHeader div {
         font-size: 1.3rem;
+        flex-direction: column;
       } 
       #stickyHeader img {
         width: 42px;
         height: 42px;
       }
     }
-
     .li {
       padding: 5px 0;
       list-style: none;
@@ -729,6 +731,7 @@ videosBtn.addEventListener('click', showVideosGallery);
 
 </body>
 </html>
+
 
 
 
