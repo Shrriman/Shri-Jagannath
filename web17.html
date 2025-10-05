@@ -384,11 +384,13 @@ body {
   }
 
   .gallery-container { 
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   }
 
   .gallery-item img, .gallery-item video {
     height: 261px;
+    width: 100%;
   }
 }
 
@@ -727,6 +729,7 @@ videosBtn.addEventListener('click', showVideosGallery);
 
 </body>
 </html>
+
 
 
 
