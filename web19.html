@@ -155,7 +155,7 @@ body {
     /* Sticky Heading */
     #stickyHeader {
       position: absolute;
-      top: 13px;
+      top: -4px;
       left: 50%;
       transform: translateX(-50%);
       padding: 10px 20px 10px 70px;
@@ -165,10 +165,7 @@ body {
       color: #ffd700;
       white-space: nowrap;
       z-index: 1000;
-      margin-left: 13px;
       display: flex;
-      flex-direction: row;
-      gap: 8px;
       justify-content: center;
       align-items: center;
     }
@@ -200,9 +197,8 @@ body {
     @media (max-width: 480px) {
       #stickyHeader {
         padding-left: 61px;
-        flex-direction: column;
         top: -2px;
-        gap: 0;
+        margin-left: 7px;
       }
 
       #stickyHeader div {
@@ -582,8 +578,7 @@ footer {
   <!-- Sticky Header Only -->
   <div id="stickyHeader">
     <img src="mahadev.png" alt="Mahadev Ji" />
-    <div>ହରିହର</div>
-    <div>ଦର୍ଶନ</div>
+    <div>ହରିହର ଦିବ୍ୟ ଦର୍ଶନ</div>
   </div>
 
   <!-- Language Button -->
@@ -734,6 +729,7 @@ videosBtn.addEventListener('click', showVideosGallery);
 
 </body>
 </html>
+
 
 
 
