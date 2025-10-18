@@ -493,6 +493,16 @@
         if (msg.includes('jagannath') || msg.includes('ଜଗନ୍ନାଥ') || msg.includes('जगन्नाथ')) return "'Jagannath' means 'Lord of the Universe' (Jagat = Universe, Nath = Lord). He is a form of Lord Vishnu and is especially worshipped as a form of Lord Krishna. He is the presiding deity of the Jagannath Temple in Puri, Odisha.";
          if (msg.includes('hi') || msg.includes('hello') || msg.includes('ହାଏ') || msg.includes('ହେଲୋ') || msg.includes('हेलो') || msg.includes('हाए')) {
           return "Leave hello and hi, say Jagannath Swami ki Jai! 🙌🏻";
+             let botReply = "🙏 Jai ho!";
+
+if (userText.toLowerCase().includes("jay")) {
+  let words = userText.trim().split(" ");
+  let index = words.findIndex(w => w.toLowerCase() === "jay");
+  if (index !== -1 && words[index + 1]) {
+    let godName = words.slice(index + 1).join(" ");
+    botReply = `🙏 Jay ${godName.trim()}! May Lord ${godName.trim()} bless you always!`;
+  }
+}
          }
         return "Sorry, I'm still learning. Since I do not have a complete understanding of your language, I am unable to understand it. Please ask another question.";
       }
@@ -600,6 +610,7 @@
 
 </body>
 </html>
+
 
 
 
