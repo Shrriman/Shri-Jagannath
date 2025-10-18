@@ -489,6 +489,21 @@
         "महाप्रभु के नवम अवतार कौन हैं, यह स्पष्ट नहीं है। इस विषय में अभी भी हाईकोर्ट में मामला चल रहा है। कुछ लोग भगवान बुद्ध को श्री विष्णु के नवम अवतार मानते हैं, जबकि कुछ लोग श्री जगन्नाथ जी को श्री विष्णु के नवम अवतार कहते हैं। श्रीमद्भागवत सहित कई पुराणों और शास्त्रों में भगवान बुद्ध को श्री विष्णु के नवम अवतार कहा गया है।";
         }
            if (msg.includes('jay') || msg.includes('ଜୟ') || msg.includes('जय')) return "जय श्री जगन्नाथ! ⚫❗⚫ महाप्रभु जगन्नाथ जी के आशीर्वाद से आप हमेशा खुश और स्वस्थ रहें।";
+let botReply = "🙏 जय जगन्नाथ!";
+if (
+  msg.toLowerCase().includes('jai') ||
+  msg.toLowerCase().includes('jay') ||
+  msg.includes('ଜୟ') ||
+  msg.includes('जय')
+) {
+  let words = msg.trim().split(" ");
+  let index = words.findIndex(w => ['jai', 'jay', 'ଜୟ', 'जय'].includes(w.toLowerCase()));
+
+  if (index !== -1 && words[index + 1]) {
+    let godName = words.slice(index + 1).join(" ");
+    return `जय ${godName.trim()} ✨! भगवान ${godName.trim()} के आशीर्वाद आपके ऊपर हमेशा बनी रहें!🙏`;
+  }
+}
           if (msg.includes('namaste') || msg.includes('namaskar') || msg.includes('pranam') || msg.includes('नमस्ते') || msg.includes('ନମସ୍ତେ') || msg.includes('ନମସ୍କାର') || msg.includes('नमस्कार') || msg.includes('प्रणाम') || msg.includes('ପ୍ରଣାମ')) return "नमस्ते! महाप्रभु जगन्नाथ के आशीर्वाद से आप हमेशा खुश और स्वस्थ रहें।";
         if (msg.includes('jagannath') || msg.includes('ଜଗନ୍ନାଥ') || msg.includes('जगन्नाथ')) return "'जगन्नाथ' शब्द का अर्थ है 'जगत के स्वामी' (जगत = विश्व, नाथ = स्वामी)। वो भगवान विष्णु के एक अवतार के रूप में वर्णित हैं, और विशेष रूप से भगवान श्रीकृष्ण के रूप में पूजे जाते हैं। वो ओडिशा के पुरी स्थित जगन्नाथ मंदिर के मुख्य देवता हैं।";
          if (msg.includes('hi') || msg.includes('hello') || msg.includes('ହାଏ') || msg.includes('ହେଲୋ') || msg.includes('हेलो') || msg.includes('हाए')) {
@@ -600,6 +615,7 @@
   
 </body>
 </html>
+
 
 
 
