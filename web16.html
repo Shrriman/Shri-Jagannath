@@ -489,7 +489,21 @@
            "୧୦. କଳ୍କୀ (ଭବିଷ୍ୟତରେ ଶ୍ଵେତ ଘୋଡ଼ାରେ ଚଢ଼ି ଧରାକୁ ଆସିବାକୁ ଯାଉଥିବା ଯୋଦ୍ଧା)\n\n" +
         "ମହାପ୍ରଭୁଙ୍କ ନବମ ଅବତାର କିଏ ତାହା ସ୍ପଷ୍ଟ ହେଇନି। ତାକୁ ନେଇ ଏବେ ମଧ୍ୟ ହାଇକୋର୍ଟ ରେ କେସ ଚାଲିଛି। କେହି କେହି ଭଗବାନ ବୁଦ୍ଧଙ୍କୁ ଶ୍ରୀ ବିଷ୍ଣୁ ଙ୍କ ନବମ ଅବତାର ମାନନ୍ତି ଆଉ କେହି କେହି ଶ୍ରୀ ଜଗନ୍ନାଥଙ୍କୁ ଶ୍ରୀ ବିଷ୍ଣୁଙ୍କ ନବମ ଅବତାର କୁହନ୍ତି। ଶ୍ରୀମଦ୍ ଭାଗବତ ଭଳି ଅନେକ ପୁରାଣ ଶାସ୍ତ୍ରଗୁଡ଼ିକରେ ଭଗଵାନ ବୁଦ୍ଧଙ୍କୁ ଶ୍ରୀ ବିଷ୍ଣୁ ଙ୍କ ନବମ ଅବତାର ବୋଲି କୁହାଯାଇଛି।";
         }
-           if (msg.includes('jay') || msg.includes('ଜୟ') || msg.includes('जय')) return "ଜୟ ଶ୍ରୀ ଜଗନ୍ନାଥ ⚫❗⚫! ମହାପ୍ରଭୁ ଶ୍ରୀ ଜଗନ୍ନାଥଙ୍କ ଆଶୀର୍ବାଦରେ ଆପଣ ସବୁବେଳେ ଖୁସିରେ ରୁହନ୍ତୁ।";
+let botReply = "🙏 ଜୟ ଜଗନ୍ନାଥ!";
+if (
+  msg.toLowerCase().includes('jai') ||
+  msg.toLowerCase().includes('jay') ||
+  msg.includes('ଜୟ') ||
+  msg.includes('जय')
+) {
+  let words = msg.trim().split(" ");
+  let index = words.findIndex(w => ['jai', 'jay', 'ଜୟ', 'जय'].includes(w.toLowerCase()));
+
+  if (index !== -1 && words[index + 1]) {
+    let godName = words.slice(index + 1).join(" ");
+    return `ଜୟ ${godName.trim()} ✨! ଭଗବାନ ${godName.trim()}ଙ୍କ ଆଶୀର୍ବାଦ ଆପଣଙ୍କ ଉପରେ ସର୍ବଦା ରହିଥାଉ!🙏`;
+  }
+}
           if (msg.includes('namaste') || msg.includes('namaskar') || msg.includes('pranam') || msg.includes('नमस्ते') || msg.includes('ନମସ୍ତେ') || msg.includes('ନମସ୍କାର') || msg.includes('नमस्कार') || msg.includes('प्रणाम') || msg.includes('ପ୍ରଣାମ')) return "ନମସ୍ତେ! ମହାପ୍ରଭୁ ଜଗନ୍ନାଥଙ୍କ ଆଶୀର୍ବାଦରେ ଆପଣ ସବୁବେଳେ ଖୁସିରେ ରୁହନ୍ତୁ।";
         if (msg.includes('jagannath') || msg.includes('ଜଗନ୍ନାଥ') || msg.includes('जगन्नाथ')) return "‘ଜଗନ୍ନାଥ’ ଶବ୍ଦର ଅର୍ଥ ହେଲା ‘ବିଶ୍ୱର ପ୍ରଭୁ’ (ଜଗତ = ବିଶ୍ୱ, ନାଥ = ପ୍ରଭୁ) । ସେ ଭଗବାନ ବିଷ୍ଣୁଙ୍କ ଏକ ଅବତାର ଭାବେ ବର୍ଣ୍ଣିତ, ଏବଂ ବିଶେଷ କରି ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣଙ୍କ ରୂପରେ ପୂଜିତ ହୁଅନ୍ତି । ସେ ଓଡ଼ିଶାର ପୁରୀ ଜଗନ୍ନାଥ ମନ୍ଦିରର ମୁଖ୍ୟ ଦେବତା।";
          if (msg.includes('hi') || msg.includes('hello') || msg.includes('ହାଏ') || msg.includes('ହେଲୋ') || msg.includes('हेलो') || msg.includes('हाए')) {
@@ -599,6 +613,7 @@
   
 </body>
 </html>
+
 
 
 
