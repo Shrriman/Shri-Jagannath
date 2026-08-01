@@ -1,0 +1,26 @@
+name: Sync to Second Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+
+      - name: Push to second repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.PAT_TOKEN }}
+        with:
+          source-directory: "."
+          destination-github-username: srimanpradhan
+          destination-repository-name: Shri-Jagannath
+          target-branch: main
+          user-email: shrrimankpraddhan05@gmail.com
+          commit-message: "Auto Sync"
